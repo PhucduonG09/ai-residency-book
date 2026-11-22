@@ -59,9 +59,9 @@
 
 ## Đề cương toàn bộ sách
 
-Sách gồm 14 chương lõi, 3 đề thi thử và 3 luồng việc chạy song song từ tuần đầu tiên, kéo dài từ tháng 11/2026 đến tháng 9/2027. Mốc nộp hồ sơ là đợt tuyển cuối năm 2027, với giả định ngành của bạn học 4 năm (cần xác nhận). Chương 0–13 đã có trong app; chương 14 và ba đề thi thử được bổ sung trước tuần cần dùng. Chương chưa viết hiện tên trong app nhưng chưa mở được.
+Sách gồm 14 chương lõi, 3 đề thi thử và 3 luồng việc chạy song song từ tuần đầu tiên, kéo dài từ 7/12/2026 đến giữa tháng 11/2027. Mốc nộp hồ sơ là đợt tuyển cuối năm 2027, với giả định ngành của bạn học 4 năm (cần xác nhận). Chương 0–13 đã có trong app; chương 14 và ba đề thi thử được bổ sung trước tuần cần dùng. Chương chưa viết hiện tên trong app nhưng chưa mở được.
 
-**Phần I — Nền tảng (tháng 11/2026 – 1/2027, 12 tuần)**
+**Phần I — Nền tảng (tháng 12/2026 – 3/2027, 12 tuần)**
 
 0. Bài chẩn đoán đầu vào — 30 câu, chấm theo chương để biết nên học kỹ chương nào.
 1. **Đại số tuyến tính cho ML** — ma trận là phép biến đổi, hạng, phép chiếu, QR, trị riêng, SVD, PCA.
@@ -71,9 +71,9 @@ Sách gồm 14 chương lõi, 3 đề thi thử và 3 luồng việc chạy song
 5. ML cổ điển — hồi quy, phân loại, bias–variance, regularization, SVM và kernel, cây và boosting, k-means, GMM/EM.
 6. Mạng nơ-ron từ con số 0 — MLP bằng NumPy rồi PyTorch, khởi tạo, normalization, cách debug khi loss không giảm.
 
-→ **Đề thi thử 1** (cuối tháng 1/2027, bấm giờ 120 phút).
+→ **Đề thi thử 1** (14/3/2027, bấm giờ 120 phút).
 
-**Phần II — Deep learning hiện đại (tháng 2 – 4/2027, 12 tuần)**
+**Phần II — Deep learning hiện đại (tháng 3 – 5/2027, 12 tuần)**
 
 7. CNN và thị giác máy tính — convolution, ResNet, augmentation, ViT.
 8. Attention và Transformer — RNN và vanishing gradient, self-attention, positional encoding, KV cache.
@@ -81,25 +81,25 @@ Sách gồm 14 chương lõi, 3 đề thi thử và 3 luồng việc chạy song
 10. Mô hình sinh và học tự giám sát — VAE, diffusion, contrastive learning.
 11. Phương pháp thực nghiệm và đọc paper — đánh giá đúng, ablation, nhiều seed, khoảng tin cậy; phiếu đọc 8 paper kinh điển.
 
-→ **Đề thi thử 2** (18/4/2027, cuối tuần 24).
+→ **Đề thi thử 2** (30/5/2027, cuối tuần 24).
 
-**Phần III — Chuyên sâu NLP (tháng 5 – 6/2027)**
+**Phần III — Chuyên sâu NLP (tháng 6 – 7/2027)**
 
 12. Nhánh chuyên sâu và đạo đức AI: NLP, trọng tâm là LLM, retrieval (RAG) và trích xuất tri thức; đọc 10 paper gần đây của hướng này, nối thẳng với dự án ở luồng A; thêm một buổi về bias, quyền riêng tư và đánh giá rủi ro.
 
-**Phần IV — Hồ sơ và phỏng vấn (tháng 7 – 9/2027)**
+**Phần IV — Hồ sơ và phỏng vấn (tháng 7 – 11/2027)**
 
 13. Hồ sơ và video presentation — CV, research statement, thư giới thiệu, kịch bản trình bày dự án bằng tiếng Anh, thang tự chấm.
 14. Technical interview — ngân hàng chuỗi câu hỏi tổng hợp và câu hỏi hành vi, luyện bằng tiếng Anh.
 
-→ **Đề thi thử 3** (tháng 9/2027, mô phỏng đủ các vòng).
+→ **Đề thi thử 3** (11/11/2027, sau khi nộp hồ sơ, mô phỏng đủ các vòng).
 
 **Ba luồng chạy song song suốt kế hoạch.** Dự án nghiên cứu và coding không phải một chương học một lần, mà là việc làm đều mỗi tuần.
 
 - **Luồng A — Dự án nghiên cứu (3–4 giờ/tuần).** Lấy một dự án đang làm trên trường làm nền, nâng lên mức nghiên cứu: câu hỏi rõ, baseline, ablation, báo cáo. Đây là tín hiệu mạnh nhất của hồ sơ track Research và là nguồn thư giới thiệu.
 - **Luồng B — Coding (3–4 bài/tuần).** Đi từ mảng, hash, hai con trỏ, stack sang cây, đồ thị, quy hoạch động, cuối cùng là bài bấm giờ như phỏng vấn thật.
-- **Luồng C — Tiếng Anh và trình bày (1 giờ/tuần).** Mỗi chương có câu trả lời mẫu bằng tiếng Anh và một bài dựng cảnh Manim. Từ tháng 3/2027, mỗi tuần nói 3 phút về một paper, ghi âm và tự nghe lại.
+- **Luồng C — Tiếng Anh và trình bày (1 giờ/tuần).** Mỗi chương có câu trả lời mẫu bằng tiếng Anh và một bài dựng cảnh Manim. Từ tháng 4/2027, mỗi tuần nói 3 phút về một paper, ghi âm và tự nghe lại.
 
-![Lộ trình 11/2026 – 9/2027](../plan/lo-trinh.png)
+![Lộ trình 12/2026 – 11/2027](../plan/lo-trinh.png)
 
 Đọc theo cột: tháng nào bạn cũng làm cả bốn việc — học chương, dự án, coding, tiếng Anh. Mốc của dự án nghiên cứu được đặt trùng hoặc ngay trước đề thi thử để mỗi đợt kiểm tra cũng là một lần rà lại hồ sơ.

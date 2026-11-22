@@ -202,7 +202,7 @@ $$
 
 Mỗi tuần dành cho chương khoảng 8 giờ và luồng A không bị cắt, nên mỗi tuần lùi mốc hấp thụ tối đa 8 giờ. Có thể bù thêm tối đa 4 giờ bằng một hoặc hai buổi Thứ Bảy, nhưng đó là **giờ vượt kế hoạch**: các tuần w01–w12 trong `plan/weeks.yaml` đã ở khoảng 14.25–15.25 giờ mỗi tuần (cộng giờ các việc trong tuần, kiểm ngày 2026-11-05), tức đã sát hoặc vượt trần 12–15 giờ mỗi tuần của `huong-dan.md`. Vì vậy chỉ bù Thứ Bảy khi bạn chủ động đồng ý tăng giờ. Một công thức cho mọi dải: số tuần lùi là ⌈max(D − 4, 0)/8⌉ nếu bù 4 giờ Thứ Bảy, hoặc ⌈max(D, 0)/8⌉ nếu không bù. Tra D:
 
-| D (giờ) | Lùi Đề thi thử 1 (31/1/2027), có bù 4 giờ Thứ Bảy | Lùi, không bù Thứ Bảy |
+| D (giờ) | Lùi Đề thi thử 1 (14/3/2027), có bù 4 giờ Thứ Bảy | Lùi, không bù Thứ Bảy |
 | --- | --- | --- |
 | Từ −24 đến 0 | 0 tuần (giữ mốc). D âm nghĩa là có giờ dư; đừng dùng giờ dư đó để cắt luồng A, B, C (xem Phần II bên dưới) | 0 tuần |
 | +1 đến +4 | 0 tuần | 1 tuần |
@@ -221,7 +221,7 @@ $$
 D' = 6s - 4v - 2w \quad \text{(giờ)}
 $$
 
-với s là số chương học từ đầu trong chương 7–11, v là số chương vững trong {7, 10, 11}, w là số chương vững trong {8, 9}. Đề thi thử 2 (18/4/2027) lùi theo cùng công thức và cùng hai cách của bảng D, áp dụng cho D + D′: ⌈max(D + D′ − 4, 0)/8⌉ tuần nếu bù 4 giờ Thứ Bảy, ⌈max(D + D′, 0)/8⌉ tuần nếu không bù (bù Thứ Bảy tính một lần cho cả hai mốc, vì không có cơ sở để cộng dồn giờ vượt trần; heuristic). Vì D + D′ gộp cả hai phần, **giờ dư của Phần I (D < 0) tự chuyển sang các chương Phần II yếu**, và việc lùi mốc 1 mà Phần II còn dư giờ có thể không làm mốc 2 lùi.
+với s là số chương học từ đầu trong chương 7–11, v là số chương vững trong {7, 10, 11}, w là số chương vững trong {8, 9}. Đề thi thử 2 (30/5/2027) lùi theo cùng công thức và cùng hai cách của bảng D, áp dụng cho D + D′: ⌈max(D + D′ − 4, 0)/8⌉ tuần nếu bù 4 giờ Thứ Bảy, ⌈max(D + D′, 0)/8⌉ tuần nếu không bù (bù Thứ Bảy tính một lần cho cả hai mốc, vì không có cơ sở để cộng dồn giờ vượt trần; heuristic). Vì D + D′ gộp cả hai phần, **giờ dư của Phần I (D < 0) tự chuyển sang các chương Phần II yếu**, và việc lùi mốc 1 mà Phần II còn dư giờ có thể không làm mốc 2 lùi.
 
 Hôm nay chỉ nói được D′ nằm trong khoảng từ −16 (cả năm chương vững) đến +30 (cả năm học từ đầu), nên D + D′ hôm nay là một khoảng, không phải một số. Để thấy vì sao không dùng mức hôm nay: một hồ sơ trung bình (D = +12) mà năm chương Phần II đều ra "học từ đầu" thì D + D′ = +42, tức lùi 5 tuần (có bù) hoặc 6 tuần (không bù); quy tắc cũ "D − S" chỉ trừ giờ rút và bỏ qua giờ thêm, nên báo thiếu 12 giờ trong khi thiếu thật tới 42 nếu mức đó còn nguyên lúc đến chương [mô phỏng `work/ch00/round3_sim.py`, 2026-11-05]. Sau khi học, mức thường khá hơn hôm nay [dự đoán, chưa đo]; Kiểm tra nhanh đầu chương sẽ cho con số thật.
 
@@ -369,7 +369,7 @@ Thời gian và quỹ giờ: cột Phút cộng ra phần A 87, phần N 17, ph�
 **Cần bạn xác nhận.**
 
 1. Ngưỡng 75% (vững) và 50% (cần đọc kỹ), số giờ gợi ý (12 / 16 / 22 giờ mỗi chương) và số phút mỗi câu là heuristic hoặc ước lượng, chưa thử trên người thật. Sau lần làm đầu, nếu bạn thấy kết quả không khớp cảm nhận của mình về chương nào khó, hoặc 120 phút quá chặt hay quá rộng, hãy báo để chỉnh.
-2. Mốc 31/1/2027 của Đề thi thử 1 lấy từ danh mục chương; số tuần lùi trong bảng D ở mục Đọc kết quả là gợi ý (giả định 8 giờ mỗi tuần cho chương), quyết định thuộc về bạn, nhất là khi phải lùi trên hai tuần. Cột "có bù 4 giờ Thứ Bảy" của bảng D vượt trần 12–15 giờ mỗi tuần của hướng dẫn, và các tuần w01–w12 đã gần trần; bạn cần quyết có chấp nhận hay không.
+2. Mốc 14/3/2027 của Đề thi thử 1 lấy từ danh mục chương; số tuần lùi trong bảng D ở mục Đọc kết quả là gợi ý (giả định 8 giờ mỗi tuần cho chương), quyết định thuộc về bạn, nhất là khi phải lùi trên hai tuần. Cột "có bù 4 giờ Thứ Bảy" của bảng D vượt trần 12–15 giờ mỗi tuần của hướng dẫn, và các tuần w01–w12 đã gần trần; bạn cần quyết có chấp nhận hay không.
 3. Bài chẩn đoán chỉ hỏi D* của mục 10.2 (GAN, câu 21(c)) và không có câu cho 10.5 (đánh giá mô hình sinh), và cũng không hỏi RoPE, giải mã và nhiệt độ, khối Transformer (xem cột "Mục không được hỏi"); nếu bạn muốn phủ thêm, cần thêm hoặc đổi câu và tính lại bảng chấm.
 4. Làm bài (120 phút) cộng chấm và ghi sổ lỗi (khoảng 1 giờ, ước lượng) là khoảng 3 giờ mà lịch tuần hiện chưa có chỗ; bạn cần quyết lấy từ luồng nào hoặc dời sang tuần nào.
 5. Câu 7(c) dùng |x₁| làm chuẩn sai số; nếu bạn thích chuẩn Euclid hơn, đáp số là 31 và 63 và lời giải đã ghi cả hai.

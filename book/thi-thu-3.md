@@ -2,7 +2,7 @@
 
 ## Cách làm
 
-Đây là đề cuối của sách. Bạn làm nó ở tuần 48, vào hoặc quanh Thứ Năm 30/9/2027 (ngày ghi trong `book/chapters.yaml`), sau khi đã học xong chương 0–14. Lộ trình giao cho đề việc `w48-run`, 4 giờ: "Làm Đề thi thử 3 theo từng vòng, đúng giờ; sau đó chấm và ghi lỗi vào sổ lỗi". Đề có bốn vòng, xếp theo đúng thứ tự công khai của quy trình tuyển: entrance test, coding interview, video presentation, technical interview. Đề có hai mục đích. Một là đo lần cuối cả kiến thức lẫn cách trình bày khi bị bấm giờ. Hai là giúp bạn quyết định dùng mấy tuần còn lại trước hạn nộp hồ sơ vào việc gì.
+Đây là đề cuối của sách. Bạn làm nó ở tuần 48, vào hoặc quanh Thứ Năm 11/11/2027 (ngày ghi trong `book/chapters.yaml`), sau khi đã học xong chương 0–14. Lộ trình giao cho đề việc `w48-run`, 4 giờ: "Làm Đề thi thử 3 theo từng vòng, đúng giờ; sau đó chấm và ghi lỗi vào sổ lỗi". Đề có bốn vòng, xếp theo đúng thứ tự công khai của quy trình tuyển: entrance test, coding interview, video presentation, technical interview. Đề có hai mục đích. Một là đo lần cuối cả kiến thức lẫn cách trình bày khi bị bấm giờ. Hai là giúp bạn quyết định luyện gì cho các vòng sau Application. Theo lịch, bạn đã nộp hồ sơ ở tuần 46 nên đề này làm sau khi nộp.
 
 **Lưu ý trung thực.** Tin tuyển Batch 17 của Qualcomm RRP (đăng 13/10/2026, mức B) chỉ liệt kê năm vòng: Application → Entrance test → Coding interview → Video presentation → Technical interview. Nội dung, thời lượng, định dạng và tiêu chí chấm của bốn vòng sau Application đều không công khai (mức D; xem mục 13.1 và 14.1). Vì vậy đề này là **bản mô phỏng của sách**. Cơ cấu từng vòng, số phút, loại câu, thang điểm và mọi ngưỡng đọc kết quả đều do người soạn chọn hoặc ước lượng, và chưa được hiệu chỉnh trên người làm thật. Đề không mô phỏng vòng Application; vòng đó là gói hồ sơ bạn đã chuẩn bị ở chương 13. Danh sách vòng của đợt 2027 có thể khác Batch 17 (mục 13.1 ghi Batch 14 có thêm vòng Screening), nên hãy đọc lại tin tuyển của chính đợt bạn nộp.
 
@@ -10,14 +10,14 @@
 
 | Buổi | Mốc | Việc | Phút |
 | --- | --- | --- | --- |
-| 1 — Thứ Năm 30/9/2027 | 0:00–1:15 | Vòng 1 — Entrance test (giấy bút) | 75 |
+| 1 — Thứ Năm 11/11/2027 | 0:00–1:15 | Vòng 1 — Entrance test (giấy bút) | 75 |
 | 1 | 1:15–1:25 | Nghỉ | 10 |
 | 1 | 1:25–2:35 | Vòng 2 — Coding interview (máy tính, ghi âm) | 70 |
 | 1 | 2:35–2:45 | Nghỉ | 10 |
 | 1 | 2:45–3:25 | Lượt hai của Vòng 1 và Vòng 2 (tối đa 20 phút mỗi vòng) | 40 |
 | 1 | 3:25–3:55 | Chấm Vòng 1 theo Lời giải, gắn nhãn lỗi | 30 |
 | 1 | 3:55–4:10 | Chạy bộ chấm, chấm tay Vòng 2 từ bản ghi âm | 15 |
-| 2 — Thứ Bảy 2/10/2027 | 0:00–0:30 | Vòng 3 — Video presentation (quay một lần, tự xem lại, đánh dấu tiêu chí) | 30 |
+| 2 — Thứ Bảy 13/11/2027 | 0:00–0:30 | Vòng 3 — Video presentation (quay một lần, tự xem lại, đánh dấu tiêu chí) | 30 |
 | 2 | 0:30–0:35 | Nghỉ, người phỏng vấn vào | 5 |
 | 2 | 0:35–1:20 | Vòng 4 — Technical interview (với người khác, ghi hình) | 45 |
 | 2 | 1:20–1:30 | Người phỏng vấn điền phiếu chấm | 10 |
@@ -25,7 +25,7 @@
 | 2 | 1:50–1:55 | Mở file người phỏng vấn, đối chiếu ý đáp án, ghi sổ lỗi | 5 |
 | **Tổng** | | Buổi 1: 250; buổi 2: 115 | **365** |
 
-**Thời gian có đủ không.** Bốn vòng làm bài (không kể nghỉ và chấm) hết 75 + 70 + 30 + 45 = 220 phút. Cả đề hết 365 phút, tức khoảng 6.1 giờ, vượt 4 giờ của `w48-run` khoảng 2.1 giờ [ước lượng, chưa đo]. Theo `plan/weeks.yaml`, tuần 48 đang có 12.5 giờ; thay 4 giờ của `w48-run` bằng 6.1 giờ thì thành khoảng 14.6 giờ, vẫn dưới trần 15 giờ mỗi tuần mà Đề thi thử 2 dùng. Nếu tính bản quay ở Vòng 3 là lần quay đầu của việc `w48-c` (quay video bản cuối), `w48-c` bớt khoảng nửa giờ và tuần 48 còn khoảng 14.1 giờ. Lượt ba (làm nốt không tính giờ) nằm ngoài ngân sách này. Đề không khuyến nghị làm cả bốn vòng một buổi: riêng bốn vòng và ba lần nghỉ đã hết 245 phút, cộng phần chấm thành hơn 6 giờ liền. Việc `w48-c` nên làm **sau** Vòng 3, ví dụ Chủ nhật 3/10/2027, và dùng kết quả của Vòng 3 để sửa. Việc hẹn người phỏng vấn và gửi file cho họ nên làm từ tuần 47, trong việc `w47-plan`.
+**Thời gian có đủ không.** Bốn vòng làm bài (không kể nghỉ và chấm) hết 75 + 70 + 30 + 45 = 220 phút. Cả đề hết 365 phút, tức khoảng 6.1 giờ, vượt 4 giờ của `w48-run` khoảng 2.1 giờ [ước lượng, chưa đo]. Theo `plan/weeks.yaml`, tuần 48 đang có 12.5 giờ; thay 4 giờ của `w48-run` bằng 6.1 giờ thì thành khoảng 14.6 giờ, vẫn dưới trần 15 giờ mỗi tuần mà Đề thi thử 2 dùng. Nếu tính bản quay ở Vòng 3 là lần quay đầu của việc `w48-c` (quay video bản cuối), `w48-c` bớt khoảng nửa giờ và tuần 48 còn khoảng 14.1 giờ. Lượt ba (làm nốt không tính giờ) nằm ngoài ngân sách này. Đề không khuyến nghị làm cả bốn vòng một buổi: riêng bốn vòng và ba lần nghỉ đã hết 245 phút, cộng phần chấm thành hơn 6 giờ liền. Việc `w48-c` nên làm **sau** Vòng 3, ví dụ Chủ nhật 14/11/2027, và dùng kết quả của Vòng 3 để sửa. Việc hẹn người phỏng vấn và gửi file cho họ nên làm từ tuần 47, trong việc `w47-plan`.
 
 **Quy tắc chung.**
 
@@ -314,7 +314,7 @@ Bảng này chỉ dành cho Vòng 1. Ghi **điểm cuối** vào cột "Điểm 
 | 3 — Video | 12 tiêu chí | — | | Không có mốc: mỗi tiêu chí trượt là một việc sửa |
 | 4 — Technical interview | 30 | — | | ≥ 24 sẵn sàng; 18 đến dưới 24 luyện phần yếu nhất; dưới 18 quay về ngân hàng chuỗi (mốc của mục 14.5) |
 
-**Thời gian còn lại.** `plan/weeks.yaml` kết thúc ở tuần 48 (đến 3/10/2027). Hạn nộp hồ sơ của đợt 2027 chưa công bố tại thời điểm viết đề. Lịch ngược của chương 13 dùng hạn **giả định** 12/11/2027 (chưa xác minh, suy từ Batch 17). Nếu hạn đó đúng, từ 4/10 đến hạn còn 39 ngày, khoảng 5.6 tuần. Lịch của các vòng sau Application không công khai (mục 13.1); nếu chúng diễn ra sau hạn nộp [suy luận của người soạn, không có nguồn], thời gian luyện cho Vòng 2–4 thật có thể dài hơn. Mọi số giờ dưới đây là **đề xuất ngoài lộ trình**: bạn tự quyết, và nên giữ dưới trần 15 giờ mỗi tuần.
+**Thời gian còn lại.** `plan/weeks.yaml` kết thúc ở tuần 48 (đến 14/11/2027). Hạn nộp hồ sơ của đợt 2027 chưa công bố tại thời điểm viết đề. Lịch ngược của chương 13 dùng hạn **giả định** 12/11/2027 (chưa xác minh, suy từ Batch 17), và lộ trình đặt mục tiêu nộp trước 31/10/2027 (tuần 46), nên khi làm đề này bạn đã nộp xong. Lịch của các vòng sau Application không công khai (mục 13.1); nếu chúng diễn ra sau hạn nộp [suy luận của người soạn, không có nguồn], quỹ thời gian để sửa theo kết quả dưới đây bắt đầu từ 15/11/2027 và dài bao nhiêu thì chưa biết. Mọi số giờ dưới đây là **đề xuất ngoài lộ trình**: bạn tự quyết, và nên giữ dưới trần 15 giờ mỗi tuần.
 
 **Quy tắc một dòng.** Sửa vòng yếu nhất trước, nhưng không bỏ vòng nào quá một tuần: các vòng thật diễn ra liên tiếp, và mỗi vòng loại một số ứng viên [suy luận của người soạn từ cấu trúc nhiều vòng, không có số liệu công khai].
 
@@ -510,7 +510,7 @@ Tái lập: từ thư mục gốc repo, chạy bốn script trên bằng `/home/
 | B1 | NLL 1.7269, 1.5537, 1.4299; −ln 0.35 = 1.0498 và −ln 0.15 = 1.8971 (cho sẵn 1.050 và 1.897); perplexity 5.62, 4.73, 4.18; cận 1.6403; ℓ′(0.5) = −10/21; EM 0.4702; w* 0.410, NLL 1.4246 | NumPy, autograd cho ℓ′, `minimize_scalar` và EM 500 vòng hội tụ cùng chỗ; tính lại bằng bảng hằng số lệch dưới 2·10⁻⁴ | khớp |
 | B2 | 0.65, 0.8, 0.25; 0.6075; 0.6625, 0.6595; 0.215, 0.39; 209, 71, 0.70, 0.746, 0.345; 0.5225; SE 0.0194; 0.155; 64 027 và 130 667; kết hợp 0.7225, cộng riêng 0.7145, tương tác 0.008, SE tương tác 0.027 | tính trực tiếp; độ mạnh ở n = 400 mô phỏng 20 000 lần (seed 11) dưới 0.07 | khớp |
 | Vòng 3 | 20, 25, 45, 45, 25, 20 cộng 180; mốc 0:20 … 3:00; 47, 58, 105, 105, 58, 47 từ | cộng dồn; 140 từ/phút | khớp |
-| Lịch | 30/9/2027 Thứ Năm, 2/10/2027 Thứ Bảy, 3/10/2027 Chủ nhật; 39 ngày từ 4/10 đến 12/11/2027; hai buổi 250 + 115 = 365 phút; tuần 48: 12.5 − 4 + 365/60 ≈ 14.6 giờ | `datetime`, `plan/weeks.yaml` | khớp |
+| Lịch | 11/11/2027 Thứ Năm, 13/11/2027 Thứ Bảy, 14/11/2027 Chủ nhật; nộp trước 31/10/2027 là 12 ngày trước 12/11/2027; hai buổi 250 + 115 = 365 phút; tuần 48: 12.5 − 4 + 365/60 ≈ 14.6 giờ | `datetime`, `plan/weeks.yaml` | khớp |
 
 **Bộ chấm bám thang điểm.** Mỗi bài làm cố ý chỉ viết một bài (bài kia để `NotImplementedError`), trừ lời giải mẫu.
 
@@ -565,6 +565,6 @@ Trên máy kiểm, lời giải mẫu chạy test tốc độ hết khoảng 0.1
 2. Cả đề cần khoảng 365 phút kể cả lượt hai và chấm (khoảng 6.1 giờ), vượt 4 giờ của `w48-run`. Đề chia hai buổi (250 và 115 phút), làm tuần 48 thành khoảng 14.6 giờ, hoặc 14.1 giờ nếu bản quay ở Vòng 3 được tính là lần quay đầu của `w48-c`. Sửa `plan/weeks.yaml` cho khớp thuộc bước merge. Nếu muốn giữ đúng 4 giờ thì phải bỏ lượt hai và dời phần chấm sang tuần sau.
 3. Chương 13 không có thang điểm cho video. Vòng 3 vì thế ghi số tiêu chí đạt trên 12, mỗi tiêu chí trỏ tới một chỗ có thật của chương 13, và không có ngưỡng đạt. Nếu muốn có điểm, có thể dùng thêm hai dòng "Đào sâu dự án" và "Cách nói" của thang 30 điểm (chương 14 đã dùng chúng cho khung trình bày 5 phút ở mục 14.4), nhưng đó là thang của chương 14, không phải của chương 13.
 4. Vòng 4 dùng thang 30 điểm của mục 14.5 với một điều chỉnh của đề: dòng Hành vi chấm một câu chuyện, mỗi tiêu chí 1 điểm thay vì hai câu chuyện mỗi tiêu chí 0.5. Bốn chuỗi mới nằm trong file người phỏng vấn; người phỏng vấn chỉ bốc 2 để khớp dòng "Kỹ thuật (2 chuỗi)"; 2 chuỗi còn lại để luyện sau.
-5. Mốc 15 và 10 điểm của Vòng 2 và các số giờ ôn ở mục Tổng kết là heuristic của sách. Thời điểm của các vòng sau Application chưa công khai, nên "khoảng 5.6 tuần" chỉ đúng nếu hạn nộp giả định 12/11/2027 đúng.
+5. Mốc 15 và 10 điểm của Vòng 2 và các số giờ ôn ở mục Tổng kết là heuristic của sách. Thời điểm của các vòng sau Application chưa công khai, nên quỹ thời gian sau đề này chưa biết. Mục tiêu nộp trước 31/10/2027 chỉ an toàn nếu hạn thật không sớm hơn hạn giả định 12/11/2027; nếu trang chính thức công bố hạn sớm hơn, kéo việc nộp lên theo.
 6. Đề chưa được đăng ký trong `book/chapters.yaml` và `book/_toc.yml` (phiên này không được sửa hai file đó), nên app chưa có trang "Sách → Đề thi thử 3". Việc này thuộc bước merge. File người phỏng vấn `labs/thi-thu-3/nguoi-phong-van.md` cố ý không đăng ký vào app, để người làm đề không lướt thấy nó.
 7. Ước lượng 78 phút của Vòng 1 vẫn vượt giờ thi khoảng 4%. Nếu đo thật vẫn vượt nhiều, chỗ nên cắt tiếp là B2(b)(iii).

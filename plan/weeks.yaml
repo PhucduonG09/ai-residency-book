@@ -1,8 +1,9 @@
 # Kế hoạch theo tuần. Mỗi khi một chương mới được viết, các tuần tiếp theo được thêm vào đây.
+# Lịch bắt đầu Thứ Hai 7/12/2026 (dời 6 tuần so với bản đầu, ngày 22/11/2026). Các mốc hồ sơ bám hạn nộp giả định 12/11/2027, không dời theo lịch học.
 # stream: chuong | A | B | C | chung        hours: ước lượng giờ
 weeks:
   - id: w00
-    start: 2026-10-26
+    start: 2026-12-07
     title: "Tuần 0 — Khởi động và chương 1 (mục 1.1–1.2)"
     chapter: chuong-01
     tasks:
@@ -16,7 +17,7 @@ weeks:
       - {id: w00-c, stream: C, hours: 0.5, text: "Đọc to câu trả lời mẫu chuỗi 1 (PCA), ghi âm 2 phút"}
 
   - id: w01
-    start: 2026-11-02
+    start: 2026-12-14
     title: "Tuần 1 — Chương 1 (mục 1.3–1.4)"
     chapter: chuong-01
     tasks:
@@ -28,7 +29,7 @@ weeks:
       - {id: w01-c, stream: C, hours: 0.75, text: "Chuỗi phỏng vấn 2 (bình phương tối thiểu): trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w02
-    start: 2026-11-09
+    start: 2026-12-21
     title: "Tuần 2 — Chương 1 (mục 1.5, ★★★, lab 3–4)"
     chapter: chuong-01
     tasks:
@@ -42,19 +43,19 @@ weeks:
       - {id: w02-c, stream: C, hours: 0.75, text: "Chuỗi phỏng vấn 3 và 4 bằng tiếng Anh, ghi âm"}
 
   - id: w03
-    start: 2026-11-16
+    start: 2026-12-28
     title: "Tuần 3 — Mini-test chương 1, bắt đầu chương 2"
     chapter: chuong-02
     tasks:
       - {id: w03-mt, stream: chuong, hours: 0.75, text: "Mini-test chương 1 (30 phút, bấm giờ); nhập điểm ở trang Tiến độ"}
       - {id: w03-on, stream: chuong, hours: 1.5, text: "Ôn lại các mục ứng với câu sai; làm lại bài tính nhanh"}
-      - {id: w03-ch2, stream: chuong, hours: 5, text: "Chương 2 — giải tích ma trận và backprop (chương sẽ có trong app trước 16/11): đọc mục 2.1–2.3, bài ★ 1–4 và ★★ 5–6, lab 1–2"}
+      - {id: w03-ch2, stream: chuong, hours: 5, text: "Chương 2 — giải tích ma trận và backprop: đọc mục 2.1–2.3, bài ★ 1–4 và ★★ 5–6, lab 1–2"}
       - {id: w03-a, stream: A, hours: 4, text: "Chạy baseline đầu tiên của dự án, ghi kết quả và cấu hình vào một file log"}
       - {id: w03-b, stream: B, hours: 3, text: "3 bài: Binary Search, Search in Rotated Sorted Array, Koko Eating Bananas"}
       - {id: w03-c, stream: C, hours: 1, text: "Ghi âm 3 phút giới thiệu dự án bằng tiếng Anh"}
 
   - id: w04
-    start: 2026-11-23
+    start: 2027-01-04
     title: "Tuần 4 — Chương 2 (mục 2.4–2.5, ★★★, lab, mini-test)"
     chapter: chuong-02
     tasks:
@@ -70,7 +71,7 @@ weeks:
       - {id: w04-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1–4 chương 2, mỗi chuỗi chỉ tầng 1–2 bằng tiếng Anh, 15 phút một chuỗi, ghi âm"}
 
   - id: w05
-    start: 2026-11-30
+    start: 2027-01-11
     title: "Tuần 5 — Chương 3 (mục 3.1–3.3)"
     chapter: chuong-03
     tasks:
@@ -84,7 +85,7 @@ weeks:
       - {id: w05-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (Bayes và tỉ lệ nền) và 2 (MLE và loss) chương 3: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w06
-    start: 2026-12-07
+    start: 2027-01-18
     title: "Tuần 6 — Chương 3 (mục 3.4–3.5, ★★★, lab, mini-test)"
     chapter: chuong-03
     tasks:
@@ -99,7 +100,7 @@ weeks:
       - {id: w06-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (lý thuyết thông tin) và 4 (thực nghiệm và ý nghĩa thống kê) chương 3: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w07
-    start: 2026-12-14
+    start: 2027-01-25
     title: "Tuần 7 — Chương 4 (mục 4.1–4.3)"
     chapter: chuong-04
     tasks:
@@ -113,7 +114,7 @@ weeks:
       - {id: w07-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (gradient descent và số điều kiện) và 2 (Adam) chương 4: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w08
-    start: 2026-12-21
+    start: 2027-02-01
     title: "Tuần 8 — Chương 4 (mục 4.4–4.5, ★★★, lab, mini-test)"
     chapter: chuong-04
     tasks:
@@ -128,7 +129,7 @@ weeks:
       - {id: w08-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (SGD và batch size) và 4 (bậc hai và không lồi) chương 4: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w09
-    start: 2026-12-28
+    start: 2027-02-08
     title: "Tuần 9 — Chương 5 (mục 5.1–5.3)"
     chapter: chuong-05
     tasks:
@@ -142,7 +143,7 @@ weeks:
       - {id: w09-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (logistic regression) và 2 (bias–variance và regularization) chương 5: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w10
-    start: 2027-01-04
+    start: 2027-02-15
     title: "Tuần 10 — Chương 5 (mục 5.4–5.5, ★★★, lab, mini-test)"
     chapter: chuong-05
     tasks:
@@ -157,7 +158,7 @@ weeks:
       - {id: w10-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (đánh giá trên dữ liệu lệch) và 4 (ensemble và GBDT; chuỗi dự phòng k-means, GMM, EM nếu còn thời gian) chương 5: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w11
-    start: 2027-01-11
+    start: 2027-02-22
     title: "Tuần 11 — Chương 6 (mục 6.1–6.3)"
     chapter: chuong-06
     tasks:
@@ -171,7 +172,7 @@ weeks:
       - {id: w11-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (phi tuyến và năng lực biểu diễn) và 2 (khởi tạo) chương 6: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w12
-    start: 2027-01-18
+    start: 2027-03-01
     title: "Tuần 12 — Chương 6 (mục 6.4–6.5, ★★★, lab, mini-test)"
     chapter: chuong-06
     tasks:
@@ -186,21 +187,21 @@ weeks:
       - {id: w12-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (normalization) và 4 (debug huấn luyện) chương 6: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w13
-    start: 2027-01-25
+    start: 2027-03-08
     title: "Tuần 13 — Mini-test chương 2–6 và Đề thi thử 1"
     chapter: chuong-06
     tasks:
       - {id: w13-mt, stream: chuong, hours: 2.5, text: "Mini-test tổng hợp: làm lại 5 mini-test chương 2–6 (mỗi đề 30 phút, bấm giờ, chia 2–3 buổi); nhập điểm ở trang Tiến độ"}
       - {id: w13-on, stream: chuong, hours: 1.5, text: "Ôn lại câu sai: đọc lại mục tương ứng, làm lại bài tập liên quan và bài tính nhanh của chương có điểm thấp nhất"}
       - {id: w13-fc, stream: chuong, hours: 0.5, text: "Ôn flashcard chương 2–6"}
-      - {id: w13-mock, stream: chuong, hours: 3, text: "Đề thi thử 1 (trang Sách → Đề thi thử 1): làm đúng 120 phút vào khoảng 31/1/2027, không tài liệu; sau đó chấm theo lời giải và bảng chấm theo chương (khoảng 1 giờ), ghi câu sai vào sổ lỗi"}
+      - {id: w13-mock, stream: chuong, hours: 3, text: "Đề thi thử 1 (trang Sách → Đề thi thử 1): làm đúng 120 phút vào khoảng 14/3/2027, không tài liệu; sau đó chấm theo lời giải và bảng chấm theo chương (khoảng 1 giờ), ghi câu sai vào sổ lỗi"}
       - {id: w13-a, stream: A, hours: 2, text: "Viết bản nháp 1 trang: câu hỏi, phương pháp, kết quả, hạn chế; đánh dấu chỗ lập luận còn yếu để sửa sau"}
       - {id: w13-b, stream: B, hours: 3, text: "3 bài ôn tổng hợp, làm lại không xem lời giải: Merge Intervals, Product of Array Except Self, Coin Change (chọn bài từng chậm nhất nếu muốn thay)"}
       - {id: w13-c, stream: C, hours: 1, text: "Nghe lại các bản ghi âm chương 2–6, chọn chuỗi nói tệ nhất, soạn lại và ghi âm bản tiếng Anh mới"}
 
-  # Phần II — Deep learning hiện đại (tháng 2–4/2027). Luồng B từ đây: một số tên bài LeetCode chọn theo trí nhớ, rà lại tên và độ khó trước khi làm.
+  # Phần II — Deep learning hiện đại (tháng 3–5/2027). Luồng B từ đây: một số tên bài LeetCode chọn theo trí nhớ, rà lại tên và độ khó trước khi làm.
   - id: w14
-    start: 2027-02-01
+    start: 2027-03-15
     title: "Tuần 14 — Chương 7 (mục 7.1–7.3), mở Phần II"
     chapter: chuong-07
     tasks:
@@ -214,7 +215,7 @@ weeks:
       - {id: w14-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (conv, thiên kiến cấu trúc và dịch chuyển) và 2 (residual và độ sâu) chương 7: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w15
-    start: 2027-02-08
+    start: 2027-03-22
     title: "Tuần 15 — Chương 7 (mục 7.4–7.5, ★★★, lab, mini-test)"
     chapter: chuong-07
     tasks:
@@ -229,7 +230,7 @@ weeks:
       - {id: w15-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (BatchNorm trong CNN và transfer learning) và 4 (từ conv 1D tới attention) chương 7: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w16
-    start: 2027-02-15
+    start: 2027-03-29
     title: "Tuần 16 — Chương 8 (mục 8.1–8.3)"
     chapter: chuong-08
     tasks:
@@ -243,7 +244,7 @@ weeks:
       - {id: w16-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 1 (vì sao attention) và 2 (scaled dot-product và multi-head) chương 8: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
   - id: w17
-    start: 2027-02-22
+    start: 2027-04-05
     title: "Tuần 17 — Chương 8 (mục 8.4–8.5, ★★★, lab, mini-test)"
     chapter: chuong-08
     tasks:
@@ -257,9 +258,9 @@ weeks:
       - {id: w17-b, stream: B, hours: 3, text: "3 bài cây nâng cao: Construct Binary Tree from Preorder and Inorder Traversal, Binary Tree Maximum Path Sum, Serialize and Deserialize Binary Tree"}
       - {id: w17-c, stream: C, hours: 1, text: "Chuỗi phỏng vấn 3 (mã hóa vị trí) và 4 (khối Transformer và chi phí) chương 8: trả lời tiếng Việt rồi tiếng Anh, ghi âm"}
 
-  # Từ tháng 3/2027, luồng C có thêm bài nói 3 phút về một paper mỗi tuần (ghi âm, nghe lại).
+  # Từ tháng 4/2027, luồng C có thêm bài nói 3 phút về một paper mỗi tuần (ghi âm, nghe lại).
   - id: w18
-    start: 2027-03-01
+    start: 2027-04-12
     title: "Tuần 18 — Chương 9 (mục 9.1–9.3)"
     chapter: chuong-09
     tasks:
@@ -274,7 +275,7 @@ weeks:
       - {id: w18-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: Scaling Laws for Neural Language Models (hoặc một paper về quy luật quy mô bạn chọn). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w19
-    start: 2027-03-08
+    start: 2027-04-19
     title: "Tuần 19 — Chương 9 (mục 9.4–9.5, ★★★, lab, mini-test)"
     chapter: chuong-09
     tasks:
@@ -290,7 +291,7 @@ weeks:
       - {id: w19-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: LoRA: Low-Rank Adaptation of Large Language Models (hoặc paper DPO). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w20
-    start: 2027-03-15
+    start: 2027-04-26
     title: "Tuần 20 — Chương 10 (mục 10.1–10.3)"
     chapter: chuong-10
     tasks:
@@ -305,7 +306,7 @@ weeks:
       - {id: w20-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: Auto-Encoding Variational Bayes (hoặc paper GAN gốc). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w21
-    start: 2027-03-22
+    start: 2027-05-03
     title: "Tuần 21 — Chương 10 (mục 10.4–10.5, ★★★, lab, mini-test)"
     chapter: chuong-10
     tasks:
@@ -321,7 +322,7 @@ weeks:
       - {id: w21-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: Denoising Diffusion Probabilistic Models (hoặc paper contrastive learning bạn chọn). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w22
-    start: 2027-03-29
+    start: 2027-05-10
     title: "Tuần 22 — Chương 11 (mục 11.1–11.3)"
     chapter: chuong-11
     tasks:
@@ -336,7 +337,7 @@ weeks:
       - {id: w22-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: một paper đã phê bình theo mẫu ba lượt của mục 11.1 (bạn chọn). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w23
-    start: 2027-04-05
+    start: 2027-05-17
     title: "Tuần 23 — Chương 11 (mục 11.4–11.5, ★★★, lab, mini-test)"
     chapter: chuong-11
     tasks:
@@ -352,22 +353,22 @@ weeks:
       - {id: w23-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: một paper gần với dự án luồng A của bạn. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w24
-    start: 2027-04-12
+    start: 2027-05-24
     title: "Tuần 24 — Mini-test chương 7–11 và Đề thi thử 2"
     chapter: chuong-11
     tasks:
       - {id: w24-mt, stream: chuong, hours: 2.5, text: "Mini-test tổng hợp: làm lại 5 mini-test chương 7–11 (mỗi đề 30 phút, bấm giờ, chia 2–3 buổi); nhập điểm ở trang Tiến độ"}
       - {id: w24-on, stream: chuong, hours: 1.5, text: "Ôn lại câu sai: đọc lại mục tương ứng, làm lại bài tập liên quan và bài tính nhanh của chương có điểm thấp nhất; đọc lại sổ lỗi"}
       - {id: w24-fc, stream: chuong, hours: 0.5, text: "Ôn flashcard chương 7–11"}
-      - {id: w24-mock, stream: chuong, hours: 3, text: "Đề thi thử 2 (trang Sách → Đề thi thử 2; sẽ có trong app trước tuần này): làm đúng 120 phút vào khoảng 18/4/2027, không tài liệu; chấm theo lời giải và bảng chấm theo chương (khoảng 1 giờ), ghi câu sai vào sổ lỗi"}
+      - {id: w24-mock, stream: chuong, hours: 3, text: "Đề thi thử 2 (trang Sách → Đề thi thử 2; sẽ có trong app trước tuần này): làm đúng 120 phút vào khoảng 30/5/2027, không tài liệu; chấm theo lời giải và bảng chấm theo chương (khoảng 1 giờ), ghi câu sai vào sổ lỗi"}
       - {id: w24-a, stream: A, hours: 2, text: "Chốt báo cáo dự án v2: đọc từ đầu đến cuối, sửa lập luận yếu, đối chiếu mọi con số trong văn bản với bảng kết quả"}
       - {id: w24-b, stream: B, hours: 2.5, text: "3 bài ôn tổng hợp, làm lại không xem lời giải: Course Schedule II, Longest Increasing Subsequence, Subsets (chọn bài từng chậm nhất nếu muốn thay)"}
       - {id: w24-c, stream: C, hours: 1, text: "Nghe lại các bản ghi âm chương 7–11, chọn chuỗi nói tệ nhất, soạn lại và ghi âm bản tiếng Anh mới"}
       - {id: w24-paper, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper bạn thấy thú vị nhất trong Phần II. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
-  # Phần III — Chuyên sâu NLP (tháng 4–6/2027). Chương 12 nặng về dự án: đọc 10 paper theo phiếu ba lượt (mục 11.1) và nối với luồng A. Rà lại tên và độ khó các bài LeetCode ghi trong phần này.
+  # Phần III — Chuyên sâu NLP (tháng 6–7/2027). Chương 12 nặng về dự án: đọc 10 paper theo phiếu ba lượt (mục 11.1) và nối với luồng A. Rà lại tên và độ khó các bài LeetCode ghi trong phần này.
   - id: w25
-    start: 2027-04-19
+    start: 2027-05-31
     title: "Tuần 25 — Chương 12 (1/4): bản đồ hướng NLP và paper 1–3"
     chapter: chuong-12
     tasks:
@@ -380,7 +381,7 @@ weeks:
       - {id: w25-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper 1 trong danh sách chương 12. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w26
-    start: 2027-04-26
+    start: 2027-06-07
     title: "Tuần 26 — Chương 12 (2/4): retrieval, RAG và paper 4–6"
     chapter: chuong-12
     tasks:
@@ -393,7 +394,7 @@ weeks:
       - {id: w26-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper 4 trong danh sách chương 12 (về retrieval hoặc RAG). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w27
-    start: 2027-05-03
+    start: 2027-06-14
     title: "Tuần 27 — Chương 12 (3/4): trích xuất tri thức và paper 7–10"
     chapter: chuong-12
     tasks:
@@ -406,7 +407,7 @@ weeks:
       - {id: w27-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper 8 trong danh sách chương 12. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w28
-    start: 2027-05-10
+    start: 2027-06-21
     title: "Tuần 28 — Chương 12 (4/4): đạo đức AI và tổng hợp 10 paper"
     chapter: chuong-12
     tasks:
@@ -420,7 +421,7 @@ weeks:
       - {id: w28-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper bạn thấy tác động đến dự án nhất trong 10 paper. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w29
-    start: 2027-05-17
+    start: 2027-06-28
     title: "Tuần 29 — Tuần đệm 1: ôn Phần II và thí nghiệm bổ sung"
     chapter: chuong-12
     tasks:
@@ -433,7 +434,7 @@ weeks:
       - {id: w29-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: paper bất kỳ bạn muốn kiểm tra khả năng giải thích. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w30
-    start: 2027-05-24
+    start: 2027-07-05
     title: "Tuần 30 — Tuần đệm 2: bản nháp paper hoặc technical report"
     chapter: chuong-12
     tasks:
@@ -445,7 +446,7 @@ weeks:
       - {id: w30-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: dự án của bạn như thể là paper của người khác (nói phần vấn đề, ý chính, kết quả, hạn chế). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
   - id: w31
-    start: 2027-05-31
+    start: 2027-07-12
     title: "Tuần 31 — Tuần đệm 3: demo và repo sạch"
     chapter: chuong-12
     tasks:
@@ -454,11 +455,12 @@ weeks:
       - {id: w31-a, stream: A, hours: 6, text: "Dọn repo: README (vấn đề, kết quả, cách chạy), script tái lập một lệnh, notebook demo ngắn, hình kết quả chính; thử clone về máy sạch và chạy lại"}
       - {id: w31-b, stream: B, hours: 2.5, text: "2 bài bấm giờ 35 phút mỗi bài: Coin Change II, Partition Labels (làm không xem lời giải)"}
       - {id: w31-c, stream: C, hours: 1, text: "Tập demo dự án 3 phút bằng tiếng Anh theo repo (nói to, ghi âm); ghi chỗ khán giả sẽ không hiểu"}
+      - {id: w31-lor, stream: chung, hours: 0.5, text: "Thư giới thiệu, mốc 1/4 (lịch ngược mục 13.4, hạn giả định 12/11/2027): chốt 2 người viết và hỏi trực tiếp trước Thứ Năm 15/7/2027 (120 ngày trước hạn). Lịch học đã dời 6 tuần nhưng hạn nộp thì không, nên việc này đi trước chương 13; đọc trước đoạn thư giới thiệu của mục 13.4 (khoảng 20 phút) rồi hỏi"}
       - {id: w31-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper: bản demo dự án (như giới thiệu với người chưa biết gì). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế)"}
 
-  # Phần IV — Hồ sơ và phỏng vấn (tháng 6–8/2027). Rà lại tên và độ khó các bài LeetCode trong phần này; mọi mẫu trong chương 13 là mẫu minh họa với số giả, hồ sơ thật dùng số thật của bạn.
+  # Phần IV — Hồ sơ và phỏng vấn (tháng 7–11/2027). Rà lại tên và độ khó các bài LeetCode trong phần này; mọi mẫu trong chương 13 là mẫu minh họa với số giả, hồ sơ thật dùng số thật của bạn.
   - id: w32
-    start: 2027-06-07
+    start: 2027-07-19
     title: "Tuần 32 — Chương 13 (mục 13.1–13.2): bản đồ hồ sơ và CV"
     chapter: chuong-13
     tasks:
@@ -474,7 +476,7 @@ weeks:
       - {id: w32-talk, stream: C, hours: 0.5, text: "Nói 3 phút giới thiệu bản thân và dự án theo cấu trúc hồ sơ; ghi âm, nghe lại"}
 
   - id: w33
-    start: 2027-06-14
+    start: 2027-07-26
     title: "Tuần 33 — Chương 13 (mục 13.3–13.4): research statement và thư giới thiệu"
     chapter: chuong-13
     tasks:
@@ -490,7 +492,7 @@ weeks:
       - {id: w33-talk, stream: C, hours: 0.5, text: "Nói 3 phút về động cơ ứng tuyển và hướng NLP bạn theo; ghi âm, nghe lại"}
 
   - id: w34
-    start: 2027-06-21
+    start: 2027-08-02
     title: "Tuần 34 — Chương 13 (mục 13.5, ★★★, lab, mini-test): video presentation"
     chapter: chuong-13
     tasks:
@@ -507,7 +509,7 @@ weeks:
       - {id: w34-talk, stream: C, hours: 0.5, text: "Nói 3 phút theo kịch bản video, bấm giờ và đo từ/phút; nghe lại bản ghi"}
 
   - id: w35
-    start: 2027-06-28
+    start: 2027-08-09
     title: "Tuần 35 — Chương 14 (1/4): chuỗi tổng hợp, toán và ML nền"
     chapter: chuong-14
     tasks:
@@ -520,7 +522,7 @@ weeks:
       - {id: w35-talk, stream: C, hours: 0.5, text: "Nói 3 phút giải thích một khái niệm chương 1–6 cho người không chuyên; ghi âm"}
 
   - id: w36
-    start: 2027-07-05
+    start: 2027-08-16
     title: "Tuần 36 — Chương 14 (2/4): chuỗi tổng hợp, deep learning hiện đại"
     chapter: chuong-14
     tasks:
@@ -533,7 +535,7 @@ weeks:
       - {id: w36-talk, stream: C, hours: 0.5, text: "Nói 3 phút giải thích Transformer hoặc diffusion cho người đã biết ML; ghi âm"}
 
   - id: w37
-    start: 2027-07-12
+    start: 2027-08-23
     title: "Tuần 37 — Chương 14 (3/4): chuỗi thực nghiệm, hướng NLP và dự án"
     chapter: chuong-14
     tasks:
@@ -546,7 +548,7 @@ weeks:
       - {id: w37-talk, stream: C, hours: 0.5, text: "Nói 3 phút tóm tắt một paper chương 12 mà bạn bị hỏi sâu nhất; ghi âm"}
 
   - id: w38
-    start: 2027-07-19
+    start: 2027-08-30
     title: "Tuần 38 — Chương 14 (4/4): câu hỏi hành vi và phỏng vấn thử trọn vẹn"
     chapter: chuong-14
     tasks:
@@ -560,7 +562,7 @@ weeks:
       - {id: w38-talk, stream: C, hours: 0.5, text: "Nói 3 phút về lý do bạn muốn làm nghiên cứu NLP và kế hoạch 2 năm tới; ghi âm"}
 
   - id: w39
-    start: 2027-07-26
+    start: 2027-09-06
     title: "Tuần 39 — Chẩn đoán điểm yếu (1/2): chương 0 và mini-test chương 1–5"
     chapter: chuong-14
     tasks:
@@ -570,10 +572,11 @@ weeks:
       - {id: w39-a, stream: A, hours: 2, text: "Rà trạng thái dự án luồng A: liệt kê việc còn thiếu cho repo, demo, technical report; ước giờ từng việc để chia vào 7 tuần tới"}
       - {id: w39-b, stream: B, hours: 3, text: "2 bài bấm giờ 40 phút mỗi bài: LRU Cache, Merge Intervals; sau đó viết lại lời giải không nhìn"}
       - {id: w39-c, stream: C, hours: 1, text: "Chọn 1 chuỗi phỏng vấn chương 1–5 bạn hay trả lời yếu; trả lời tiếng Anh, ghi âm, nghe lại và sửa"}
+      - {id: w39-lor, stream: chung, hours: 0.5, text: "Thư giới thiệu, mốc 2/4: gửi gói tài liệu cho người viết (CV, statement, danh sách dự án đã soạn ở tuần 32–34) trong tuần này, sớm hơn mốc 56 ngày (Thứ Sáu 17/9/2027) của lịch ngược mục 13.4 vì tuần 40 đã đủ 15 giờ"}
       - {id: w39-talk, stream: C, hours: 0.5, text: "Nói 3 phút tiếng Anh về một paper bạn đã đọc ở chương 12; ghi âm"}
 
   - id: w40
-    start: 2027-08-02
+    start: 2027-09-13
     title: "Tuần 40 — Chẩn đoán điểm yếu (2/2): mini-test chương 6–12 và bảng ưu tiên ôn"
     chapter: chuong-14
     tasks:
@@ -587,7 +590,7 @@ weeks:
       - {id: w40-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper chương 12 khác; ghi âm"}
 
   - id: w41
-    start: 2027-08-09
+    start: 2027-09-20
     title: "Tuần 41 — Ôn nhóm yếu 1 và phỏng vấn kỹ thuật chéo chương: nền toán và ML"
     chapter: chuong-14
     tasks:
@@ -600,7 +603,7 @@ weeks:
       - {id: w41-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper nền tảng (Attention Is All You Need hoặc paper khác trong phiếu 10 paper); ghi âm"}
 
   - id: w42
-    start: 2027-08-16
+    start: 2027-09-27
     title: "Tuần 42 — Ôn nhóm yếu 2 và phỏng vấn kỹ thuật chéo chương: deep learning, Transformer, LLM"
     chapter: chuong-14
     tasks:
@@ -613,7 +616,7 @@ weeks:
       - {id: w42-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper LLM; ghi âm"}
 
   - id: w43
-    start: 2027-08-23
+    start: 2027-10-04
     title: "Tuần 43 — Ôn nhóm yếu 3, repo và demo luồng A, theo dõi đợt tuyển"
     chapter: chuong-14
     tasks:
@@ -627,7 +630,7 @@ weeks:
       - {id: w43-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper NLP; ghi âm"}
 
   - id: w44
-    start: 2027-08-30
+    start: 2027-10-11
     title: "Tuần 44 — Technical report và demo luồng A; mock interview"
     chapter: chuong-14
     tasks:
@@ -641,56 +644,56 @@ weeks:
       - {id: w44-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper; ghi âm"}
 
   - id: w45
-    start: 2027-09-06
+    start: 2027-10-18
     title: "Tuần 45 — Video presentation bản cuối và chuẩn bị nộp hồ sơ"
     chapter: chuong-14
     tasks:
       - {id: w45-on, stream: chuong, hours: 2.5, text: "Ôn các nhóm chủ đề còn dưới 80% ở mini-test gần nhất; làm lại bài tập sai"}
       - {id: w45-cross, stream: chuong, hours: 2, text: "Luyện câu hỏi chéo chương mới, trả lời miệng 4 tầng; bạn tự bốc ngẫu nhiên 4 chuỗi"}
       - {id: w45-doc, stream: chuong, hours: 1, text: "Đọc lại phần chương 13 về hồ sơ: CV, statement, thư giới thiệu; đối chiếu từng mục với hồ sơ của bạn"}
-      - {id: w45-apply, stream: chung, hours: 1, text: "Chuẩn bị gói nộp hồ sơ sẵn sàng: CV, bảng điểm, statement, link repo, link video, thư giới thiệu (nhắc người viết thư sớm). Kiểm tra trang chính thức Qualcomm/VinAI về ngày mở, ngày đóng, hình thức nộp và yêu cầu; chỉ ghi ngày sau khi thấy công bố thật"}
+      - {id: w45-apply, stream: chung, hours: 1, text: "Chuẩn bị gói nộp hồ sơ sẵn sàng: CV, bảng điểm, statement, link repo, link video, thư giới thiệu (mốc 3/4: nhắc người viết thư lần 1 vào Thứ Sáu 22/10/2027). Kiểm tra trang chính thức Qualcomm/VinAI về ngày mở, ngày đóng, hình thức nộp và yêu cầu; chỉ ghi ngày sau khi thấy công bố thật"}
       - {id: w45-a, stream: A, hours: 2, text: "Quay video presentation bản cuối (khớp kịch bản đã chốt ở chương 13): xem lại, kiểm tra tiếng và hình, nghe người khác xem thử một lần"}
       - {id: w45-b, stream: B, hours: 3, text: "2 bài bấm giờ 40 phút mỗi bài: Lowest Common Ancestor of a Binary Tree, Word Search"}
       - {id: w45-c, stream: C, hours: 2, text: "Ghi hình phần trình bày dự án 3 phút bản cuối bằng tiếng Anh; nghe lại và chọn bản tốt nhất, chép lại lỗi phát âm lặp"}
       - {id: w45-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper; ghi âm"}
 
   - id: w46
-    start: 2027-09-13
+    start: 2027-10-25
     title: "Tuần 46 — Nộp hồ sơ khi đợt tuyển mở và mock interview toàn phần"
     chapter: chuong-14
     tasks:
       - {id: w46-on, stream: chuong, hours: 2, text: "Ôn sổ lỗi cuối cùng của các nhóm yếu; làm lại 10 câu sai nhiều nhất"}
       - {id: w46-full, stream: chuong, hours: 2.5, text: "Mock interview toàn phần tự chấm: 15 phút kiến thức chéo chương, 20 phút code, 15 phút dự án, 10 phút hành vi; ghi hình"}
       - {id: w46-review, stream: chuong, hours: 1, text: "Xem lại bản ghi hình, chấm theo thang tự chấm ở chương 13 và chương 14, ghi 3 việc sửa"}
-      - {id: w46-apply, stream: chung, hours: 1.5, text: "Nộp hồ sơ nếu đợt tuyển đã mở: kiểm tra trang chính thức Qualcomm AI Residency và VinAI Residency về ngày mở, ngày đóng thật (chưa công bố cho đợt 2027 tại thời điểm lập kế hoạch). Đã mở thì nộp sớm, lưu bản xác nhận; chưa mở thì giữ gói hồ sơ sẵn sàng, kiểm tra lại mỗi tuần và không tự đoán ngày"}
+      - {id: w46-apply, stream: chung, hours: 1.5, text: "Nộp hồ sơ nếu đợt tuyển đã mở: kiểm tra trang chính thức Qualcomm AI Residency và VinAI Residency về ngày mở, ngày đóng thật (chưa công bố cho đợt 2027 tại thời điểm lập kế hoạch). Đã mở thì nộp sớm, mục tiêu trước Chủ nhật 31/10/2027 (12 ngày trước hạn giả định 12/11/2027), lưu bản xác nhận; chưa mở thì giữ gói hồ sơ sẵn sàng, kiểm tra lại mỗi tuần và không tự đoán ngày"}
       - {id: w46-a, stream: A, hours: 2.5, text: "Chốt cuối repo, technical report và video: kiểm tra mọi link mở được ở cửa sổ ẩn danh, số liệu trong CV, statement, video và báo cáo khớp nhau"}
       - {id: w46-b, stream: B, hours: 2.5, text: "2 bài bấm giờ 40 phút mỗi bài: Decode Ways, Rotting Oranges"}
       - {id: w46-mock, stream: C, hours: 2, text: "Phiên mock interview tiếng Anh 60 phút với bạn bè (kỹ thuật, dự án, hành vi); xin điểm theo thang và phản hồi bằng văn bản"}
       - {id: w46-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper; ghi âm"}
 
   - id: w47
-    start: 2027-09-20
+    start: 2027-11-01
     title: "Tuần 47 — Rà soát cuối trước Đề thi thử 3"
     chapter: chuong-14
     tasks:
       - {id: w47-on, stream: chuong, hours: 2.5, text: "Đọc lại sổ lỗi từ đầu đến giờ, ôn flashcard theo thẻ sai; làm lại bài tính nhanh của ba chương điểm thấp nhất"}
       - {id: w47-cross, stream: chuong, hours: 2, text: "Luyện 4 chuỗi phỏng vấn kỹ thuật chéo chương, trả lời miệng, bấm giờ"}
-      - {id: w47-plan, stream: chuong, hours: 1, text: "Lập kế hoạch làm Đề thi thử 3 tuần sau (hai buổi: Thứ Năm 30/9 và Thứ Bảy 2/10): giờ làm từng vòng, nghỉ giữa vòng, không ôn kiến thức mới 2 ngày trước; hẹn người phỏng vấn cho Thứ Bảy 2/10 và gửi họ labs/thi-thu-3/nguoi-phong-van.md (bạn không tự mở file này)"}
-      - {id: w47-apply, stream: chung, hours: 0.5, text: "Kiểm tra lại trang tuyển dụng chính thức Qualcomm/VinAI; cập nhật trạng thái hồ sơ (đã nộp, chờ mở, hay còn thiếu giấy tờ)"}
+      - {id: w47-plan, stream: chuong, hours: 1, text: "Lập kế hoạch làm Đề thi thử 3 tuần sau (hai buổi: Thứ Năm 11/11 và Thứ Bảy 13/11): giờ làm từng vòng, nghỉ giữa vòng, không ôn kiến thức mới 2 ngày trước; hẹn người phỏng vấn cho Thứ Bảy 13/11 và gửi họ labs/thi-thu-3/nguoi-phong-van.md (bạn không tự mở file này)"}
+      - {id: w47-apply, stream: chung, hours: 0.5, text: "Kiểm tra lại trang tuyển dụng chính thức Qualcomm/VinAI; cập nhật trạng thái hồ sơ (đã nộp, chờ mở, hay còn thiếu giấy tờ). Nếu đợt tuyển đã mở mà chưa nộp thì nộp trong tuần này, không để sang tuần 48: hạn giả định 12/11/2027 rơi vào giữa tuần 48. Thư giới thiệu, mốc 4/4: nhắc người viết lần cuối vào Thứ Sáu 5/11/2027"}
       - {id: w47-a, stream: A, hours: 2, text: "Ôn cách giải thích dự án: 1 phút, 3 phút và 10 phút; tập trả lời 5 câu đào sâu nhất cùng người nghe thử"}
       - {id: w47-b, stream: B, hours: 2.5, text: "2 bài bấm giờ 40 phút mỗi bài: Implement Trie, Meeting Rooms II"}
       - {id: w47-c, stream: C, hours: 1.5, text: "Mock interview tiếng Anh ngắn 30 phút với bạn bè hoặc tự ghi hình; luyện mở đầu, kết thúc và cách hỏi lại khi chưa hiểu câu hỏi"}
       - {id: w47-talk, stream: C, hours: 0.5, text: "Nói 3 phút về một paper; ghi âm"}
 
   - id: w48
-    start: 2027-09-27
+    start: 2027-11-08
     title: "Tuần 48 — Đề thi thử 3 và tổng kết"
     chapter: chuong-14
     tasks:
-      - {id: w48-mock, stream: chung, hours: 0, text: "Đề thi thử 3 (trang Sách → Đề thi thử 3) chia hai buổi: Thứ Năm 30/9 và Thứ Bảy 2/10/2027; xem mục Cách làm của đề"}
+      - {id: w48-mock, stream: chung, hours: 0, text: "Đề thi thử 3 (trang Sách → Đề thi thử 3) chia hai buổi: Thứ Năm 11/11 và Thứ Bảy 13/11/2027; xem mục Cách làm của đề"}
       - {id: w48-sol, stream: chuong, hours: 2.5, text: "Đọc lại sổ lỗi, ôn flashcard theo thẻ sai; làm lại bài tính nhanh của hai chương điểm thấp nhất"}
-      - {id: w48-run1, stream: chuong, hours: 4.2, text: "Đề thi thử 3, buổi 1 (Thứ Năm 30/9/2027): Vòng 1 (entrance test) và Vòng 2 (coding interview) đúng giờ, rồi chấm Vòng 1–2 theo lời giải; ghi sổ lỗi"}
-      - {id: w48-run2, stream: chuong, hours: 1.9, text: "Đề thi thử 3, buổi 2 (Thứ Bảy 2/10/2027, có người phỏng vấn): Vòng 3 (video) và Vòng 4 (technical interview), rồi chấm; chỉ sau buổi này mới mở labs/thi-thu-3/nguoi-phong-van.md; ghi sổ lỗi"}
-      - {id: w48-a, stream: A, hours: 2, text: "Rà hồ sơ lần cuối: CV, statement, kịch bản video, README repo và báo cáo khớp số liệu; lập danh sách việc nộp hồ sơ"}
+      - {id: w48-run1, stream: chuong, hours: 4.2, text: "Đề thi thử 3, buổi 1 (Thứ Năm 11/11/2027): Vòng 1 (entrance test) và Vòng 2 (coding interview) đúng giờ, rồi chấm Vòng 1–2 theo lời giải; ghi sổ lỗi"}
+      - {id: w48-run2, stream: chuong, hours: 1.9, text: "Đề thi thử 3, buổi 2 (Thứ Bảy 13/11/2027, có người phỏng vấn): Vòng 3 (video) và Vòng 4 (technical interview), rồi chấm; chỉ sau buổi này mới mở labs/thi-thu-3/nguoi-phong-van.md; ghi sổ lỗi"}
+      - {id: w48-a, stream: A, hours: 2, text: "Rà lại bộ hồ sơ đã nộp: CV, statement, kịch bản video, README repo và báo cáo; ghi một trang các con số và mốc thời gian để trả lời nhất quán ở các vòng sau Application"}
       - {id: w48-b, stream: B, hours: 2.5, text: "2 bài bấm giờ 40 phút mỗi bài, bài mới hoàn toàn"}
-      - {id: w48-c, stream: C, hours: 1, text: "Chủ nhật 3/10: sửa và quay lại video 3 phút bản cuối theo các tiêu chí trượt ở Vòng 3 (bản quay ở Vòng 3 là lần quay đầu)"}
+      - {id: w48-c, stream: C, hours: 1, text: "Chủ nhật 14/11: sửa và quay lại video 3 phút bản cuối theo các tiêu chí trượt ở Vòng 3 (bản quay ở Vòng 3 là lần quay đầu)"}
