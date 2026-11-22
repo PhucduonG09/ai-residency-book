@@ -1,0 +1,31 @@
+chuong08:
+  file: chuong08_scenes.py
+  scenes:
+  - cls: NutThatCoChai
+    section: '8.1'
+    title: Nút thắt thông tin và attention
+    desc: Một vector c phải chứa cả câu (acc 0.667 → 0.350 khi độ dài 8 → 16, Lab 6); rồi attention cộng tính của ví dụ 8.1, α = (0.5504, 0.4496).
+  - cls: AttentionBaTu
+    section: '8.2'
+    title: Attention với 3 token
+    desc: Ví dụ 8.3, dₖ = 2; QKᵀ, chia √2, softmax từng hàng, nhân V ra O; rồi mặt nạ nhân quả, O₂ = (2.3395, 3.3395).
+  - cls: BaoHoaSoftmax
+    section: '8.2'
+    title: Vì sao chia √dₖ
+    desc: Logit (8, 0) cho đạo hàm 3.35e-4; chia √64 = 8 còn logit (1, 0) và đạo hàm 0.1966.
+  - cls: SongSinViTri
+    section: '8.3'
+    title: Mã hóa vị trí sinusoidal
+    desc: Bảng PE d = 4 của ví dụ 8.5 và hai kim đồng hồ quay 1 rad và 0.01 rad mỗi bước.
+  - cls: RoPEQuay
+    section: '8.3'
+    title: RoPE chỉ phụ thuộc n − m
+    desc: Ví dụ 8.6, q = (1, 2), k = (3, 1), θ = π/6; ba cặp (m, n) cùng điểm −1.8301.
+  - cls: PreLNvsPostLN
+    section: '8.4'
+    title: Post-LN và pre-LN
+    desc: Hai cách đặt LayerNorm; std dòng residual pre-LN 1.020, 1.128, 1.257, 1.555 sau 1, 6, 12, 24 khối (Lab 2).
+  - cls: KVCache
+    section: '8.5'
+    title: KV cache
+    desc: Mỗi token mới thêm một cột K, V; 500 500 so với 1000 lượt xử lý token; GPT-2 small 36 864 byte mỗi token.

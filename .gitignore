@@ -1,0 +1,5 @@
+progress/
+manim/cua-toi/videos/
+**/media/
+__pycache__/
+.ipynb_checkpoints/

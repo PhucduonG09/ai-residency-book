@@ -1,0 +1,10 @@
+chuong02:
+  file: chuong02_scenes.py
+  scenes:
+    - {cls: GradientDongMuc, section: "2.1", title: "Gradient vuông góc với đường đồng mức", desc: "f = x₁²x₂ + 3x₂ tại (1, 2): ∇f = (4, 4); quay u và đọc ∇fᵀu — lớn nhất 5.657 theo ∇f, bằng 0 theo tiếp tuyến."}
+    - {cls: TaylorXapXi, section: "2.1", title: "Taylor bậc 1 và bậc 2", desc: "Lát cắt dọc d = (0.5, 0.5): sai số bậc 1 là 0.041 rồi 1.125, bậc 2 là 0.001 rồi 0.125."}
+    - {cls: JacobianOVuong, section: "2.1", title: "Jacobian là xấp xỉ tuyến tính", desc: "Tọa độ cực tại (2, π/6): ô nhỏ thành gần hình bình hành có cạnh là cột của J, diện tích ×2 = det J."}
+    - {cls: DoThiNeuron, section: "2.3", title: "Forward và backward trên một neuron", desc: "z = 0.2, s = 0.5498, σ′ = 0.2475; cổng nhân đổi chéo cho ∂s/∂w₁ = 0.4950, ∂s/∂x₁ = 0.1238."}
+    - {cls: FanOutCongDon, section: "2.3", title: "Fan-out phải cộng dồn", desc: "f = (x + y)·y tại (3, 2): hai đường về y đóng góp 5 và 2, tổng 7; ghi đè cho 2."}
+    - {cls: ForwardVsReverse, section: "2.4", title: "Forward mode và reverse mode", desc: "J 2×3 dựng bằng 3 JVP (cột) hoặc 2 VJP (hàng); chuỗi 10 lớp 1000×1000: 10⁷ so với 10¹⁰ phép nhân."}
+    - {cls: SoftmaxGradient, section: "2.5", title: "Softmax + cross-entropy", desc: "Logit (2, 1, 0), nhãn lớp 2: p − y = (0.665, −0.755, 0.090); logit 1000 cho nan nếu không trừ max."}

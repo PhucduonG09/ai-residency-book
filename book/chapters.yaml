@@ -1,0 +1,25 @@
+# Danh mục chương cho app. status: ready = đã viết, planned = sẽ viết (cuốn chiếu).
+chapters:
+  - {id: huong-dan, title: "Hướng dẫn và đề cương", file: huong-dan.md, status: ready}
+  - {id: chuong-00, title: "Chương 0 — Bài chẩn đoán đầu vào", file: chuong-00.md, status: ready}
+  - {id: chuong-01, title: "Chương 1 — Đại số tuyến tính cho ML", file: chuong-01.md, status: ready, lab: chuong01, manim: chuong01, flashcards: chuong01}
+  - {id: chuong-02, title: "Chương 2 — Giải tích ma trận và backpropagation", file: chuong-02.md, status: ready, lab: chuong02, manim: chuong02, flashcards: chuong02}
+  - {id: chuong-03, title: "Chương 3 — Xác suất, thống kê, lý thuyết thông tin", file: chuong-03.md, status: ready, lab: chuong03, manim: chuong03, flashcards: chuong03}
+  - {id: chuong-04, title: "Chương 4 — Tối ưu hóa", file: chuong-04.md, status: ready, lab: chuong04, manim: chuong04, flashcards: chuong04}
+  - {id: chuong-05, title: "Chương 5 — ML cổ điển", file: chuong-05.md, status: ready, lab: chuong05, manim: chuong05, flashcards: chuong05}
+  - {id: chuong-06, title: "Chương 6 — Mạng nơ-ron từ con số 0", file: chuong-06.md, status: ready, lab: chuong06, manim: chuong06, flashcards: chuong06}
+  - {id: thi-thu-1, title: "Đề thi thử 1 — Phần I (chương 1–6)", file: thi-thu-1.md, status: ready}
+  - {id: chuong-07, title: "Chương 7 — CNN và thị giác máy tính", file: chuong-07.md, status: ready, lab: chuong07, manim: chuong07, flashcards: chuong07}
+  - {id: chuong-08, title: "Chương 8 — Attention và Transformer", file: chuong-08.md, status: ready, lab: chuong08, manim: chuong08, flashcards: chuong08}
+  - {id: chuong-09, title: "Chương 9 — Mô hình ngôn ngữ lớn", file: chuong-09.md, status: ready, lab: chuong09, manim: chuong09, flashcards: chuong09}
+  - {id: chuong-10, title: "Chương 10 — Mô hình sinh và học tự giám sát", file: chuong-10.md, status: ready, lab: chuong10, manim: chuong10, flashcards: chuong10}
+  - {id: chuong-11, title: "Chương 11 — Phương pháp thực nghiệm và đọc paper", file: chuong-11.md, status: ready, lab: chuong11, manim: chuong11, flashcards: chuong11}
+  - {id: thi-thu-2, title: "Đề thi thử 2 — Phần II (chương 7–11)", file: thi-thu-2.md, status: ready}
+  - {id: chuong-12, title: "Chương 12 — Chuyên sâu NLP và đạo đức AI", file: chuong-12.md, status: ready, lab: chuong12, manim: chuong12, flashcards: chuong12}
+  - {id: chuong-13, title: "Chương 13 — Hồ sơ và video presentation", file: chuong-13.md, status: ready, lab: chuong13, manim: chuong13, flashcards: chuong13}
+  - {id: chuong-14, title: "Chương 14 — Technical interview", file: chuong-14.md, status: ready, lab: chuong14, manim: chuong14, flashcards: chuong14}
+  - {id: thi-thu-3, title: "Đề thi thử 3 — Mô phỏng đủ các vòng", file: thi-thu-3.md, status: ready}
+mock_tests:
+  - {name: "Đề thi thử 1", date: 2027-01-31}
+  - {name: "Đề thi thử 2", date: 2027-04-18}
+  - {name: "Đề thi thử 3", date: 2027-09-30}

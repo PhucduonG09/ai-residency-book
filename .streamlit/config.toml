@@ -1,0 +1,17 @@
+# Cấu hình giúp app nhẹ và mượt hơn khi chạy local
+[server]
+fileWatcherType = "none"      # không theo dõi file nguồn (đỡ tốn CPU); sửa app.py thì khởi động lại app
+runOnSave = false
+headless = true
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"
+
+[runner]
+fastReruns = true
+magicEnabled = false

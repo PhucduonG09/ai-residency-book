@@ -1,0 +1,31 @@
+chuong06:
+  file: chuong06_scenes.py
+  scenes:
+  - cls: SupDoTuyenTinh
+    section: '6.1'
+    title: Hai lớp tuyến tính chỉ là một lớp
+    desc: W₂W₁ = (−1, 4) của ví dụ 6.1; chèn ReLU vào thì đường thẳng gập thành gấp khúc.
+  - cls: XORHaiNeuron
+    section: '6.1'
+    title: XOR với hai neuron ReLU
+    desc: Ví dụ 6.2; bốn điểm XOR được đưa sang không gian (h₁, h₂), nơi một đường thẳng tách được.
+  - cls: XapXiTungKhuc
+    section: '6.1'
+    title: Xấp xỉ tuyến tính từng khúc
+    desc: Nội suy sin x với K = 2, 4, 8, 16 khúc; sai số lớn nhất 0.2105 → 0.0048.
+  - cls: LanNguocMLP
+    section: '6.2'
+    title: Forward và backward trên mạng 2–3–2
+    desc: Số của ví dụ 6.4, L = 1.9102; neuron có z = −1.5 chặn gradient.
+  - cls: TinHieuQuaLop
+    section: '6.4'
+    title: Std activation qua 10 lớp ReLU
+    desc: std 0.01, Xavier, He trên thang log (ví dụ 6.8); chỉ He giữ std ổn định.
+  - cls: BatchVaLayerNorm
+    section: '6.4'
+    title: BatchNorm theo cột, LayerNorm theo hàng
+    desc: Ví dụ 6.9; cột (1, 2, 3, 6) và hàng (2, 4, 6, 8), running_var 1.367.
+  - cls: QuetLearningRate
+    section: '6.5'
+    title: Quét learning rate
+    desc: Loss val sau 3 epoch Adam theo lr 1e-5 … 1 (Lab 5); hình chữ U, vùng tốt 1e-3 đến 1e-2.

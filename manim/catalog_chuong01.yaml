@@ -1,0 +1,35 @@
+chuong01:
+  file: chuong01_scenes.py
+  scenes:
+  - cls: BienDangLuoi
+    section: '1.1'
+    title: Ma trận là một phép biến đổi
+    desc: Lưới bị A = [[2, 1], [1, 2]] biến dạng; e₁, e₂ đi tới hai cột của A; diện
+      tích hình bình hành = det A = 3.
+  - cls: ABKhacBA
+    section: '1.1'
+    title: SR ≠ RS
+    desc: Cùng chữ F, quay rồi kéo giãn khác hẳn kéo giãn rồi quay.
+  - cls: PhepChieu
+    section: '1.3'
+    title: Bình phương tối thiểu là phép chiếu
+    desc: Điểm trên C(A) gần b nhất là chân đường vuông góc; phần dư vuông góc với
+      C(A).
+  - cls: VectorRieng
+    section: '1.4'
+    title: Vector riêng
+    desc: 'Quay v quanh đường tròn: chỉ ở hướng riêng thì Av cùng phương với v.'
+  - cls: GDSoDieuKien
+    section: '1.4'
+    title: Số điều kiện và gradient descent
+    desc: Cùng λₘₐₓ = 10 và cùng learning rate 0.18; κ = 1 (λ = 10, 10) về đáy nhanh, κ = 20
+      (λ = 10, 0.5) zig-zag và còn xa đáy sau 25 bước vì λₘᵢₙ nhỏ.
+  - cls: SVDXoayKeoXoay
+    section: '1.5'
+    title: 'SVD: xoay → kéo giãn → xoay'
+    desc: Ma trận [[3, 0], [4, 5]] của ví dụ 1.7, từng bước Vᵀ, Σ, U.
+  - cls: PCAXoayTruc
+    section: '1.5'
+    title: PCA là thương Rayleigh
+    desc: Xoay một trục qua đám điểm; phương sai chiếu lớn nhất tại vector riêng lớn
+      nhất.

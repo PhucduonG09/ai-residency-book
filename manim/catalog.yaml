@@ -1,0 +1,429 @@
+# Danh mục cảnh Manim cho app. Video render sẵn nằm ở manim/videos/<chương>/<Tên cảnh>.mp4
+chuong01:
+  file: chuong01_scenes.py
+  scenes:
+  - cls: BienDangLuoi
+    section: '1.1'
+    title: Ma trận là một phép biến đổi
+    desc: Lưới bị A = [[2, 1], [1, 2]] biến dạng; e₁, e₂ đi tới hai cột của A; diện tích hình bình hành = det A = 3.
+  - cls: ABKhacBA
+    section: '1.1'
+    title: SR ≠ RS
+    desc: Cùng chữ F, quay rồi kéo giãn khác hẳn kéo giãn rồi quay.
+  - cls: PhepChieu
+    section: '1.3'
+    title: Bình phương tối thiểu là phép chiếu
+    desc: Điểm trên C(A) gần b nhất là chân đường vuông góc; phần dư vuông góc với C(A).
+  - cls: VectorRieng
+    section: '1.4'
+    title: Vector riêng
+    desc: 'Quay v quanh đường tròn: chỉ ở hướng riêng thì Av cùng phương với v.'
+  - cls: GDSoDieuKien
+    section: '1.4'
+    title: Số điều kiện và gradient descent
+    desc: Cùng λₘₐₓ = 10 và cùng learning rate 0.18; κ = 1 (λ = 10, 10) về đáy nhanh, κ = 20 (λ = 10, 0.5) zig-zag và còn xa đáy sau 25 bước vì λₘᵢₙ nhỏ.
+  - cls: SVDXoayKeoXoay
+    section: '1.5'
+    title: 'SVD: xoay → kéo giãn → xoay'
+    desc: Ma trận [[3, 0], [4, 5]] của ví dụ 1.7, từng bước Vᵀ, Σ, U.
+  - cls: PCAXoayTruc
+    section: '1.5'
+    title: PCA là thương Rayleigh
+    desc: Xoay một trục qua đám điểm; phương sai chiếu lớn nhất tại vector riêng lớn nhất.
+chuong02:
+  file: chuong02_scenes.py
+  scenes:
+  - cls: GradientDongMuc
+    section: '2.1'
+    title: Gradient vuông góc với đường đồng mức
+    desc: 'f = x₁²x₂ + 3x₂ tại (1, 2): ∇f = (4, 4); quay u và đọc ∇fᵀu — lớn nhất 5.657 theo ∇f, bằng 0 theo tiếp tuyến.'
+  - cls: TaylorXapXi
+    section: '2.1'
+    title: Taylor bậc 1 và bậc 2
+    desc: 'Lát cắt dọc d = (0.5, 0.5): sai số bậc 1 là 0.041 rồi 1.125, bậc 2 là 0.001 rồi 0.125.'
+  - cls: JacobianOVuong
+    section: '2.1'
+    title: Jacobian là xấp xỉ tuyến tính
+    desc: 'Tọa độ cực tại (2, π/6): ô nhỏ thành gần hình bình hành có cạnh là cột của J, diện tích ×2 = det J.'
+  - cls: DoThiNeuron
+    section: '2.3'
+    title: Forward và backward trên một neuron
+    desc: z = 0.2, s = 0.5498, σ′ = 0.2475; cổng nhân đổi chéo cho ∂s/∂w₁ = 0.4950, ∂s/∂x₁ = 0.1238.
+  - cls: FanOutCongDon
+    section: '2.3'
+    title: Fan-out phải cộng dồn
+    desc: 'f = (x + y)·y tại (3, 2): hai đường về y đóng góp 5 và 2, tổng 7; ghi đè cho 2.'
+  - cls: ForwardVsReverse
+    section: '2.4'
+    title: Forward mode và reverse mode
+    desc: 'J 2×3 dựng bằng 3 JVP (cột) hoặc 2 VJP (hàng); chuỗi 10 lớp 1000×1000: 10⁷ so với 10¹⁰ phép nhân.'
+  - cls: SoftmaxGradient
+    section: '2.5'
+    title: Softmax + cross-entropy
+    desc: 'Logit (2, 1, 0), nhãn lớp 2: p − y = (0.665, −0.755, 0.090); logit 1000 cho nan nếu không trừ max.'
+chuong03:
+  file: chuong03_scenes.py
+  scenes:
+  - cls: LuoiBayes
+    section: '3.1'
+    title: Tỉ lệ nền và định lý Bayes
+    desc: 'Lưới 1000 bình luận: 20 độc, 67 bị gắn cờ, chỉ 18 cờ đúng ⇒ P(độc ∣ cờ) ≈ 0.27.'
+  - cls: PhuongSaiEnsemble
+    section: '3.2'
+    title: Phương sai của trung bình ensemble
+    desc: 'Var = ρσ² + (1 − ρ)σ²/K với ρ = 0, 0.5, 0.9: giảm nhanh rồi dừng ở ρσ².'
+  - cls: ElipGauss
+    section: '3.3'
+    title: Gauss 2 chiều và khoảng cách Mahalanobis
+    desc: 'Σ = [[2, 1], [1, 2]]: elip theo vector riêng; (1, 1) và (1, −1) cùng xa theo Euclid nhưng Mahalanobis² 0.667 vs 2.0.'
+  - cls: PriorKeoVe0
+    section: '3.4'
+    title: MAP với prior Gauss là ridge
+    desc: Likelihood đỉnh 2.214, prior N(0, τ²) kéo đỉnh posterior về 1.292 khi τ² = 0.1; đổi τ² để thấy đỉnh di chuyển.
+  - cls: KLKhongDoiXung
+    section: '3.5'
+    title: KL thuận và KL ngược
+    desc: 'Fit một Gauss vào hỗn hợp hai đỉnh: KL(p‖q) cho N(0, 2.09²) phủ cả hai đỉnh, KL(q‖p) cho N(2.0, 0.60²) bám một đỉnh. Cuối cảnh hiện KL: 0.555 và 1.273 nat cho nghiệm thuận, 0.692 nat (≈ ln 2)
+      cho nghiệm ngược.'
+  - cls: PairedBootstrap
+    section: '3.5'
+    title: Bootstrap có cặp và không cặp
+    desc: 'Bảng chéo 820/30/15/135: CI có cặp [0.002, 0.028] không chứa 0, CI không cặp [−0.017, 0.046] vắt qua 0.'
+chuong04:
+  file: chuong04_scenes.py
+  scenes:
+  - cls: DayCungHamLoi
+    section: '4.1'
+    title: Dây cung và tiếp tuyến của hàm lồi
+    desc: 'x²/2: dây cung luôn trên đồ thị, tiếp tuyến luôn dưới; x⁴/4 − x²: dây cung chui xuống dưới đồ thị.'
+  - cls: KKTTiepXuc
+    section: '4.1'
+    title: 'KKT: đường mức chạm biên'
+    desc: 'Ví dụ 4.2: nghiệm (1.5, 0.5) với μ = 1; nới ràng buộc thành x + y ≤ 4 thì μ = 0.'
+  - cls: TocDoTungHuongRieng
+    section: '4.2'
+    title: GD theo từng hướng riêng
+    desc: 'f = ½(x₁² + 100x₂²): η = 0.01 cần 1 341 bước, η = 2/101 cần 691, η = 0.0201 phân kỳ.'
+  - cls: SanNhieuSGD
+    section: '4.3'
+    title: Sàn nhiễu của SGD
+    desc: 'Phương sai dừng ησ²/(B(2 − η)): 0.21 → 0.013 khi B = 16, → 0.020 khi η = 0.01.'
+  - cls: MomentumBongLan
+    section: '4.4'
+    title: 'Momentum: √κ thay cho κ (bài bậc hai)'
+    desc: 'Cùng bài κ = 100: GD tối ưu 691 bước, heavy ball tối ưu 93 bước; vẽ x₁(k), x₂(k).'
+  - cls: AdamChuanHoaBuoc
+    section: '4.4'
+    title: Adam chuẩn hóa bước; AdamW khác L2
+    desc: 'Bước đầu ≈ α với g = 10⁻⁴, 1, 10³; tham số không có gradient: AdamW 0.9900, L2 trong Adam 0.258.'
+  - cls: NewtonYenNgua
+    section: '4.5'
+    title: Newton bị hút về yên ngựa
+    desc: 'f = x² − y²: Newton nhảy vào (0, 0) trong 1 bước; GD η = 0.1 thoát sau 38 bước.'
+chuong05:
+  file: chuong05_scenes.py
+  scenes:
+  - cls: LogisticTachDuoc
+    section: '5.1'
+    title: Logistic trên dữ liệu tách được
+    desc: 'x = 1..4, y = (0, 0, 1, 1): không L2 thì w tăng 1.716 → 10.312 (‖w‖ → ∞), sigmoid thành bậc thang, ranh giới −b/w tăng chậm 2.307 → 2.483 và tiến về 2.5 (implicit bias, hướng (w, b) hội tụ rất
+      chậm về nghiệm lề cực đại); L2 λ = 0.1 dừng ở w = 1.508, ranh giới 2.5.'
+  - cls: BiasVarianceDaThuc
+    section: '5.2'
+    title: Bias–variance với đa thức
+    desc: 'Vẽ 20 trong 2000 lần lấy lại nhãn nhiễu (số liệu tính từ cả 2000 lần), bậc 1, 3, 9: bias² 0.1809 / 0.0054 / 0.0000, variance 0.0078 / 0.0136 / 0.0380.'
+  - cls: L1L2HinhHoc
+    section: '5.2'
+    title: Vì sao L1 thưa
+    desc: Đồng mức chạm hình tròn ở điểm có hai tọa độ khác 0, chạm hình thoi ở đỉnh; soft-threshold z = (3, 0.8, −2) → (2, 0, −1).
+  - cls: NguongVaPrecision
+    section: '5.2'
+    title: Ngưỡng, ROC và precision
+    desc: Trượt ngưỡng trên hai phân phối điểm, theo dõi điểm tương ứng trên đường ROC (cảnh chỉ vẽ ROC, không vẽ đường PR); bảng số bên phải cho thấy tại TPR 0.9, FPR 0.05 precision là 0.947 / 0.667 /
+      0.154 khi lớp dương chiếm 50% / 10% / 1%.
+  - cls: HamMatMatSoSanh
+    section: '5.3'
+    title: 0-1, hinge và log-loss
+    desc: Ba hàm mất mát trên trục margin; hai điểm của ví dụ 5.8 có hinge 0.5 và 2.
+  - cls: BoostingPhanDu
+    section: '5.4'
+    title: Gradient boosting khớp phần dư
+    desc: '6 điểm, stump chia ở 3.5, η = 0.5: MSE 0.2447 → 0.0695 → 0.0257.'
+  - cls: KMeansVaEM
+    section: '5.5'
+    title: k-means kẹt và một vòng EM
+    desc: 'Hai khởi tạo cho J = 196 và 77.5; EM trên (0, 1, 2.5, 4, 5): γ = 0.5 cho điểm giữa, μ → (0.901, 4.099).'
+chuong06:
+  file: chuong06_scenes.py
+  scenes:
+  - cls: SupDoTuyenTinh
+    section: '6.1'
+    title: Hai lớp tuyến tính chỉ là một lớp
+    desc: W₂W₁ = (−1, 4) của ví dụ 6.1; chèn ReLU vào thì đường thẳng gập thành gấp khúc.
+  - cls: XORHaiNeuron
+    section: '6.1'
+    title: XOR với hai neuron ReLU
+    desc: Ví dụ 6.2; bốn điểm XOR được đưa sang không gian (h₁, h₂), nơi một đường thẳng tách được.
+  - cls: XapXiTungKhuc
+    section: '6.1'
+    title: Xấp xỉ tuyến tính từng khúc
+    desc: Nội suy sin x với K = 2, 4, 8, 16 khúc; sai số lớn nhất 0.2105 → 0.0048.
+  - cls: LanNguocMLP
+    section: '6.2'
+    title: Forward và backward trên mạng 2–3–2
+    desc: Số của ví dụ 6.4, L = 1.9102; neuron có z = −1.5 chặn gradient.
+  - cls: TinHieuQuaLop
+    section: '6.4'
+    title: Std activation qua 10 lớp ReLU
+    desc: std 0.01, Xavier, He trên thang log (ví dụ 6.8); chỉ He giữ std ổn định.
+  - cls: BatchVaLayerNorm
+    section: '6.4'
+    title: BatchNorm theo cột, LayerNorm theo hàng
+    desc: Ví dụ 6.9; cột (1, 2, 3, 6) và hàng (2, 4, 6, 8), running_var 1.367.
+  - cls: QuetLearningRate
+    section: '6.5'
+    title: Quét learning rate
+    desc: Loss val sau 3 epoch Adam theo lr 1e-5 … 1 (Lab 5); hình chữ U, vùng tốt 1e-3 đến 1e-2.
+chuong07:
+  file: chuong07_scenes.py
+  scenes:
+  - cls: TruotKernel
+    section: '7.1'
+    title: 'Tích chập 2D: kernel trượt, nhân rồi cộng'
+    desc: Sobel dọc trên ảnh 5×5 của ví dụ 7.1; đầu ra 3×3 điền dần, ô đầu −1 = 1 − 4 + 2; convolution thật cho đúng âm.
+  - cls: ConvLaMaTran
+    section: '7.1'
+    title: Conv 1D là một phép nhân ma trận
+    desc: Ví dụ 7.3; ma trận Toeplitz 3×5 nhân (1, 2, 3, 4, 5) cho (−2, −2, −2), mỗi hàng là kernel dịch một cột.
+  - cls: ChongBaLop
+    section: '7.2'
+    title: Ba lớp 3×3 nhìn được vùng 7×7
+    desc: Ví dụ 7.5; receptive field 3, 5, 7 và số tham số 27C² so với 49C² (tỉ lệ 0.551).
+  - cls: AliasingStride
+    section: '7.2'
+    title: Stride 2 phá tính bất biến dịch chuyển
+    desc: Ví dụ 7.7; (1,0,1,0,…) lấy stride 2 ra (1,1,1,1), dịch một bước ra (0,0,0,0); thêm nhánh max-pool với xung đơn.
+  - cls: KhoiResidual
+    section: '7.3'
+    title: Khối residual bottleneck
+    desc: Ví dụ 7.10; 256 → 64 → 64 → 256 với đường tắt, 69 632 tham số so với 1 179 648 của hai conv 3×3 ở 256 kênh.
+  - cls: BN2dKenh
+    section: '7.4'
+    title: BatchNorm2d theo kênh, LayerNorm theo mẫu
+    desc: Ví dụ 7.12; tensor N = 2, C = 2, 2×2, kênh 0 có mean 4.5 và phương sai 5.25, rồi LN trên (C, H, W) của mẫu 0.
+  - cls: PatchLaConv
+    section: '7.5'
+    title: ViT biến ảnh thành chuỗi token bằng một conv
+    desc: Ví dụ 7.17; ảnh 224×224 thành lưới 14×14 = 196 patch, conv 16×16 stride 16 có 590 592 tham số.
+chuong08:
+  file: chuong08_scenes.py
+  scenes:
+  - cls: NutThatCoChai
+    section: '8.1'
+    title: Nút thắt thông tin và attention
+    desc: Một vector c phải chứa cả câu (acc 0.667 → 0.350 khi độ dài 8 → 16, Lab 6); rồi attention cộng tính của ví dụ 8.1, α = (0.5504, 0.4496).
+  - cls: AttentionBaTu
+    section: '8.2'
+    title: Attention với 3 token
+    desc: Ví dụ 8.3, dₖ = 2; QKᵀ, chia √2, softmax từng hàng, nhân V ra O; rồi mặt nạ nhân quả, O₂ = (2.3395, 3.3395).
+  - cls: BaoHoaSoftmax
+    section: '8.2'
+    title: Vì sao chia √dₖ
+    desc: Logit (8, 0) cho đạo hàm 3.35e-4; chia √64 = 8 còn logit (1, 0) và đạo hàm 0.1966.
+  - cls: SongSinViTri
+    section: '8.3'
+    title: Mã hóa vị trí sinusoidal
+    desc: Bảng PE d = 4 của ví dụ 8.5 và hai kim đồng hồ quay 1 rad và 0.01 rad mỗi bước.
+  - cls: RoPEQuay
+    section: '8.3'
+    title: RoPE chỉ phụ thuộc n − m
+    desc: Ví dụ 8.6, q = (1, 2), k = (3, 1), θ = π/6; ba cặp (m, n) cùng điểm −1.8301.
+  - cls: PreLNvsPostLN
+    section: '8.4'
+    title: Post-LN và pre-LN
+    desc: Hai cách đặt LayerNorm; std dòng residual pre-LN 1.020, 1.128, 1.257, 1.555 sau 1, 6, 12, 24 khối (Lab 2).
+  - cls: KVCache
+    section: '8.5'
+    title: KV cache
+    desc: Mỗi token mới thêm một cột K, V; 500 500 so với 1000 lượt xử lý token; GPT-2 small 36 864 byte mỗi token.
+chuong09:
+  file: chuong09_scenes.py
+  scenes:
+  - cls: BPEGhepCap
+    section: '9.1'
+    title: BPE gộp cặp phổ biến nhất
+    desc: Ví dụ 9.1; bốn từ của Sennrich, ba phép gộp đầu hòa nhau ở tần số 9, rồi lo, low; lowest thành low + est</w>.
+  - cls: GiaiMaNhietDo
+    section: '9.1'
+    title: Nhiệt độ và top-p
+    desc: Ví dụ 9.4; logit (3, 2, 1, 0, −1) ở T = 0.5, 1, 2, rồi cắt top-p = 0.9 giữ 3 token và chuẩn hóa còn (0.6652, 0.2447, 0.0900).
+  - cls: TokenMoiThamSo
+    section: '9.2'
+    title: Bao nhiêu token cho mỗi tham số
+    desc: Ví dụ 9.5 và 9.6; D/N của GPT-3, Gopher, Chinchilla, Llama 3; các điểm tối ưu ở C = 5.88·10²³ (92.8 với số mũ làm tròn, 57.9 với số mũ đủ chữ số, so với 18.4 của Epoch); 93 chỉ do làm tròn, paper
+      nêu cách 3 ≈ 40B ở ngân sách Gopher.
+  - cls: DPOHaiLogTiSo
+    section: '9.3'
+    title: Loss DPO và likelihood displacement
+    desc: Ví dụ 9.7; z = 0.4, loss 0.5130, trọng số 0.4013; kịch bản đáp án thắng giảm xác suất mà loss giảm xuống 0.4741, thấp hơn 0.6931 lúc khởi đầu.
+  - cls: GRPONhom
+    section: '9.3'
+    title: Advantage theo nhóm của GRPO
+    desc: Ví dụ 9.8; G = 8, advantage +1.291 và −0.775; nhóm toàn sai không có gradient.
+  - cls: LoRAHaiMaTran
+    section: '9.4'
+    title: LoRA thay ΔW bằng BA
+    desc: Ví dụ 9.9; 16 777 216 so với 65 536 tham số (0.39%), B = 0 nên ΔW = 0 lúc đầu.
+  - cls: NgoaiLeLuongTu
+    section: '9.4'
+    title: Ngoại lệ trong lượng tử hóa
+    desc: Ví dụ 9.11; absmax int8 sai số 0.0016, thêm ngoại lệ 12.0 thì 0.0445, lượng tử theo khối thì khối chứa ngoại lệ vẫn sai 0.0276 còn khối kia, mã (16, 127, −95, 64), sai 0.0016.
+chuong10:
+  file: chuong10_scenes.py
+  scenes:
+  - cls: ELBOvaKhoangHo
+    section: '10.1'
+    title: ELBO và khe hở tới log p(x)
+    desc: Ví dụ 10.2; ELBO −1.5321, log p(x) −1.5155, khe hở 0.0166 bằng KL(q‖posterior), q về posterior thì khe hở bằng 0.
+  - cls: TaiThamSoHoa
+    section: '10.1'
+    title: Reparameterization, cùng kỳ vọng khác phương sai
+    desc: Ví dụ 10.3; z = μ + σε, độ lệch chuẩn gradient 1.60 (reparam) so với 3.64 (score function), cùng trung bình 1.0.
+  - cls: DiscriminatorToiUu
+    section: '10.2'
+    title: Discriminator tối ưu và JSD bão hòa
+    desc: Ví dụ 10.4–10.5; D*(x) = σ(2 − 2x) giữa N(0, 1) và N(2, 1); dịch xa thì JSD tiến về ln 2 còn KL tăng.
+  - cls: LichNhieuKhuechTan
+    section: '10.3'
+    title: Lịch nhiễu tuyến tính và cosine
+    desc: Ví dụ 10.6; ᾱ < 0.5 lần đầu tại t = 260 (tuyến tính) và 497 (cosine), T = 1000.
+  - cls: HuongDanKhongPhanLoai
+    section: '10.3'
+    title: Classifier-free guidance
+    desc: Ví dụ 10.8 và Lab 3; ε̃ = 0.50 / 0.80 / 1.40 / 2.75 theo w, độ lệch chuẩn lớp 0 co từ 1.338 xuống 0.550.
+  - cls: MaTranInfoNCE
+    section: '10.4'
+    title: InfoNCE trên ma trận tương đồng 4×4
+    desc: Ví dụ 10.9; loss trung bình 0.9898 / 0.6816 / 0.0322 cho τ = 1 / 0.5 / 0.1, và ln 4 khi mọi tương đồng bằng nhau.
+  - cls: MatNaMaskedVsCausal
+    section: '10.4'
+    title: Palindrome, masked LM so với causal LM
+    desc: Ví dụ 10.10; causal LM kẹt ở sàn 0.9868 (đo 0.9966), masked LM đạt 0.0023.
+chuong11:
+  file: chuong11_scenes.py
+  scenes:
+  - cls: DemChienThang
+    section: '11.1'
+    title: Đếm chiến thắng
+    desc: Ví dụ 11.1; thắng 11/18 cột cho P = 0.2403; chỉ 6 phép so sánh độc lập thì thắng 5/6 (lưới tô khớp, dataset 1–5 thắng đa số cột) vẫn có P = 0.1094.
+  - cls: BaselineBiDoiXu
+    section: '11.2'
+    title: Baseline chưa tune làm hiệu ứng phình ra
+    desc: Ví dụ 11.3; cùng một phương pháp, ba cách tune baseline cho chênh +5.17, +0.29, +0.52 điểm.
+  - cls: NganSachCongBang
+    section: '11.2'
+    title: Cùng ngân sách tune hay không
+    desc: Ví dụ 11.4; EVP(k) của hai không gian tìm kiếm; chênh 2.4 điểm khi A có 4 lần thử còn B có 60, chỉ 0.2–0.4 khi cùng 60; chênh ở k = 1 chỉ là nhiễu.
+  - cls: AblationTuongTac
+    section: '11.2'
+    title: Remove-one khác add-one
+    desc: Ví dụ 11.5; LayerNorm −0.06 khi thêm vào baseline nhưng −1.35 khi bỏ khỏi mô hình đủ; tổng add-one 3.96 so với cả bộ 2.20.
+  - cls: HaiKhoangTinCay
+    section: '11.3'
+    title: CI theo seed không phải CI của độ chính xác thật
+    desc: Ví dụ 11.6; CI t [76.00, 77.28] từ 5 seed, giá trị thật 73.70 nằm ngoài; băng ± 2.72 của sai số lấy mẫu test; ví dụ là một lần rút ở đuôi, điển hình lệch khoảng 1 SE.
+  - cls: RoRiChonLocTruocKhiChia
+    section: '11.4'
+    title: Chọn đặc trưng trước khi chia
+    desc: Ví dụ 11.8; nhãn ngẫu nhiên, hai quy trình cho 0.867 (rò rỉ) và 0.491 (đúng), đường chuẩn 0.5.
+  - cls: BestOfK
+    section: '11.4'
+    title: Chọn tốt nhất trong K mô hình theo cùng test set
+    desc: Ví dụ 11.10; K mô hình bằng nhau 0.80, thiên lệch +0.00, +1.44, +2.33, +3.12, +4.06 điểm cho K = 1, 5, 20, 100, 1000.
+chuong12:
+  file: chuong12_scenes.py
+  scenes:
+  - cls: BM25BaoHoa
+    section: '12.1'
+    title: BM25, tf bão hòa và idf
+    desc: Ví dụ 12.1; phần tf tiến về k₁ + 1 = 2.2 (f = 1, 2, 5, 10, 50 cho 1.000 … 2.148; trục f vẽ các mốc cách đều, không theo tỉ lệ); bốn đoạn có điểm 1.2683, 0.9624, 0.5154, 0.4766; d₁ thắng d₂ và
+      d₃ nhờ idf (gấp 1.94 lần), không phải nhờ tf.
+  - cls: RRFHopNhat
+    section: '12.1'
+    title: RRF gộp theo hạng
+    desc: Ví dụ 12.3; hai danh sách xếp hạng, k = 60 cho d1 0.03252 và d3 0.03227; k nhỏ làm hạng đầu áp đảo.
+  - cls: ChunkBienGioi
+    section: '12.2'
+    title: Sự thật hai câu bị cắt ngang
+    desc: Ví dụ 12.4; xác suất cắt 0.492, 0.238, 0.111, 0.048 cho c = 2, 4, 8, 16; chồng lấn 1 câu cho ans@top-3 = 1.000 và ans@top-1 = 0.833 (không chồng lấn 0.743 ở c = 4); hòa điểm làm top-1 phụ thuộc
+      quy tắc phá hòa (0.677 nếu phá theo chỉ số nhỏ), cái giá là số chunk gấp 1.31 lần.
+  - cls: PhanRaLoiRAG
+    section: '12.2'
+    title: Phân rã lỗi RAG
+    desc: Ví dụ 12.6; Acc = 0.70·0.85 + 0.30·0.20 = 0.655; R lên 0.85 cho 0.7525, a₁ lên 0.92 cho 0.704.
+  - cls: PPRLanToa
+    section: '12.3'
+    title: PPR lan khối lượng
+    desc: Ví dụ 12.7; đồ thị 7 nút, hạt giống X, α = 0.5; hội tụ P₃ 0.1658 > P₁ 0.1556 > P₂ 0.0120 (thường đoạn xa xếp sau, không phải luật chung).
+  - cls: TamGiacBatKhaThi
+    section: '12.5'
+    title: Công bằng không thể có tất cả
+    desc: Ví dụ 12.10; cùng PPV 0.8 và FNR 0.2 nhưng tỉ lệ nền 0.5 và 0.2 buộc FPR 0.200 so với 0.050.
+chuong13:
+  file: chuong13_scenes.py
+  scenes:
+  - cls: PheuTuyenRRP
+    section: '13.1'
+    title: Năm vòng công khai của Qualcomm RRP
+    desc: Batch 17 có 5 vòng; video là vòng 4 và định dạng không công khai (mức D). Nguồn mức B, kiểm ngày 03/11/2026.
+  - cls: BulletCV
+    section: '13.2'
+    title: Sửa một bullet CV
+    desc: Động từ hành động, bối cảnh, kết quả có số; số cờ linter đi từ 2 xuống 1 rồi 0.
+  - cls: MuiTenStatement
+    section: '13.3'
+    title: Statement như một đề xuất nhỏ
+    desc: Mẫu 306 từ sáu đoạn; đoạn mở 34 từ, ba đoạn việc đã làm 157 từ, bước tiếp theo 56 từ; đoạn lạc đề 59 từ bị bỏ, còn 247 từ.
+  - cls: LichNguocThu
+    section: '13.4'
+    title: Lịch ngược cho thư giới thiệu
+    desc: Hạn giả định 12/11/2027; hỏi người viết ngày 15/07, gửi gói tài liệu 17/09, nhắc 22/10 và 05/11.
+  - cls: BaPhutPresentation
+    section: '13.5'
+    title: Ngân sách cho video 3 phút
+    desc: Sáu đoạn 20, 25, 45, 45, 25, 20 giây; 47, 58, 105, 105, 58, 47 từ; tổng 180 giây và 420 từ ở 140 từ/phút.
+  - cls: NhipNoiWPM
+    section: '13.5'
+    title: Nhịp nói theo cửa sổ 30 giây
+    desc: Bản ghi giả lập; trung bình 130.0 từ/phút che mất mở đầu 172 và cuối 106 đến 112 từ/phút.
+chuong14:
+  file: chuong14_scenes.py
+  scenes:
+  - cls: DongHo12Phut
+    section: '14.1'
+    title: Một chuỗi 4 tầng trong 12 phút
+    desc: Mỗi tầng 3 phút gồm 2 phút trả lời (khoảng 280 từ ở 140 từ/phút) và 1 phút hỏi lại. Khung luyện của sách, không phải định dạng của chương trình nào.
+  - cls: LichLeitner
+    section: '14.1'
+    title: Lịch ôn Leitner cho 18 chuỗi
+    desc: Lab 2, 28 ngày, hộp 1-3-7-14 ngày; tổng 69 lượt, ngày 12 và 17 nặng nhất với 6 chuỗi (72 phút nói).
+  - cls: BoDePhuongSai
+    section: '14.2'
+    title: Một bổ đề phương sai, ba chỗ dùng
+    desc: Var(Σ wᵢxᵢ) = n·Var(w)·E[x²] cho khởi tạo He (1.995 → 1.808 qua 10 lớp ở một seed; 20 seed cho 1.35–3.21), 1/n còn 0.0017, chia √dₖ (std 7.99 → 0.999) và dòng residual (25.13 so với 2.000).
+  - cls: NganSachBoNho
+    section: '14.3'
+    title: Ngân sách bộ nhớ khi phục vụ mô hình 7B
+    desc: GPU giả định 80 GiB chứa 33 chuỗi 4096 token với MHA hoặc 134 với 8 đầu K/V; laptop 6 GiB cần 5.33 GiB cho 4-bit và KV 4096 token, chưa tính overhead.
+  - cls: CayChuoiNoiChuong
+    section: '14.3'
+    title: Từ một logit tới một token được phục vụ
+    desc: Chuỗi capstone P1 qua chương 2, 8, 9; mỗi nút một con số đã kiểm (p − y, entropy theo nhiệt độ, 0.5 MiB mỗi token, 3.36 token mỗi lượt).
+  - cls: TokenNhapHinhHoc
+    section: '14.4'
+    title: Speculative decoding, token kỳ vọng mỗi lượt
+    desc: α = 0.8, k = 4; tổng 1 + 0.8 + 0.64 + 0.512 + 0.4096 = 3.3616 (mô phỏng 3.3511), với giả định chấp nhận độc lập.
+  - cls: NganSachSTAR
+    section: '14.5'
+    title: Ngân sách giây cho một câu chuyện STAR
+    desc: Gợi ý MIT CAPD 20/10/60/10 cho 2 phút (24, 12, 72, 12 giây) so với câu chuyện mẫu 206 từ, 88 giây ở 140 từ/phút (15/11/56/18%, nhãn của sách không đếm); thanh vẽ theo số giây thật, còn dư 32 giây.

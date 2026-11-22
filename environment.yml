@@ -1,0 +1,20 @@
+# Môi trường conda cho Sổ tay Residency. Tạo bằng setup.bat (hoặc: conda env create -f environment.yml)
+name: residency-book
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-image
+  - jupyterlab
+  - ipykernel
+  - nbformat
+  - pyyaml
+  - streamlit
+  - manim
+  - ffmpeg
+  - pip
+# PyTorch sẽ được thêm khi tới chương 6 (cần bản CUDA hợp với RTX 4050).

@@ -1,0 +1,27 @@
+chuong12:
+  file: chuong12_scenes.py
+  scenes:
+  - cls: BM25BaoHoa
+    section: '12.1'
+    title: BM25, tf bão hòa và idf
+    desc: Ví dụ 12.1; phần tf tiến về k₁ + 1 = 2.2 (f = 1, 2, 5, 10, 50 cho 1.000 … 2.148; trục f vẽ các mốc cách đều, không theo tỉ lệ); bốn đoạn có điểm 1.2683, 0.9624, 0.5154, 0.4766; d₁ thắng d₂ và d₃ nhờ idf (gấp 1.94 lần), không phải nhờ tf.
+  - cls: RRFHopNhat
+    section: '12.1'
+    title: RRF gộp theo hạng
+    desc: Ví dụ 12.3; hai danh sách xếp hạng, k = 60 cho d1 0.03252 và d3 0.03227; k nhỏ làm hạng đầu áp đảo.
+  - cls: ChunkBienGioi
+    section: '12.2'
+    title: Sự thật hai câu bị cắt ngang
+    desc: Ví dụ 12.4; xác suất cắt 0.492, 0.238, 0.111, 0.048 cho c = 2, 4, 8, 16; chồng lấn 1 câu cho ans@top-3 = 1.000 và ans@top-1 = 0.833 (không chồng lấn 0.743 ở c = 4); hòa điểm làm top-1 phụ thuộc quy tắc phá hòa (0.677 nếu phá theo chỉ số nhỏ), cái giá là số chunk gấp 1.31 lần.
+  - cls: PhanRaLoiRAG
+    section: '12.2'
+    title: Phân rã lỗi RAG
+    desc: Ví dụ 12.6; Acc = 0.70·0.85 + 0.30·0.20 = 0.655; R lên 0.85 cho 0.7525, a₁ lên 0.92 cho 0.704.
+  - cls: PPRLanToa
+    section: '12.3'
+    title: PPR lan khối lượng
+    desc: Ví dụ 12.7; đồ thị 7 nút, hạt giống X, α = 0.5; hội tụ P₃ 0.1658 > P₁ 0.1556 > P₂ 0.0120 (thường đoạn xa xếp sau, không phải luật chung).
+  - cls: TamGiacBatKhaThi
+    section: '12.5'
+    title: Công bằng không thể có tất cả
+    desc: Ví dụ 12.10; cùng PPV 0.8 và FNR 0.2 nhưng tỉ lệ nền 0.5 và 0.2 buộc FPR 0.200 so với 0.050.

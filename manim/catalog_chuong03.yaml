@@ -1,0 +1,9 @@
+chuong03:
+  file: chuong03_scenes.py
+  scenes:
+    - {cls: LuoiBayes, section: "3.1", title: "Tỉ lệ nền và định lý Bayes", desc: "Lưới 1000 bình luận: 20 độc, 67 bị gắn cờ, chỉ 18 cờ đúng ⇒ P(độc ∣ cờ) ≈ 0.27."}
+    - {cls: PhuongSaiEnsemble, section: "3.2", title: "Phương sai của trung bình ensemble", desc: "Var = ρσ² + (1 − ρ)σ²/K với ρ = 0, 0.5, 0.9: giảm nhanh rồi dừng ở ρσ²."}
+    - {cls: ElipGauss, section: "3.3", title: "Gauss 2 chiều và khoảng cách Mahalanobis", desc: "Σ = [[2, 1], [1, 2]]: elip theo vector riêng; (1, 1) và (1, −1) cùng xa theo Euclid nhưng Mahalanobis² 0.667 vs 2.0."}
+    - {cls: PriorKeoVe0, section: "3.4", title: "MAP với prior Gauss là ridge", desc: "Likelihood đỉnh 2.214, prior N(0, τ²) kéo đỉnh posterior về 1.292 khi τ² = 0.1; đổi τ² để thấy đỉnh di chuyển."}
+    - {cls: KLKhongDoiXung, section: "3.5", title: "KL thuận và KL ngược", desc: "Fit một Gauss vào hỗn hợp hai đỉnh: KL(p‖q) cho N(0, 2.09²) phủ cả hai đỉnh, KL(q‖p) cho N(2.0, 0.60²) bám một đỉnh. Cuối cảnh hiện KL: 0.555 và 1.273 nat cho nghiệm thuận, 0.692 nat (≈ ln 2) cho nghiệm ngược."}
+    - {cls: PairedBootstrap, section: "3.5", title: "Bootstrap có cặp và không cặp", desc: "Bảng chéo 820/30/15/135: CI có cặp [0.002, 0.028] không chứa 0, CI không cặp [−0.017, 0.046] vắt qua 0."}

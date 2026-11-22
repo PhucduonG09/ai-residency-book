@@ -1,0 +1,31 @@
+chuong09:
+  file: chuong09_scenes.py
+  scenes:
+  - cls: BPEGhepCap
+    section: '9.1'
+    title: BPE gộp cặp phổ biến nhất
+    desc: Ví dụ 9.1; bốn từ của Sennrich, ba phép gộp đầu hòa nhau ở tần số 9, rồi lo, low; lowest thành low + est</w>.
+  - cls: GiaiMaNhietDo
+    section: '9.1'
+    title: Nhiệt độ và top-p
+    desc: Ví dụ 9.4; logit (3, 2, 1, 0, −1) ở T = 0.5, 1, 2, rồi cắt top-p = 0.9 giữ 3 token và chuẩn hóa còn (0.6652, 0.2447, 0.0900).
+  - cls: TokenMoiThamSo
+    section: '9.2'
+    title: Bao nhiêu token cho mỗi tham số
+    desc: Ví dụ 9.5 và 9.6; D/N của GPT-3, Gopher, Chinchilla, Llama 3; các điểm tối ưu ở C = 5.88·10²³ (92.8 với số mũ làm tròn, 57.9 với số mũ đủ chữ số, so với 18.4 của Epoch); 93 chỉ do làm tròn, paper nêu cách 3 ≈ 40B ở ngân sách Gopher.
+  - cls: DPOHaiLogTiSo
+    section: '9.3'
+    title: Loss DPO và likelihood displacement
+    desc: Ví dụ 9.7; z = 0.4, loss 0.5130, trọng số 0.4013; kịch bản đáp án thắng giảm xác suất mà loss giảm xuống 0.4741, thấp hơn 0.6931 lúc khởi đầu.
+  - cls: GRPONhom
+    section: '9.3'
+    title: Advantage theo nhóm của GRPO
+    desc: Ví dụ 9.8; G = 8, advantage +1.291 và −0.775; nhóm toàn sai không có gradient.
+  - cls: LoRAHaiMaTran
+    section: '9.4'
+    title: LoRA thay ΔW bằng BA
+    desc: Ví dụ 9.9; 16 777 216 so với 65 536 tham số (0.39%), B = 0 nên ΔW = 0 lúc đầu.
+  - cls: NgoaiLeLuongTu
+    section: '9.4'
+    title: Ngoại lệ trong lượng tử hóa
+    desc: Ví dụ 9.11; absmax int8 sai số 0.0016, thêm ngoại lệ 12.0 thì 0.0445, lượng tử theo khối thì khối chứa ngoại lệ vẫn sai 0.0276 còn khối kia, mã (16, 127, −95, 64), sai 0.0016.

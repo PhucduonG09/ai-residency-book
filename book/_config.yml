@@ -1,0 +1,6 @@
+title: Sổ tay luyện thi AI Residency — Track Research (NLP)
+author: PhucduonG
+execute:
+  execute_notebooks: "off"
+parse:
+  myst_enable_extensions: [dollarmath, amsmath]

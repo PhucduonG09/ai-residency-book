@@ -1,0 +1,22 @@
+# Mục lục theo định dạng Jupyter Book (v1)
+format: jb-book
+root: huong-dan
+chapters:
+- file: chuong-00
+- file: chuong-01
+- file: chuong-02
+- file: chuong-03
+- file: chuong-04
+- file: chuong-05
+- file: chuong-06
+- file: thi-thu-1
+- file: chuong-07
+- file: chuong-08
+- file: chuong-09
+- file: chuong-10
+- file: chuong-11
+- file: thi-thu-2
+- file: chuong-12
+- file: chuong-13
+- file: chuong-14
+- file: thi-thu-3

@@ -1,0 +1,5 @@
+{
+  "@jupyterlab/apputils-extension:notification": {"fetchNews": "false"},
+  "@jupyterlab/apputils-extension:themes": {"theme": "JupyterLab Light"},
+  "@jupyterlab/notebook-extension:tracker": {"autoStartDefaultKernel": true}
+}

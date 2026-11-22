@@ -1,0 +1,31 @@
+chuong10:
+  file: chuong10_scenes.py
+  scenes:
+  - cls: ELBOvaKhoangHo
+    section: '10.1'
+    title: ELBO và khe hở tới log p(x)
+    desc: Ví dụ 10.2; ELBO −1.5321, log p(x) −1.5155, khe hở 0.0166 bằng KL(q‖posterior), q về posterior thì khe hở bằng 0.
+  - cls: TaiThamSoHoa
+    section: '10.1'
+    title: Reparameterization, cùng kỳ vọng khác phương sai
+    desc: Ví dụ 10.3; z = μ + σε, độ lệch chuẩn gradient 1.60 (reparam) so với 3.64 (score function), cùng trung bình 1.0.
+  - cls: DiscriminatorToiUu
+    section: '10.2'
+    title: Discriminator tối ưu và JSD bão hòa
+    desc: Ví dụ 10.4–10.5; D*(x) = σ(2 − 2x) giữa N(0, 1) và N(2, 1); dịch xa thì JSD tiến về ln 2 còn KL tăng.
+  - cls: LichNhieuKhuechTan
+    section: '10.3'
+    title: Lịch nhiễu tuyến tính và cosine
+    desc: Ví dụ 10.6; ᾱ < 0.5 lần đầu tại t = 260 (tuyến tính) và 497 (cosine), T = 1000.
+  - cls: HuongDanKhongPhanLoai
+    section: '10.3'
+    title: Classifier-free guidance
+    desc: Ví dụ 10.8 và Lab 3; ε̃ = 0.50 / 0.80 / 1.40 / 2.75 theo w, độ lệch chuẩn lớp 0 co từ 1.338 xuống 0.550.
+  - cls: MaTranInfoNCE
+    section: '10.4'
+    title: InfoNCE trên ma trận tương đồng 4×4
+    desc: Ví dụ 10.9; loss trung bình 0.9898 / 0.6816 / 0.0322 cho τ = 1 / 0.5 / 0.1, và ln 4 khi mọi tương đồng bằng nhau.
+  - cls: MatNaMaskedVsCausal
+    section: '10.4'
+    title: Palindrome, masked LM so với causal LM
+    desc: Ví dụ 10.10; causal LM kẹt ở sàn 0.9868 (đo 0.9966), masked LM đạt 0.0023.

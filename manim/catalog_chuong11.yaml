@@ -1,0 +1,31 @@
+chuong11:
+  file: chuong11_scenes.py
+  scenes:
+  - cls: DemChienThang
+    section: '11.1'
+    title: Đếm chiến thắng
+    desc: Ví dụ 11.1; thắng 11/18 cột cho P = 0.2403; chỉ 6 phép so sánh độc lập thì thắng 5/6 (lưới tô khớp, dataset 1–5 thắng đa số cột) vẫn có P = 0.1094.
+  - cls: BaselineBiDoiXu
+    section: '11.2'
+    title: Baseline chưa tune làm hiệu ứng phình ra
+    desc: Ví dụ 11.3; cùng một phương pháp, ba cách tune baseline cho chênh +5.17, +0.29, +0.52 điểm.
+  - cls: NganSachCongBang
+    section: '11.2'
+    title: Cùng ngân sách tune hay không
+    desc: Ví dụ 11.4; EVP(k) của hai không gian tìm kiếm; chênh 2.4 điểm khi A có 4 lần thử còn B có 60, chỉ 0.2–0.4 khi cùng 60; chênh ở k = 1 chỉ là nhiễu.
+  - cls: AblationTuongTac
+    section: '11.2'
+    title: Remove-one khác add-one
+    desc: Ví dụ 11.5; LayerNorm −0.06 khi thêm vào baseline nhưng −1.35 khi bỏ khỏi mô hình đủ; tổng add-one 3.96 so với cả bộ 2.20.
+  - cls: HaiKhoangTinCay
+    section: '11.3'
+    title: CI theo seed không phải CI của độ chính xác thật
+    desc: Ví dụ 11.6; CI t [76.00, 77.28] từ 5 seed, giá trị thật 73.70 nằm ngoài; băng ± 2.72 của sai số lấy mẫu test; ví dụ là một lần rút ở đuôi, điển hình lệch khoảng 1 SE.
+  - cls: RoRiChonLocTruocKhiChia
+    section: '11.4'
+    title: Chọn đặc trưng trước khi chia
+    desc: Ví dụ 11.8; nhãn ngẫu nhiên, hai quy trình cho 0.867 (rò rỉ) và 0.491 (đúng), đường chuẩn 0.5.
+  - cls: BestOfK
+    section: '11.4'
+    title: Chọn tốt nhất trong K mô hình theo cùng test set
+    desc: Ví dụ 11.10; K mô hình bằng nhau 0.80, thiên lệch +0.00, +1.44, +2.33, +3.12, +4.06 điểm cho K = 1, 5, 20, 100, 1000.

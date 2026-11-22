@@ -1,0 +1,27 @@
+chuong13:
+  file: chuong13_scenes.py
+  scenes:
+  - cls: PheuTuyenRRP
+    section: '13.1'
+    title: Năm vòng công khai của Qualcomm RRP
+    desc: Batch 17 có 5 vòng; video là vòng 4 và định dạng không công khai (mức D). Nguồn mức B, kiểm ngày 03/11/2026.
+  - cls: BulletCV
+    section: '13.2'
+    title: Sửa một bullet CV
+    desc: Động từ hành động, bối cảnh, kết quả có số; số cờ linter đi từ 2 xuống 1 rồi 0.
+  - cls: MuiTenStatement
+    section: '13.3'
+    title: Statement như một đề xuất nhỏ
+    desc: Mẫu 306 từ sáu đoạn; đoạn mở 34 từ, ba đoạn việc đã làm 157 từ, bước tiếp theo 56 từ; đoạn lạc đề 59 từ bị bỏ, còn 247 từ.
+  - cls: LichNguocThu
+    section: '13.4'
+    title: Lịch ngược cho thư giới thiệu
+    desc: Hạn giả định 12/11/2027; hỏi người viết ngày 15/07, gửi gói tài liệu 17/09, nhắc 22/10 và 05/11.
+  - cls: BaPhutPresentation
+    section: '13.5'
+    title: Ngân sách cho video 3 phút
+    desc: Sáu đoạn 20, 25, 45, 45, 25, 20 giây; 47, 58, 105, 105, 58, 47 từ; tổng 180 giây và 420 từ ở 140 từ/phút.
+  - cls: NhipNoiWPM
+    section: '13.5'
+    title: Nhịp nói theo cửa sổ 30 giây
+    desc: Bản ghi giả lập; trung bình 130.0 từ/phút che mất mở đầu 172 và cuối 106 đến 112 từ/phút.

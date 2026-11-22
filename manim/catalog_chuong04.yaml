@@ -1,0 +1,10 @@
+chuong04:
+  file: chuong04_scenes.py
+  scenes:
+    - {cls: DayCungHamLoi, section: "4.1", title: "Dây cung và tiếp tuyến của hàm lồi", desc: "x²/2: dây cung luôn trên đồ thị, tiếp tuyến luôn dưới; x⁴/4 − x²: dây cung chui xuống dưới đồ thị."}
+    - {cls: KKTTiepXuc, section: "4.1", title: "KKT: đường mức chạm biên", desc: "Ví dụ 4.2: nghiệm (1.5, 0.5) với μ = 1; nới ràng buộc thành x + y ≤ 4 thì μ = 0."}
+    - {cls: TocDoTungHuongRieng, section: "4.2", title: "GD theo từng hướng riêng", desc: "f = ½(x₁² + 100x₂²): η = 0.01 cần 1 341 bước, η = 2/101 cần 691, η = 0.0201 phân kỳ."}
+    - {cls: SanNhieuSGD, section: "4.3", title: "Sàn nhiễu của SGD", desc: "Phương sai dừng ησ²/(B(2 − η)): 0.21 → 0.013 khi B = 16, → 0.020 khi η = 0.01."}
+    - {cls: MomentumBongLan, section: "4.4", title: "Momentum: √κ thay cho κ (bài bậc hai)", desc: "Cùng bài κ = 100: GD tối ưu 691 bước, heavy ball tối ưu 93 bước; vẽ x₁(k), x₂(k)."}
+    - {cls: AdamChuanHoaBuoc, section: "4.4", title: "Adam chuẩn hóa bước; AdamW khác L2", desc: "Bước đầu ≈ α với g = 10⁻⁴, 1, 10³; tham số không có gradient: AdamW 0.9900, L2 trong Adam 0.258."}
+    - {cls: NewtonYenNgua, section: "4.5", title: "Newton bị hút về yên ngựa", desc: "f = x² − y²: Newton nhảy vào (0, 0) trong 1 bước; GD η = 0.1 thoát sau 38 bước."}

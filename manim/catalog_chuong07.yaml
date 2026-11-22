@@ -1,0 +1,31 @@
+chuong07:
+  file: chuong07_scenes.py
+  scenes:
+  - cls: TruotKernel
+    section: '7.1'
+    title: 'Tích chập 2D: kernel trượt, nhân rồi cộng'
+    desc: Sobel dọc trên ảnh 5×5 của ví dụ 7.1; đầu ra 3×3 điền dần, ô đầu −1 = 1 − 4 + 2; convolution thật cho đúng âm.
+  - cls: ConvLaMaTran
+    section: '7.1'
+    title: Conv 1D là một phép nhân ma trận
+    desc: Ví dụ 7.3; ma trận Toeplitz 3×5 nhân (1, 2, 3, 4, 5) cho (−2, −2, −2), mỗi hàng là kernel dịch một cột.
+  - cls: ChongBaLop
+    section: '7.2'
+    title: Ba lớp 3×3 nhìn được vùng 7×7
+    desc: Ví dụ 7.5; receptive field 3, 5, 7 và số tham số 27C² so với 49C² (tỉ lệ 0.551).
+  - cls: AliasingStride
+    section: '7.2'
+    title: Stride 2 phá tính bất biến dịch chuyển
+    desc: Ví dụ 7.7; (1,0,1,0,…) lấy stride 2 ra (1,1,1,1), dịch một bước ra (0,0,0,0); thêm nhánh max-pool với xung đơn.
+  - cls: KhoiResidual
+    section: '7.3'
+    title: Khối residual bottleneck
+    desc: Ví dụ 7.10; 256 → 64 → 64 → 256 với đường tắt, 69 632 tham số so với 1 179 648 của hai conv 3×3 ở 256 kênh.
+  - cls: BN2dKenh
+    section: '7.4'
+    title: BatchNorm2d theo kênh, LayerNorm theo mẫu
+    desc: Ví dụ 7.12; tensor N = 2, C = 2, 2×2, kênh 0 có mean 4.5 và phương sai 5.25, rồi LN trên (C, H, W) của mẫu 0.
+  - cls: PatchLaConv
+    section: '7.5'
+    title: ViT biến ảnh thành chuỗi token bằng một conv
+    desc: Ví dụ 7.17; ảnh 224×224 thành lưới 14×14 = 196 patch, conv 16×16 stride 16 có 590 592 tham số.
