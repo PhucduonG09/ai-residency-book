@@ -37,8 +37,8 @@ Khi trang tuyển dụng chính thức công bố hạn thật, hãy sửa các 
 
 ## Cài đặt (một lần)
 
-1. Nhấp đúp `setup.bat`. Script dùng Anaconda có sẵn trên máy để tạo môi trường `residency-book` (Python 3.11, NumPy, JupyterLab, Streamlit, Manim, ffmpeg). Lần đầu mất khoảng 5–15 phút.
-2. **Cài PyTorch trước khi tới chương 6.** `setup.bat` chưa cài PyTorch, mà lab chương 6–12 cần nó. Bản CPU là đủ. Mở **Anaconda Prompt** rồi chạy:
+1. Nhấp đúp `setup.bat`. Script dùng Anaconda có sẵn trên máy để tạo môi trường `residency-book` (Python 3.11, NumPy, JupyterLab, Streamlit, Manim, ffmpeg, PyTorch bản CPU cho lab chương 6–12). Lần đầu mất khoảng 5–15 phút. Cuối cùng script in phiên bản PyTorch để bạn biết đã cài được.
+2. **Đã chạy `setup.bat` từ trước?** Chạy lại một lần: script cập nhật môi trường cũ và cài thêm PyTorch. Nếu vẫn báo chưa import được PyTorch, mở **Anaconda Prompt** rồi chạy:
 
    ```
    conda activate residency-book
