@@ -17,4 +17,9 @@ dependencies:
   - manim
   - ffmpeg
   - pip
-# PyTorch sẽ được thêm khi tới chương 6 (cần bản CUDA hợp với RTX 4050).
+  - pip:
+      # PyTorch bản CPU cho lab chương 6–12 (bản CPU là đủ, xem đầu lab chương 6).
+      # --index-url chỉ áp dụng cho các gói pip ở mục này, các gói conda ở trên không bị ảnh hưởng.
+      # Muốn dùng GPU: lấy lệnh cài bản CUDA hợp với card ở pytorch.org rồi cài đè trong môi trường này.
+      - --index-url https://download.pytorch.org/whl/cpu
+      - torch

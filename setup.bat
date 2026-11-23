@@ -17,6 +17,16 @@ if %errorlevel%==0 (
   echo Tao moi truong residency-book lan dau, co the mat 5-15 phut...
   call "%CONDA_BAT%" env create -f environment.yml
 )
+if errorlevel 1 (
+  echo.
+  echo Cai dat chua xong. Xem thong bao loi o tren, roi chay lai setup.bat.
+  pause
+  exit /b 1
+)
+echo.
+echo Kiem tra PyTorch...
+call "%CONDA_BAT%" run -n residency-book python -c "import torch; print('PyTorch', torch.__version__)"
+if errorlevel 1 echo Chua import duoc PyTorch. Lab chuong 6-12 can no; xem muc Cai dat trong README.
 echo.
 echo Xong. Nhap dup run_app.bat de mo app.
 pause

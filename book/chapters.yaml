@@ -20,6 +20,6 @@ chapters:
   - {id: chuong-14, title: "Chương 14 — Technical interview", file: chuong-14.md, status: ready, lab: chuong14, manim: chuong14, flashcards: chuong14}
   - {id: thi-thu-3, title: "Đề thi thử 3 — Mô phỏng đủ các vòng", file: thi-thu-3.md, status: ready}
 mock_tests:
-  - {name: "Đề thi thử 1", date: 2027-01-31}
-  - {name: "Đề thi thử 2", date: 2027-04-18}
-  - {name: "Đề thi thử 3", date: 2027-09-30}
+  - {name: "Đề thi thử 1", date: 2027-03-14}
+  - {name: "Đề thi thử 2", date: 2027-05-30}
+  - {name: "Đề thi thử 3", date: 2027-11-11}

@@ -2,7 +2,7 @@
 
 ## Cách làm
 
-Đề này làm vào cuối tuần 24 (khoảng 18/4/2027), sau khi bạn học xong chương 7–11. Nó mô phỏng một vòng **entrance test** theo hình dung của người soạn [giả định; định dạng đề thật không công khai]: một buổi bấm giờ, deep learning và NLP ở mức đề thi đầu vào, có phần lập trình. Khoảng 13 điểm nhắc lại Phần I (chương 1–6), như Đề thi thử 1 đã hứa. Mục đích là đo lại Phần II dưới áp lực thời gian, rồi quyết định ôn gì trước khi sang Phần III (chương 12, tuần 25).
+Đề này làm vào cuối tuần 24 (khoảng 30/5/2027), sau khi bạn học xong chương 7–11. Nó mô phỏng một vòng **entrance test** theo hình dung của người soạn [giả định; định dạng đề thật không công khai]: một buổi bấm giờ, deep learning và NLP ở mức đề thi đầu vào, có phần lập trình. Khoảng 13 điểm nhắc lại Phần I (chương 1–6), như Đề thi thử 1 đã hứa. Mục đích là đo lại Phần II dưới áp lực thời gian, rồi quyết định ôn gì trước khi sang Phần III (chương 12, tuần 25).
 
 **Lưu ý trung thực.** Đề entrance test của Qualcomm AI Residency và VinAI không công khai (xem `huong-dan.md`, dòng "Lưu ý trung thực"). Đây là **đề mô phỏng** do sách soạn, bám nội dung chương 7–11 và các chủ đề chung của các khóa deep learning và NLP (Stanford CS231n, CS224N ở mức chủ đề, không chép bài). Cơ cấu điểm, thời lượng, thứ tự các phần, số phút từng câu và mọi ngưỡng điểm là lựa chọn hoặc ước lượng của người soạn, chưa hiệu chỉnh trên người làm thật.
 
@@ -240,9 +240,9 @@ Cách chia điểm Phần C về chương (bộ chấm in sẵn phần tự đ�
 
 | Tổng | Việc nên làm |
 | --- | --- |
-| 75–100, không chương nào yếu | Sang Phần III đúng lịch (tuần 25, chương 12, bắt đầu 19/4/2027). Dành 1–2 giờ trong tuần 25 làm lại các câu sai theo bảng Câu sai → ôn gì ở dưới. |
+| 75–100, không chương nào yếu | Sang Phần III đúng lịch (tuần 25, chương 12, bắt đầu 31/5/2027). Dành 1–2 giờ trong tuần 25 làm lại các câu sai theo bảng Câu sai → ôn gì ở dưới. |
 | 60–74, không chương nào yếu | Sang Phần III đúng lịch, nhưng ôn có mục tiêu: mỗi chương "cần ôn" khoảng 2 giờ, rải trong tuần 25–26. Theo `plan/weeks.yaml` hai tuần này đã có 13.75 giờ mỗi tuần, nên dưới trần 15 giờ chỉ còn khoảng 1.25 giờ mỗi tuần; phần còn lại theo người soạn nên lấy từ luồng B (giảm từ 3 bài xuống 2 bài mỗi tuần trong hai tuần đó). Đây là đề xuất, bạn quyết. |
-| 0–59, hoặc có chương "yếu" | Cân nhắc lùi chương 12 một tuần và dùng tuần đó học lại chương yếu theo mục (đọc lại mục, tự làm lại ví dụ giải mẫu, làm bài ★ rồi ★★, làm lại mini-test). Lùi một tuần kéo theo cả lịch Phần III và Đề thi thử 3 (30/9/2027 theo `book/chapters.yaml`); quyết định thuộc về bạn. |
+| 0–59, hoặc có chương "yếu" | Cân nhắc lùi chương 12 một tuần và dùng tuần đó học lại chương yếu theo mục (đọc lại mục, tự làm lại ví dụ giải mẫu, làm bài ★ rồi ★★, làm lại mini-test). Lùi một tuần kéo theo cả lịch Phần III và Đề thi thử 3 (11/11/2027 theo `book/chapters.yaml`); quyết định thuộc về bạn. |
 
 **Chương yếu kéo theo chương nào.** Các việc ôn dưới đây là giờ **vượt kế hoạch** nếu không lấy từ luồng B như dòng 60–74 ở trên.
 
@@ -289,7 +289,7 @@ Cách chia điểm Phần C về chương (bộ chấm in sẵn phần tự đ�
 | B4 | Mục 7.1 (đoạn Backward của conv cũng là conv), ví dụ 7.3 và 7.4; mục 7.2, ví dụ 7.5 | Chương 7: bài ★3, ★★9; mini-test câu 2 |
 | B5 | Mục 11.3, ví dụ 11.6 và 11.7 | Chương 11: bài ★3, ★★8, ★★★13; mini-test câu 1, 5 |
 
-**Đo lại.** Sách không có bản thứ hai của đề này. Mini-test từng chương đo lại chương đó; Đề thi thử 3 (30/9/2027) là mốc đo tổng tiếp theo. Ghi điểm từng chương, điểm trong giờ và điểm cuối vào trang Tiến độ, đặt cạnh số của Đề thi thử 1 để so.
+**Đo lại.** Sách không có bản thứ hai của đề này. Mini-test từng chương đo lại chương đó; Đề thi thử 3 (11/11/2027) là mốc đo tổng tiếp theo. Ghi điểm từng chương, điểm trong giờ và điểm cuối vào trang Tiến độ, đặt cạnh số của Đề thi thử 1 để so.
 
 ## Lời giải
 

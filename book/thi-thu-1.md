@@ -2,7 +2,7 @@
 
 ## Cách làm
 
-Đề này làm vào cuối tuần 13 (khoảng 31/1/2027), sau khi bạn học xong chương 1–6. Nó mô phỏng một vòng **entrance test** theo hình dung của người soạn [giả định; định dạng đề thật không công khai]: một buổi bấm giờ, toán và ML nền tảng, có phần lập trình. Mục đích là đo lại Phần I trong điều kiện có áp lực thời gian, rồi quyết định ôn chỗ nào trước khi sang Phần II.
+Đề này làm vào cuối tuần 13 (khoảng 14/3/2027), sau khi bạn học xong chương 1–6. Nó mô phỏng một vòng **entrance test** theo hình dung của người soạn [giả định; định dạng đề thật không công khai]: một buổi bấm giờ, toán và ML nền tảng, có phần lập trình. Mục đích là đo lại Phần I trong điều kiện có áp lực thời gian, rồi quyết định ôn chỗ nào trước khi sang Phần II.
 
 **Lưu ý trung thực.** Đề entrance test của Qualcomm AI Residency và VinAI không công khai (xem `huong-dan.md`, dòng "Lưu ý trung thực"). Đây là **đề mô phỏng** do sách soạn, dựa trên yêu cầu công khai "thành thạo lập trình và toán" và nội dung các khóa ML nền tảng (Stanford CS229, CS231n, MIT 18.065 ở mức chủ đề, không chép bài). Cơ cấu điểm, thời lượng, thứ tự các phần, số phút từng câu và mọi ngưỡng điểm là lựa chọn hoặc ước lượng của người soạn, chưa hiệu chỉnh trên người làm thật.
 
@@ -253,14 +253,14 @@ Cách chia điểm Phần C về chương (bộ chấm in sẵn phần tự đ�
 
 | Tổng | Việc nên làm |
 | --- | --- |
-| 75–100, không chương nào yếu | Sang Phần II đúng lịch (tuần 14, chương 7, bắt đầu 1/2/2027). Dành 1–2 giờ trong tuần 14 làm lại các câu sai theo bảng Câu sai → ôn gì ở dưới. |
+| 75–100, không chương nào yếu | Sang Phần II đúng lịch (tuần 14, chương 7, bắt đầu 15/3/2027). Dành 1–2 giờ trong tuần 14 làm lại các câu sai theo bảng Câu sai → ôn gì ở dưới. |
 | 60–74, không chương nào yếu | Sang Phần II đúng lịch, nhưng ôn có mục tiêu: mỗi chương "cần ôn" khoảng 2 giờ, rải trong tuần 14–15. Lịch hai tuần này đã 14.5 và 15 giờ, sát trần 12–15 giờ, nên phải lấy giờ từ đâu đó; cách ít hại nhất theo người soạn là giảm luồng B từ 3 bài xuống 2 bài mỗi tuần trong hai tuần đó. Đây là đề xuất, bạn quyết. |
-| 0–59, hoặc có chương "yếu" | Cân nhắc lùi chương 7 một tuần và dùng tuần đó học lại chương yếu theo mục (đọc lại mục, tự làm lại ví dụ giải mẫu, làm bài ★ rồi ★★, làm lại mini-test). Lùi một tuần kéo theo cả lịch Phần II và Đề thi thử 2 (18/4/2027); quyết định thuộc về bạn. |
+| 0–59, hoặc có chương "yếu" | Cân nhắc lùi chương 7 một tuần và dùng tuần đó học lại chương yếu theo mục (đọc lại mục, tự làm lại ví dụ giải mẫu, làm bài ★ rồi ★★, làm lại mini-test). Lùi một tuần kéo theo cả lịch Phần II và Đề thi thử 2 (30/5/2027); quyết định thuộc về bạn. |
 
 **Chương yếu kéo theo chương nào** (cùng logic với bài chẩn đoán). Các việc ôn dưới đây là giờ **vượt kế hoạch** nếu không lấy từ luồng B như dòng 60–74 ở trên.
 
 - Chương 6 yếu: đừng bắt đầu chương 7 trước khi làm lại mini-test chương 6 và đạt từ 24/30; lab chương 7 trở đi dùng PyTorch và giả định bạn debug được vòng huấn luyện.
-- Chương 1 hoặc 2 yếu: chương 8 (attention) cần nhân ma trận, softmax và Jacobian của nó, và theo `plan/weeks.yaml` bắt đầu ngày 15/2/2027, tức chỉ 2 tuần sau đề này; ôn rải 30 phút mỗi ngày bằng bài tính nhanh chương 1–2 trong hai tuần chương 7 (khoảng 3.5 giờ mỗi tuần), thay vì dừng lịch.
+- Chương 1 hoặc 2 yếu: chương 8 (attention) cần nhân ma trận, softmax và Jacobian của nó, và theo `plan/weeks.yaml` bắt đầu ngày 29/3/2027, tức chỉ 2 tuần sau đề này; ôn rải 30 phút mỗi ngày bằng bài tính nhanh chương 1–2 trong hai tuần chương 7 (khoảng 3.5 giờ mỗi tuần), thay vì dừng lịch.
 - Chương 3 yếu: chương 9–11 dùng cross-entropy, perplexity, CI liên tục; ôn mục 3.4–3.5 trước chương 9.
 - Chương 4 yếu: các lab Phần II huấn luyện bằng Adam, và chương 8 dùng lịch learning rate có warmup; ôn mục 4.2 (điều kiện ổn định của learning rate) và 4.4 trước chương 8.
 - Chương 5 yếu: chương 11 nâng metric và leakage lên mức thiết kế thí nghiệm; ôn mục 5.2 trước chương 11.
@@ -301,7 +301,7 @@ Cách chia điểm Phần C về chương (bộ chấm in sẵn phần tự đ�
 | B4 | Mục 5.2, ví dụ 5.4; ví dụ 3.8 (ridge là MAP) | Chương 5: bài ★★6, ★★8 |
 | B5 | Mục 2.5, ví dụ 2.10 và 2.11; mục 6.2, ví dụ 6.4 | Chương 6: bài ★3; mini-test câu 1 |
 
-**Đo lại.** Sách không có bản thứ hai của đề này. Mini-test từng chương đo lại chương đó; Đề thi thử 2 (18/4/2027) phủ Phần II và có một phần nhỏ nhắc lại Phần I [dự kiến, đề 2 chưa viết]. Ghi điểm từng chương, điểm trong giờ và điểm cuối vào trang Tiến độ để so.
+**Đo lại.** Sách không có bản thứ hai của đề này. Mini-test từng chương đo lại chương đó; Đề thi thử 2 (30/5/2027) phủ Phần II và có một phần nhỏ nhắc lại Phần I [dự kiến, đề 2 chưa viết]. Ghi điểm từng chương, điểm trong giờ và điểm cuối vào trang Tiến độ để so.
 
 ## Lời giải
 
