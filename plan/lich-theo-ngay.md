@@ -32,7 +32,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Bài tính nhanh 1–8, bấm giờ (0.5 giờ)
 - [C] Đọc to câu trả lời mẫu chuỗi 1 (PCA), ghi âm 2 phút (0.5 giờ)
 
-**Chủ nhật 13/12** · nghỉ hoặc làm bù
+**Chủ nhật 13/12** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 1 — Chương 1 (mục 1.3–1.4)
 
@@ -161,7 +163,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Mini-test chương 2 (30 phút, bấm giờ, không máy tính); nhập điểm ở trang Tiến độ (0.5 giờ)
 - [C] Chuỗi phỏng vấn 1–4 chương 2, mỗi chuỗi chỉ tầng 1–2 bằng tiếng Anh, 15 phút một chuỗi, ghi âm (1 giờ)
 
-**Chủ nhật 10/01** · nghỉ hoặc làm bù
+**Chủ nhật 10/01** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 5 — Chương 3 (mục 3.1–3.3)
 
@@ -331,7 +335,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Xem 7 video Manim chương 5 (LogisticTachDuoc … KMeansVaEM) trong manim/videos/chuong05 (0.5 giờ)
 - [C] Chuỗi phỏng vấn 1 (logistic regression) và 2 (bias–variance và regularization) chương 5: trả lời tiếng Việt rồi tiếng Anh, ghi âm (1 giờ)
 
-**Chủ nhật 14/02** · nghỉ hoặc làm bù
+**Chủ nhật 14/02** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 10 — Chương 5 (mục 5.4–5.5, ★★★, lab, mini-test)
 
@@ -432,7 +438,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Mini-test chương 6 (30 phút, bấm giờ, không máy tính); nhập điểm ở trang Tiến độ (0.5 giờ)
 - [C] Chuỗi phỏng vấn 3 (normalization) và 4 (debug huấn luyện) chương 6: trả lời tiếng Việt rồi tiếng Anh, ghi âm (1 giờ)
 
-**Chủ nhật 07/03** · nghỉ hoặc làm bù
+**Chủ nhật 07/03** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 13 — Mini-test chương 2–6 và Đề thi thử 1
 
@@ -634,7 +642,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [C] Chuỗi phỏng vấn 1 (token hóa, perplexity, giải mã) và 2 (quy luật quy mô) chương 9: trả lời tiếng Việt rồi tiếng Anh, ghi âm (0.75 giờ)
 - [C] Nói 3 phút về một paper: Scaling Laws for Neural Language Models (hoặc một paper về quy luật quy mô bạn chọn). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế) (0.5 giờ)
 
-**Chủ nhật 18/04** · nghỉ hoặc làm bù
+**Chủ nhật 18/04** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 19 — Chương 9 (mục 9.4–9.5, ★★★, lab, mini-test)
 
@@ -701,7 +711,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [C] Chuỗi phỏng vấn A (VAE) và B (GAN) chương 10: trả lời tiếng Việt rồi tiếng Anh, ghi âm (0.75 giờ)
 - [C] Nói 3 phút về một paper: Auto-Encoding Variational Bayes (hoặc paper GAN gốc). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế) (0.5 giờ)
 
-**Chủ nhật 02/05** · nghỉ hoặc làm bù
+**Chủ nhật 02/05** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 21 — Chương 10 (mục 10.4–10.5, ★★★, lab, mini-test)
 
@@ -864,7 +876,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [C] Chuỗi phỏng vấn hỏi về dự án: trả lời tiếng Anh 3 phút "Why this project, what is your contribution?" và ghi âm (0.75 giờ)
 - [C] Nói 3 phút về một paper: paper 1 trong danh sách chương 12. Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế) (0.5 giờ)
 
-**Chủ nhật 06/06** · nghỉ hoặc làm bù
+**Chủ nhật 06/06** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 26 — Chương 12 (2/4): retrieval, RAG và paper 4–6
 
@@ -1059,7 +1073,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [C] Tập demo dự án 3 phút bằng tiếng Anh theo repo (nói to, ghi âm); ghi chỗ khán giả sẽ không hiểu (1 giờ)
 - [C] Nói 3 phút về một paper: bản demo dự án (như giới thiệu với người chưa biết gì). Ghi âm, nghe lại một lần và ghi 2 điểm cần sửa (cấu trúc: vấn đề, ý chính, kết quả, hạn chế) (0.5 giờ)
 
-**Chủ nhật 18/07** · nghỉ hoặc làm bù
+**Chủ nhật 18/07** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 32 — Chương 13 (mục 13.1–13.2): bản đồ hồ sơ và CV
 
@@ -1158,7 +1174,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Soạn kịch bản video 3 phút (khoảng 420 từ), chạy công cụ kiểm kịch bản, ghi hình thử một bản; chéo kiểm các con số với CV và statement (1.5 giờ)
 - [C] Nói 3 phút theo kịch bản video, bấm giờ và đo từ/phút; nghe lại bản ghi (0.5 giờ)
 
-**Chủ nhật 08/08** · nghỉ hoặc làm bù
+**Chủ nhật 08/08** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 35 — Chương 14 (1/4): chuỗi tổng hợp, toán và ML nền
 
@@ -1284,7 +1302,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Ôn sổ lỗi cuối cùng của Phần IV (1 giờ)
 - [C] Nói 3 phút về lý do bạn muốn làm nghiên cứu NLP và kế hoạch 2 năm tới; ghi âm (0.5 giờ)
 
-**Chủ nhật 05/09** · nghỉ hoặc làm bù
+**Chủ nhật 05/09** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 39 — Chẩn đoán điểm yếu (1/2): chương 0 và mini-test chương 1–5
 
@@ -1512,7 +1532,9 @@ File này do `python plan/chia_ngay.py` sinh ra từ `plan/weeks.yaml`; đừng 
 - [Chương] Đọc lại phần chương 13 về hồ sơ: CV, statement, thư giới thiệu; đối chiếu từng mục với hồ sơ của bạn (1 giờ)
 - [C] Nói 3 phút về một paper; ghi âm (0.5 giờ)
 
-**Chủ nhật 24/10** · nghỉ hoặc làm bù
+**Chủ nhật 24/10** · 1.5 giờ
+
+- [Chung] Cập nhật ngành (Chủ nhật, 1.5 giờ). Mục đích: biết cái gì đã đổi so với lúc sách được viết, không học thêm chủ đề mới. (1) Đọc trang ghi chú phát hành (release notes) của PyTorch, NumPy, Streamlit và thư viện của chương sắp học; ghi thay đổi nào làm code trong sách chạy khác. (2) Lướt danh sách paper mới của chủ đề chương sắp học trên arXiv hoặc trang hội nghị, chọn 1 paper đọc tóm tắt. (3) Ghi 3 dòng vào sổ "thay đổi ngành": cái mới, chương liên quan, sách có cần sửa không. Chỗ cần sửa sẽ được xử lý ở đợt rà soát hằng quý. Ghi ngày đọc cạnh mỗi dòng. (1.5 giờ)
 
 ## Tuần 46 — Nộp hồ sơ khi đợt tuyển mở và mock interview toàn phần
 

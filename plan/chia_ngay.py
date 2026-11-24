@@ -84,7 +84,7 @@ def plan_week(w):
     alloc = {}
     load = defaultdict(float)
     for t in tasks:
-        p = PINS.get(t["id"])
+        p = PINS.get(t["id"], 7 if t["id"].endswith("-nganh") else None)  # cập nhật ngành hằng tháng: Chủ nhật
         if p is not None:
             alloc[t["id"]] = {p: t["hours"]} if isinstance(p, int) else dict(p)
             for d, h in alloc[t["id"]].items():

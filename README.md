@@ -27,6 +27,11 @@ Lộ trình gồm 49 tuần (tuần 0 đến tuần 48), bắt đầu **Thứ Ha
 
 Khi trang tuyển dụng chính thức công bố hạn thật, hãy sửa các mốc này theo hạn thật.
 
+**Giữ kiến thức không lỗi thời.**
+
+- **Mỗi tháng một buổi "Cập nhật ngành"** (Chủ nhật, 1.5 giờ, 11 buổi từ 13/12/2026 đến 24/10/2027): đọc ghi chú phát hành của thư viện, lướt paper mới của chương sắp học, ghi 3 dòng vào sổ "thay đổi ngành". Những tuần có buổi này tổng giờ lên 15–16 giờ; Thứ Hai đến Thứ Bảy không đổi.
+- **Mỗi quý một đợt rà soát tự động** (ngày 7 các tháng 12, 3, 6, 9, lúc 9 giờ sáng giờ Việt Nam): Claude rà các chương sẽ học trong khoảng 4 tháng tới, kiểm lại phần dễ lỗi thời (phiên bản thư viện, model, benchmark, đợt tuyển) với nguồn chính thức, rồi mở pull request sửa kèm ngày kiểm tra. Phần nền tảng (toán, thuật toán) không bị đổi nếu không sai.
+
 **Việc từng ngày.** Mỗi việc trong `plan/weeks.yaml` có trường `days` ghi nó làm vào thứ mấy và bao nhiêu giờ (1 = Thứ Hai, 7 = Chủ nhật). Thứ Hai đến Thứ Bảy chia đều giờ của tuần, khoảng 2–2.5 giờ mỗi ngày; Chủ nhật để nghỉ hoặc làm bù, trừ ngày có đề thi thử. Việc của chương giữ thứ tự đọc → bài tập → lab → mini-test; việc dài được chia thành nhiều buổi. Bản đọc được nằm ở [`plan/lich-theo-ngay.md`](plan/lich-theo-ngay.md). Sửa việc trong `weeks.yaml` xong thì chạy `python plan/chia_ngay.py` để chia lại.
 
 **App dùng ngày thế nào.** Trang **Tuần này** tự chọn tuần chứa ngày hôm nay và mở sẵn mục của hôm nay. Chọn "Xem theo: Ngày" để tích từng buổi, hoặc "Luồng" để xem theo chương và luồng A, B, C như trước. Trước 7/12/2026, app hiện tuần 0. Ô đếm ngược lấy ngày đề thi thử từ `book/chapters.yaml`.
