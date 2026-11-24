@@ -90,6 +90,29 @@ def weeks() -> list[dict]:
     return ws
 
 
+WEEKDAYS = {1: "Thứ Hai", 2: "Thứ Ba", 3: "Thứ Tư", 4: "Thứ Năm", 5: "Thứ Sáu", 6: "Thứ Bảy", 7: "Chủ nhật"}
+
+
+def task_days(t: dict) -> dict[int, float]:
+    """{thứ: giờ} của một việc (1 = Thứ Hai). Việc chưa có trường days coi như cả tuần một khối, đặt ở Thứ Hai."""
+    return {int(d): float(h) for d, h in (t.get("days") or {1: t["hours"]}).items()}
+
+
+def part_key(t: dict, day: int) -> str:
+    """Khóa tiến độ của một buổi; việc chỉ có một buổi dùng luôn id của việc."""
+    return t["id"] if len(task_days(t)) == 1 else f"{t['id']}#{day}"
+
+
+def done_hours(t: dict, progress: dict) -> float:
+    if t["id"] in progress["done"]:
+        return t["hours"]
+    return sum(h for d, h in task_days(t).items() if part_key(t, d) in progress["done"])
+
+
+def is_done(t: dict, progress: dict) -> bool:
+    return t["id"] in progress["done"] or all(part_key(t, d) in progress["done"] for d in task_days(t))
+
+
 def current_week_index(ws: list[dict]) -> int:
     t = today()
     for i, w in enumerate(ws):
@@ -180,9 +203,9 @@ def page_week(progress: dict) -> None:
         st.caption(f"Tuần hiện tại · hôm nay {today():%d/%m/%Y}")
 
     tasks = w["tasks"]
-    done = [t for t in tasks if t["id"] in progress["done"]]
+    done = [t for t in tasks if is_done(t, progress)]
     h_total = sum(t["hours"] for t in tasks)
-    h_done = sum(t["hours"] for t in done)
+    h_done = sum(done_hours(t, progress) for t in tasks)
     nxt = next((m for m in mock_tests() if as_date(m["date"]) >= today()), None)
     c1, c2, c3 = st.columns(3)
     c1.metric("Việc đã xong", f"{len(done)}/{len(tasks)}")
@@ -191,24 +214,69 @@ def page_week(progress: dict) -> None:
         c3.metric(f"Tới {nxt['name']}", f"{(as_date(nxt['date']) - today()).days} ngày")
     st.progress(h_done / h_total if h_total else 0.0)
 
-    def toggle(task_id: str):
-        if st.session_state[f"cb_{task_id}"]:
-            progress["done"][task_id] = today().isoformat()
+    def toggle(t: dict, day: int | None, key: str):
+        """day=None: tích cả việc (xem theo luồng); day=n: tích một buổi (xem theo ngày)."""
+        on = st.session_state[key]
+        parts = [part_key(t, d) for d in task_days(t)]
+        if day is None:
+            for k in {t["id"], *parts}:
+                progress["done"].pop(k, None)
+            if on:
+                progress["done"][t["id"]] = today().isoformat()
         else:
-            progress["done"].pop(task_id, None)
+            k = part_key(t, day)
+            if on:
+                progress["done"][k] = today().isoformat()
+            else:
+                progress["done"].pop(k, None)
+                if k != t["id"] and t["id"] in progress["done"]:
+                    # việc từng được tích cả khối: bỏ tích một buổi thì giữ các buổi còn lại
+                    progress["done"].pop(t["id"])
+                    for other in parts:
+                        if other != k:
+                            progress["done"][other] = today().isoformat()
+            if all(p in progress["done"] for p in parts):
+                progress["done"][t["id"]] = today().isoformat()
         save_progress(progress)
 
-    for key, name in STREAMS.items():
-        group = [t for t in tasks if t["stream"] == key]
-        if not group:
-            continue
-        st.subheader(name)
-        for t in group:
-            st.checkbox(f"{t['text']} · {t['hours']:g} giờ", value=t["id"] in progress["done"],
-                        key=f"cb_{t['id']}", on_change=toggle, args=(t["id"],))
+    is_now = w["start"] <= today() <= w["end"]
+    view = st.radio("Xem theo", ["Ngày", "Luồng"], horizontal=True, key="week_view")
+    if view == "Ngày":
+        st.caption("Thứ Hai đến Thứ Bảy chia đều giờ của tuần; Chủ nhật để nghỉ hoặc làm bù, trừ khi có đề thi. "
+                   "Việc dài được chia nhiều buổi, mỗi buổi tích riêng. Việc chưa xong hôm nay thì làm bù vào ngày sau.")
+        for d, dname in WEEKDAYS.items():
+            day_tasks = [t for t in tasks if d in task_days(t)]
+            date = w["start"] + dt.timedelta(days=d - 1)
+            today_mark = " · hôm nay" if date == today() else ""
+            if not day_tasks:
+                if d == 7:
+                    st.markdown(f"**{dname} {date:%d/%m}**{today_mark} · nghỉ hoặc làm bù")
+                continue
+            h_day = sum(task_days(t)[d] for t in day_tasks)
+            with st.expander(f"{dname} {date:%d/%m}{today_mark} · {h_day:g} giờ",
+                             expanded=(date == today()) or (not is_now and d == 1)):
+                for t in day_tasks:
+                    td = task_days(t)
+                    n = len(td)
+                    label = f"{STREAMS[t['stream']]} · {t['text']} · {td[d]:g} giờ"
+                    if n > 1:
+                        label += f" (buổi {sorted(td).index(d) + 1}/{n} của việc {t['hours']:g} giờ)"
+                    key = f"cb_{t['id']}_d{d}"
+                    st.checkbox(label, value=part_key(t, d) in progress["done"] or t["id"] in progress["done"],
+                                key=key, on_change=toggle, args=(t, d, key))
+    else:
+        for skey, name in STREAMS.items():
+            group = [t for t in tasks if t["stream"] == skey]
+            if not group:
+                continue
+            st.subheader(name)
+            for t in group:
+                key = f"cb_{t['id']}"
+                st.checkbox(f"{t['text']} · {t['hours']:g} giờ", value=is_done(t, progress),
+                            key=key, on_change=toggle, args=(t, None, key))
 
     st.divider()
-    st.caption("Kế hoạch các tuần nằm ở plan/weeks.yaml; tuần mới được thêm khi chương tiếp theo được viết.")
+    st.caption("Kế hoạch nằm ở plan/weeks.yaml. Chạy python plan/chia_ngay.py để chia lại việc theo ngày sau khi sửa lịch.")
 
 
 # ----------------------------------------------------------------- trang: Sách
@@ -542,7 +610,7 @@ def page_progress(progress: dict) -> None:
     rows = []
     for w in ws:
         plan_h = sum(t["hours"] for t in w["tasks"])
-        done_h = sum(t["hours"] for t in w["tasks"] if t["id"] in progress["done"])
+        done_h = sum(done_hours(t, progress) for t in w["tasks"])
         rows.append({"Tuần": w["start"].strftime("%d/%m"), "Kế hoạch (giờ)": plan_h, "Đã làm (giờ)": done_h})
     import pandas as pd
     df = pd.DataFrame(rows).set_index("Tuần")
@@ -550,7 +618,7 @@ def page_progress(progress: dict) -> None:
     st.bar_chart(df, stack=False)
 
     st.subheader("Việc còn tồn của các tuần đã qua")
-    late = [(w, t) for w in ws if w["end"] < today() for t in w["tasks"] if t["id"] not in progress["done"]]
+    late = [(w, t) for w in ws if w["end"] < today() for t in w["tasks"] if not is_done(t, progress)]
     if late:
         for w, t in late:
             st.write(f"- {w['start']:%d/%m} · {STREAMS[t['stream']]} · {t['text']}")

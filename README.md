@@ -27,7 +27,9 @@ Lộ trình gồm 49 tuần (tuần 0 đến tuần 48), bắt đầu **Thứ Ha
 
 Khi trang tuyển dụng chính thức công bố hạn thật, hãy sửa các mốc này theo hạn thật.
 
-**App dùng ngày thế nào.** Trang **Tuần này** tự chọn tuần chứa ngày hôm nay. Trước 7/12/2026, app hiện tuần 0. Ô đếm ngược lấy ngày đề thi thử từ `book/chapters.yaml`.
+**Việc từng ngày.** Mỗi việc trong `plan/weeks.yaml` có trường `days` ghi nó làm vào thứ mấy và bao nhiêu giờ (1 = Thứ Hai, 7 = Chủ nhật). Thứ Hai đến Thứ Bảy chia đều giờ của tuần, khoảng 2–2.5 giờ mỗi ngày; Chủ nhật để nghỉ hoặc làm bù, trừ ngày có đề thi thử. Việc của chương giữ thứ tự đọc → bài tập → lab → mini-test; việc dài được chia thành nhiều buổi. Bản đọc được nằm ở [`plan/lich-theo-ngay.md`](plan/lich-theo-ngay.md). Sửa việc trong `weeks.yaml` xong thì chạy `python plan/chia_ngay.py` để chia lại.
+
+**App dùng ngày thế nào.** Trang **Tuần này** tự chọn tuần chứa ngày hôm nay và mở sẵn mục của hôm nay. Chọn "Xem theo: Ngày" để tích từng buổi, hoặc "Luồng" để xem theo chương và luồng A, B, C như trước. Trước 7/12/2026, app hiện tuần 0. Ô đếm ngược lấy ngày đề thi thử từ `book/chapters.yaml`.
 
 **Muốn dời lịch lần nữa:**
 
@@ -77,6 +79,7 @@ Nếu thư mục này là bản clone của repo, chạy `git pull` để lấy 
 | `manim/` | Code các cảnh (`chuongXX_scenes.py`), video render sẵn (`videos/`), danh mục (`catalog.yaml`), lời giải bài dựng cảnh (`loigiai/`), cảnh của bạn (`cua-toi/`) |
 | `plan/weeks.yaml` | Nhiệm vụ từng tuần, chia theo chương học và luồng A, B, C |
 | `plan/ve_lo_trinh.py` | Vẽ lại `plan/lo-trinh.png` từ lịch hiện tại |
+| `plan/chia_ngay.py` | Chia việc mỗi tuần ra từng ngày (trường `days`) và sinh `plan/lich-theo-ngay.md` |
 | `flashcards/` | Thẻ ôn tập dạng CSV cho chương 1–14 (nhập được vào Anki) |
 | `progress/progress.json` | Tiến độ của bạn: việc đã xong, lịch ôn thẻ, điểm mini-test (app tự tạo, không đưa lên git) |
 
