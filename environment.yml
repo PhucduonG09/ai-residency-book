@@ -15,6 +15,7 @@ dependencies:
   - pyyaml
   - streamlit
   - manim
+  - gtts        # giọng đọc Google cho video Manim (manim/giong_doc.py)
   - ffmpeg
   - pip
   - pip:

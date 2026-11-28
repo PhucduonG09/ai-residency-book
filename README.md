@@ -96,6 +96,12 @@ Nếu thư mục này là bản clone của repo, chạy `git pull` để lấy 
 ## Ghi chú
 
 - **Manim trên Windows:** các cảnh dùng font Segoe UI khi render trên Windows. Nếu một ký hiệu (ví dụ ᵀ) hiện thành ô vuông, đổi biến `FONT` ở đầu file cảnh sang `"Cambria Math"`. Video trong `manim/videos/` đã được render sẵn nên app chạy được ngay cả khi chưa render lại.
+- **Giọng đọc cho video Manim:** `manim/giong_doc.py` dùng gTTS (giọng tiếng Việt của Google Translate, miễn phí, không cần API key). Trong cảnh, bọc từng đoạn hình bằng `with noi(self, "câu thoại"):`; cảnh tự kéo dài cho khớp câu đọc. Hiện mới có lời thoại cho `GradientDongMuc` và `FanOutCongDon` (chương 2). Render lại (lần đầu cần Internet, mp3 được lưu ở `manim/giong_doc_cache/`):
+  ```
+  cd manim
+  manim -qm chuong02_scenes.py GradientDongMuc FanOutCongDon
+  ```
+  rồi chép hai file mp4 trong `manim/media/videos/chuong02_scenes/720p30/` vào `manim/videos/chuong02/`. Đặt `MANIM_KHONG_GIONG=1` để render câm như cũ.
 - **Công thức** trong sách hiển thị bằng KaTeX của Streamlit; ký hiệu trong câu chữ dùng Unicode (Aᵀ, ‖x‖₂, ℝⁿ).
 - **Chưa thử trên Windows thật:** `setup.bat`, các script mở app và các bộ chấm mới chỉ chạy thử trên Linux. Nếu gặp lỗi, chạy `run_app.bat` để xem thông báo.
 - **Giả định cần xác nhận:** ngành học 4 năm, hạn nộp 12/11/2027, các ngưỡng điểm và thời gian làm đề đều là ước lượng của sách, chưa kiểm trên người làm thật.

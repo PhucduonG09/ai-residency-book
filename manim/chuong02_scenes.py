@@ -7,8 +7,13 @@ Chỉ dùng Text (không cần LaTeX), nên chỉ cần Manim Community + ffmpeg
 Mỗi cảnh dùng đúng số liệu của ví dụ giải mẫu trong sách.
 """
 import sys
+from pathlib import Path
+
 import numpy as np
 from manim import *
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from giong_doc import noi  # giọng đọc Google (gTTS); MANIM_KHONG_GIONG=1 để render câm
 
 FONT = "Segoe UI" if sys.platform == "win32" else "DejaVu Sans"
 C1, C2, C_ACC = GREEN, RED, YELLOW
@@ -74,11 +79,14 @@ class GradientDongMuc(Scene):
                           p0 + unit * 0.9 * np.array([1, -1, 0]) / np.sqrt(2), color=GREY_B)
 
         nums = tick_labels(ax, [0, 1, 2, 3], [1, 2, 3, 4])
-        self.play(Write(title), Create(ax), FadeIn(nums))
-        self.play(*[Create(l) for l in levels], FadeIn(lab8), FadeIn(dot), run_time=2)
-        cap = swap_caption(self, None, "Tại x₀ = (1, 2): f = 8, ∇f = (2x₁x₂, x₁² + 3) = (4, 4)")
-        self.play(GrowArrow(garrow), FadeIn(glab), Create(tang))
-        self.wait(1)
+        with noi(self, "Xét hàm f bằng x một bình phương nhân x hai, cộng ba x hai. "
+                       "Mỗi đường cong là một đường đồng mức, nơi giá trị của f không đổi."):
+            self.play(Write(title), Create(ax), FadeIn(nums))
+            self.play(*[Create(l) for l in levels], FadeIn(lab8), FadeIn(dot), run_time=2)
+        with noi(self, "Tại điểm một, hai, f bằng tám, và gradient bằng bốn, bốn."):
+            cap = swap_caption(self, None, "Tại x₀ = (1, 2): f = 8, ∇f = (2x₁x₂, x₁² + 3) = (4, 4)")
+            self.play(GrowArrow(garrow), FadeIn(glab), Create(tang))
+            self.wait(1)
 
         ang = ValueTracker(np.deg2rad(160))
 
@@ -92,19 +100,26 @@ class GradientDongMuc(Scene):
         val = always_redraw(lambda: T(f"∇fᵀu = {g @ u():+.3f}", 30, C2).next_to(panel_title, DOWN, buff=0.4))
         ang_txt = always_redraw(lambda: T(
             f"u = ({u()[0]:+.2f}, {u()[1]:+.2f})", 24).next_to(panel_title, DOWN, buff=1.1))
-        self.play(GrowArrow(uarrow), FadeIn(panel_title), FadeIn(val), FadeIn(ang_txt))
-        cap = swap_caption(self, cap, "Quay vector đơn vị u quanh x₀ và đọc tốc độ thay đổi của f")
-        self.play(ang.animate.set_value(np.arctan2(4, 3)), run_time=2.5)
+        with noi(self, "Giờ quay một vector đơn vị u quanh điểm này. Tích vô hướng giữa gradient và u "
+                       "cho biết f tăng nhanh cỡ nào khi đi theo hướng u."):
+            self.play(GrowArrow(uarrow), FadeIn(panel_title), FadeIn(val), FadeIn(ang_txt))
+            cap = swap_caption(self, cap, "Quay vector đơn vị u quanh x₀ và đọc tốc độ thay đổi của f")
+            self.play(ang.animate.set_value(np.arctan2(4, 3)), run_time=2.5)
         note1 = T("u = (0.6, 0.8): 5.6", 22, GREY_A).next_to(panel_title, DOWN, buff=1.8)
-        self.play(FadeIn(note1))
-        self.play(ang.animate.set_value(PI / 4), run_time=1.2)
+        with noi(self, "Theo hướng không phẩy sáu, không phẩy tám, tốc độ là năm phẩy sáu."):
+            self.play(FadeIn(note1))
         note2 = T("trùng ∇f: lớn nhất = ‖∇f‖ = 4√2 ≈ 5.657", 22, C1).next_to(note1, DOWN, buff=0.25)
-        self.play(FadeIn(note2))
-        self.wait(0.8)
-        self.play(ang.animate.set_value(-PI / 4), run_time=2)
+        with noi(self, "Khi u trùng hướng gradient, tốc độ đạt lớn nhất, "
+                       "bằng độ dài của gradient, bốn căn hai, xấp xỉ năm phẩy sáu năm bảy."):
+            self.play(ang.animate.set_value(PI / 4), run_time=1.2)
+            self.play(FadeIn(note2))
+            self.wait(0.8)
         note3 = T("tiếp tuyến đồng mức: bằng 0", 22, GREY_B).next_to(note2, DOWN, buff=0.25)
-        self.play(FadeIn(note3))
-        cap = swap_caption(self, cap, "∇f chỉ hướng tăng nhanh nhất và vuông góc với đường f = 8")
+        with noi(self, "Còn khi u đi dọc tiếp tuyến của đường đồng mức, tốc độ bằng không."):
+            self.play(ang.animate.set_value(-PI / 4), run_time=2)
+            self.play(FadeIn(note3))
+        with noi(self, "Vậy gradient chỉ hướng f tăng nhanh nhất, và luôn vuông góc với đường đồng mức."):
+            cap = swap_caption(self, cap, "∇f chỉ hướng tăng nhanh nhất và vuông góc với đường f = 8")
         self.wait(1.8)
 
 
@@ -296,30 +311,40 @@ class FanOutCongDon(Scene):
         e_qf = Arrow(q.get_right(), f.get_left() + UP * 0.15, buff=0.05, color=GREY_B, stroke_width=3)
         e_yf = Arrow(y.get_right(), f.get_left() + DOWN * 0.15, buff=0.05, color=GREY_B, stroke_width=3)
         e_fo = Arrow(f.get_right(), out.get_left(), buff=0.1, color=GREY_B, stroke_width=3)
-        self.play(Write(title))
-        self.play(FadeIn(VGroup(x, y, q, f, out)), Create(VGroup(e_xq, e_yq, e_qf, e_yf, e_fo)))
+        with noi(self, "Khi một biến được dùng ở nhiều chỗ, gradient từ mọi nhánh phải được cộng dồn lại. "
+                       "Xét f bằng x cộng y, rồi nhân với y."):
+            self.play(Write(title))
+            self.play(FadeIn(VGroup(x, y, q, f, out)), Create(VGroup(e_xq, e_yq, e_qf, e_yf, e_fo)))
         fv = VGroup(T("3", 22, C1).next_to(x, LEFT, buff=0.15), T("2", 22, C1).next_to(y, LEFT, buff=0.15),
                     T("q = 5", 22, C1).next_to(q, UP, buff=0.1), T("10", 22, C1).next_to(out, UP, buff=0.15))
-        cap = swap_caption(self, None, "Forward: q = x + y = 5, f = q·y = 10. Biến y được dùng HAI lần")
-        self.play(FadeIn(fv))
-        self.wait(0.8)
-        cap = swap_caption(self, cap, "Cổng nhân: ∂f/∂q = y = 2, còn nhánh trực tiếp ∂f/∂y = q = 5")
+        with noi(self, "Chạy forward tại x bằng ba, y bằng hai: q bằng năm, f bằng mười. "
+                       "Để ý rằng y được dùng hai lần."):
+            cap = swap_caption(self, None, "Forward: q = x + y = 5, f = q·y = 10. Biến y được dùng HAI lần")
+            self.play(FadeIn(fv))
+            self.wait(0.8)
         p1 = T("2", 24, C2).next_to(e_qf.get_center(), UP, buff=0.12)
         p2 = T("5", 24, C2).next_to(e_yf.get_center(), DOWN, buff=0.12)
-        self.play(FadeIn(p1), FadeIn(p2))
+        with noi(self, "Đi backward qua cổng nhân: đạo hàm theo q bằng y, tức là hai. "
+                       "Còn nhánh nối thẳng về y nhận giá trị q, tức là năm."):
+            cap = swap_caption(self, cap, "Cổng nhân: ∂f/∂q = y = 2, còn nhánh trực tiếp ∂f/∂y = q = 5")
+            self.play(FadeIn(p1), FadeIn(p2))
         p3 = T("2", 24, C2).next_to(e_yq.get_center(), LEFT, buff=0.2)
         p4 = T("2", 24, C2).next_to(e_xq.get_center(), UP, buff=0.12)
-        cap = swap_caption(self, cap, "Cổng cộng chuyển nguyên 2 về cả x và y")
-        self.play(FadeIn(p3), FadeIn(p4))
-        self.play(Indicate(p2, color=C_ACC), Indicate(p3, color=C_ACC))
+        with noi(self, "Cổng cộng chuyển nguyên gradient hai về cả x và y."):
+            cap = swap_caption(self, cap, "Cổng cộng chuyển nguyên 2 về cả x và y")
+            self.play(FadeIn(p3), FadeIn(p4))
         total = T("∂f/∂y = 5 + 2 = 7", 28, C_ACC).next_to(y, DOWN, buff=0.35).shift(RIGHT * 1.2)
         gx = T("∂f/∂x = 2", 28, C_ACC).next_to(x, UP, buff=0.3).shift(RIGHT * 0.8)
-        self.play(FadeIn(total), FadeIn(gx))
-        cap = swap_caption(self, cap, "Viết y.grad = ... (ghi đè) thay vì += sẽ ra 2: sai mà không báo lỗi")
+        with noi(self, "Vậy y nhận hai phần đóng góp, năm và hai, tổng là bảy. Còn đạo hàm theo x bằng hai."):
+            self.play(Indicate(p2, color=C_ACC), Indicate(p3, color=C_ACC))
+            self.play(FadeIn(total), FadeIn(gx))
         wrong = T("y.grad = 2  (ghi đè)", 24, C2).next_to(total, RIGHT, buff=0.6)
         cross = Line(wrong.get_left(), wrong.get_right(), color=C2, stroke_width=4)
-        self.play(FadeIn(wrong))
-        self.play(Create(cross))
+        with noi(self, "Nếu code ghi đè gradient thay vì cộng dồn, ta chỉ được hai: sai mà không hề báo lỗi. "
+                       "Autograd của PyTorch tự cộng dồn các nhánh; lỗi này hay gặp khi tự viết backprop bằng tay."):
+            cap = swap_caption(self, cap, "Viết y.grad = ... (ghi đè) thay vì += sẽ ra 2: sai mà không báo lỗi")
+            self.play(FadeIn(wrong))
+            self.play(Create(cross))
         self.wait(3)
 
 
