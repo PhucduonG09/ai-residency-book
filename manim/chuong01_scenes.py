@@ -7,8 +7,16 @@ Chỉ dùng Text (không cần LaTeX), nên chỉ cần Manim Community + ffmpeg
 Mỗi cảnh dùng đúng ma trận / số liệu của ví dụ giải mẫu trong sách.
 """
 import sys
+from pathlib import Path
+
 import numpy as np
 from manim import *
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from giong_doc import noi  # giọng đọc tiếng Việt; MANIM_KHONG_GIONG=1 để render câm
+import nen
+
+nen.bat()  # nền lưới mờ thay cho nền đen trơn
 
 FONT = "Segoe UI" if sys.platform == "win32" else "DejaVu Sans"
 C1, C2, C_ACC = GREEN, RED, YELLOW
@@ -45,20 +53,24 @@ class BienDangLuoi(Scene):
         sq = Polygon(ORIGIN, RIGHT, RIGHT + UP, UP, color=C_ACC, fill_opacity=0.35, stroke_width=2)
         l1 = T("e₁", 26, C1).next_to(e1, DOWN, buff=0.1)
         l2 = T("e₂", 26, C2).next_to(e2, LEFT, buff=0.1)
-        self.add(ghost)
-        self.play(Write(title), Create(plane), run_time=1.5)
-        self.play(FadeIn(sq), GrowArrow(e1), GrowArrow(e2), FadeIn(l1), FadeIn(l2))
-        cap0 = caption("Hình vuông đơn vị có diện tích 1")
-        self.play(FadeIn(cap0))
-        self.wait(0.5)
-        self.play(FadeOut(l1), FadeOut(l2), FadeOut(cap0))
-        group = VGroup(plane, sq, e1, e2)
-        self.play(ApplyMatrix(np.array(A, dtype=float), group), run_time=2.5)
-        a1 = T("Ae₁ = cột 1 = (2, 1)", 26, C1).next_to(e1.get_end(), RIGHT, buff=0.15)
-        a2 = T("Ae₂ = cột 2 = (1, 2)", 26, C2).next_to(e2.get_end(), UP, buff=0.15)
-        self.play(FadeIn(a1), FadeIn(a2))
-        cap = caption("Diện tích hình bình hành = |det A| = 2·2 − 1·1 = 3")
-        self.play(FadeIn(cap))
+        with noi(self, "Một ma trận hai nhân hai chính là một phép biến đổi mặt phẳng. Xét hai vector cơ sở e một, e hai, và hình vuông đơn vị mà chúng tạo ra."):
+            self.add(ghost)
+            self.play(Write(title), Create(plane), run_time=1.5)
+            self.play(FadeIn(sq), GrowArrow(e1), GrowArrow(e2), FadeIn(l1), FadeIn(l2))
+        with noi(self, "Hình vuông này có diện tích bằng một."):
+            cap0 = caption("Hình vuông đơn vị có diện tích 1")
+            self.play(FadeIn(cap0))
+            self.wait(0.5)
+            self.play(FadeOut(l1), FadeOut(l2), FadeOut(cap0))
+        with noi(self, "Áp ma trận A bằng hai, một, một, hai lên cả lưới. e một đi tới cột thứ nhất của A là hai, một; e hai đi tới cột thứ hai là một, hai."):
+            group = VGroup(plane, sq, e1, e2)
+            self.play(ApplyMatrix(np.array(A, dtype=float), group), run_time=2.5)
+            a1 = T("Ae₁ = cột 1 = (2, 1)", 26, C1).next_to(e1.get_end(), RIGHT, buff=0.15)
+            a2 = T("Ae₂ = cột 2 = (1, 2)", 26, C2).next_to(e2.get_end(), UP, buff=0.15)
+            self.play(FadeIn(a1), FadeIn(a2))
+        with noi(self, "Hình vuông thành hình bình hành, có diện tích bằng định thức của A: hai nhân hai trừ một nhân một, bằng ba."):
+            cap = caption("Diện tích hình bình hành = |det A| = 2·2 − 1·1 = 3")
+            self.play(FadeIn(cap))
         self.wait(2.5)
 
 
@@ -69,28 +81,31 @@ class ABKhacBA(Scene):
         S = [[2, 0], [0, 1]]
         R = [[0, -1], [1, 0]]
         title = T("Thứ tự phép nhân quan trọng: SR ≠ RS", 32).to_edge(UP, buff=0.3)
-        self.play(Write(title))
-        centers = [LEFT * 3.3 + DOWN * 0.45, RIGHT * 3.3 + DOWN * 0.45]
-        planes, shapes, labels = [], [], []
-        pts = [[0, 0], [0, 1.6], [1.0, 1.6], [1.0, 1.3], [0.3, 1.3], [0.3, 0.9],
-               [0.8, 0.9], [0.8, 0.6], [0.3, 0.6], [0.3, 0]]       # chữ F, bất đối xứng
-        names = ["SR: quay trước, kéo giãn sau", "RS: kéo giãn trước, quay sau"]
-        for c, name in zip(centers, names):
-            p = NumberPlane(x_range=[-3, 3, 1], y_range=[-3, 3, 1], x_length=4.4, y_length=4.4,
-                            background_line_style={"stroke_opacity": 0.35}).move_to(c + UP * 0.15)
-            unit = p.x_length / 6
-            f = Polygon(*[p.get_center() + unit * np.array([x, y, 0]) for x, y in pts],
-                        color=C_ACC, fill_opacity=0.6, stroke_width=2)
-            planes.append(p)
-            shapes.append(f)
-            labels.append(T(name, 22).next_to(p, UP, buff=0.12))
-        self.play(*[Create(p) for p in planes], *[FadeIn(f) for f in shapes], *[FadeIn(l) for l in labels])
-        self.wait(0.5)
+        with noi(self, "Thứ tự nhân ma trận rất quan trọng. Lấy S là phép kéo giãn gấp đôi theo chiều ngang, R là phép quay chín mươi độ, rồi áp lên cùng một chữ F."):
+            self.play(Write(title))
+            centers = [LEFT * 3.3 + DOWN * 0.45, RIGHT * 3.3 + DOWN * 0.45]
+            planes, shapes, labels = [], [], []
+            pts = [[0, 0], [0, 1.6], [1.0, 1.6], [1.0, 1.3], [0.3, 1.3], [0.3, 0.9],
+                   [0.8, 0.9], [0.8, 0.6], [0.3, 0.6], [0.3, 0]]       # chữ F, bất đối xứng
+            names = ["SR: quay trước, kéo giãn sau", "RS: kéo giãn trước, quay sau"]
+            for c, name in zip(centers, names):
+                p = NumberPlane(x_range=[-3, 3, 1], y_range=[-3, 3, 1], x_length=4.4, y_length=4.4,
+                                background_line_style={"stroke_opacity": 0.35}).move_to(c + UP * 0.15)
+                unit = p.x_length / 6
+                f = Polygon(*[p.get_center() + unit * np.array([x, y, 0]) for x, y in pts],
+                            color=C_ACC, fill_opacity=0.6, stroke_width=2)
+                planes.append(p)
+                shapes.append(f)
+                labels.append(T(name, 22).next_to(p, UP, buff=0.12))
+            self.play(*[Create(p) for p in planes], *[FadeIn(f) for f in shapes], *[FadeIn(l) for l in labels])
+            self.wait(0.5)
         # trái: SR = áp R trước rồi S;  phải: RS = áp S trước rồi R
-        o0, o1 = planes[0].get_center(), planes[1].get_center()
-        self.play(apply_m(shapes[0].animate, R, o0), apply_m(shapes[1].animate, S, o1), run_time=1.5)
-        self.play(apply_m(shapes[0].animate, S, o0), apply_m(shapes[1].animate, R, o1), run_time=1.5)
-        self.play(FadeIn(caption("Cùng hai lớp, đổi thứ tự → kết quả khác hẳn")))
+        with noi(self, "Bên trái quay trước rồi mới kéo giãn, bên phải kéo giãn trước rồi mới quay."):
+            o0, o1 = planes[0].get_center(), planes[1].get_center()
+            self.play(apply_m(shapes[0].animate, R, o0), apply_m(shapes[1].animate, S, o1), run_time=1.5)
+            self.play(apply_m(shapes[0].animate, S, o0), apply_m(shapes[1].animate, R, o1), run_time=1.5)
+        with noi(self, "Cùng hai phép biến đổi, chỉ đổi thứ tự mà kết quả khác hẳn. Vì vậy S nhân R thường khác R nhân S."):
+            self.play(FadeIn(caption("Cùng hai lớp, đổi thứ tự → kết quả khác hẳn")))
         self.wait(2.5)
 
 
@@ -113,13 +128,15 @@ class PhepChieu(Scene):
         lr = T("phần dư (−0.5, 0.5)", 22, C2).next_to(c2p(2.25, 2.75), RIGHT, buff=0.35)
         corner = RightAngle(Line(c2p(2.5, 2.5), c2p(0, 0)), Line(c2p(2.5, 2.5), c2p(2, 3)),
                             length=0.25, color=WHITE)
-        self.play(Write(title), Create(plane))
-        self.play(Create(line), FadeIn(lab_line))
-        self.play(GrowArrow(b), FadeIn(lb))
-        cap0 = caption("b không nằm trên đường thẳng: Ax = b vô nghiệm")
-        self.play(FadeIn(cap0))
-        self.wait(1)
-        self.play(FadeOut(cap0))
+        with noi(self, "Đường thẳng xanh là không gian cột của A, gồm mọi bội của vector a bằng một, một. Vector b bằng hai, ba."):
+            self.play(Write(title), Create(plane))
+            self.play(Create(line), FadeIn(lab_line))
+            self.play(GrowArrow(b), FadeIn(lb))
+        with noi(self, "b không nằm trên đường thẳng, nên hệ A x bằng b vô nghiệm. Ta đi tìm điểm trên đường thẳng gần b nhất."):
+            cap0 = caption("b không nằm trên đường thẳng: Ax = b vô nghiệm")
+            self.play(FadeIn(cap0))
+            self.wait(1)
+            self.play(FadeOut(cap0))
         # một điểm chạy trên đường thẳng; khoảng cách tới b nhỏ nhất ở chân đường vuông góc
         t = ValueTracker(0.3)
         dot = always_redraw(lambda: Dot(c2p(t.get_value(), t.get_value()), color=WHITE))
@@ -128,12 +145,14 @@ class PhepChieu(Scene):
         dist = always_redraw(lambda: T(
             f"khoảng cách = {np.hypot(2 - t.get_value(), 3 - t.get_value()):.3f}", 24
         ).to_corner(UL, buff=0.5).shift(DOWN * 0.8))
-        self.play(FadeIn(dot), Create(seg), FadeIn(dist))
-        self.play(t.animate.set_value(3.6), run_time=2)
-        self.play(t.animate.set_value(2.5), run_time=1.5)
-        self.play(FadeOut(seg), FadeOut(dot))
-        self.play(GrowArrow(p), FadeIn(lp), Create(r), FadeIn(lr), Create(corner))
-        self.play(FadeIn(caption("Gần nhất khi phần dư vuông góc với C(A): Aᵀ(b − Ax̂) = 0")))
+        with noi(self, "Cho một điểm chạy dọc đường thẳng và đo khoảng cách tới b. Khoảng cách nhỏ nhất tại điểm hai phẩy năm, hai phẩy năm."):
+            self.play(FadeIn(dot), Create(seg), FadeIn(dist))
+            self.play(t.animate.set_value(3.6), run_time=2)
+            self.play(t.animate.set_value(2.5), run_time=1.5)
+            self.play(FadeOut(seg), FadeOut(dot))
+        with noi(self, "Đó chính là chân đường vuông góc. Phần dư vuông góc với không gian cột, cho ta phương trình chuẩn: A chuyển vị nhân phần dư bằng không."):
+            self.play(GrowArrow(p), FadeIn(lp), Create(r), FadeIn(lr), Create(corner))
+            self.play(FadeIn(caption("Gần nhất khi phần dư vuông góc với C(A): Aᵀ(b − Ax̂) = 0")))
         self.wait(3)
 
 
@@ -163,20 +182,27 @@ class VectorRieng(Scene):
                                          color=C_ACC if is_eig() else C2, stroke_width=6))
         legend = VGroup(T("v (độ dài 1)", 24, C1), T("Av", 24, C2)).arrange(DOWN, aligned_edge=LEFT)
         legend.to_corner(UL, buff=0.5).shift(DOWN * 0.8)
-        self.play(Write(title), Create(plane), Create(circle))
-        self.play(FadeIn(va), FadeIn(wa), FadeIn(legend))
+        with noi(self, "Quay một vector đơn vị v quanh đường tròn và xem A v, với A bằng hai, một, một, hai. Thường thì A v bị xoay lệch khỏi v."):
+            self.play(Write(title), Create(plane), Create(circle))
+            self.play(FadeIn(va), FadeIn(wa), FadeIn(legend))
         stops = [(PI / 4, "v = (1, 1)/√2 → Av = 3v,  λ = 3"),
                  (3 * PI / 4, "v = (−1, 1)/√2 → Av = 1·v,  λ = 1"),
                  (5 * PI / 4, "v = −(1, 1)/√2 → vẫn λ = 3"),
                  (7 * PI / 4, "v = (1, −1)/√2 → λ = 1")]
-        for a, msg in stops:
+        loi = ["Tại hướng một, một chia căn hai, A v bằng ba lần v. Đây là vector riêng với trị riêng ba.",
+               "Tại hướng trừ một, một, A v bằng chính v: trị riêng bằng một.",
+               "Đi ngược hướng đầu tiên, trị riêng vẫn là ba.",
+               "Và hướng một, trừ một cho trị riêng một."]
+        for (a, msg), loi_doc in zip(stops, loi):
             self.play(ang.animate.set_value(a), run_time=1.6, rate_func=linear)
-            cap = caption(msg)
-            self.play(FadeIn(cap), run_time=0.4)
-            self.wait(0.8)
+            with noi(self, loi_doc):
+                cap = caption(msg)
+                self.play(FadeIn(cap), run_time=0.4)
+                self.wait(0.8)
             self.play(FadeOut(cap), run_time=0.3)
-        self.play(ang.animate.set_value(2 * PI), run_time=0.8, rate_func=linear)
-        self.play(FadeIn(caption("Ở mọi hướng khác, Av bị xoay đi so với v")))
+        with noi(self, "Chỉ ở các hướng riêng, A v mới cùng phương với v. Ở mọi hướng khác, A vừa kéo giãn vừa xoay."):
+            self.play(ang.animate.set_value(2 * PI), run_time=0.8, rate_func=linear)
+            self.play(FadeIn(caption("Ở mọi hướng khác, Av bị xoay đi so với v")))
         self.wait(2)
 
 
@@ -229,26 +255,33 @@ class SVDXoayKeoXoay(Scene):
         circ = always_redraw(circle_now)
         a1 = always_redraw(lambda: arrow_img(0, C1))
         a2 = always_redraw(lambda: arrow_img(1, C2))
-        self.play(Write(title), FadeIn(axes), FadeIn(info))
-        self.play(Create(circ), GrowArrow(a1), GrowArrow(a2))
-        cap = caption("Đường tròn đơn vị, cùng hai hướng v₁ (xanh) và v₂ (đỏ)")
-        self.play(FadeIn(cap)); self.wait(1)
+        with noi(self, "Phân tích SVD viết mọi ma trận thành ba bước: xoay, kéo giãn, rồi xoay. Lấy A bằng ba, không, bốn, năm, bắt đầu với đường tròn đơn vị và hai hướng v một, v hai."):
+            self.play(Write(title), FadeIn(axes), FadeIn(info))
+            self.play(Create(circ), GrowArrow(a1), GrowArrow(a2))
+            cap = caption("Đường tròn đơn vị, cùng hai hướng v₁ (xanh) và v₂ (đỏ)")
+            self.play(FadeIn(cap)); self.wait(1)
         steps = [(V.T, "Bước 1 — Vᵀ: xoay để v₁, v₂ nằm trên hai trục"),
                  (Sig @ V.T, "Bước 2 — Σ: kéo giãn trục 1 gấp σ₁, trục 2 gấp σ₂"),
                  (U @ Sig @ V.T, "Bước 3 — U: xoay elip về hướng u₁, u₂")]
-        for Mnext, msg in steps:
-            new = caption(msg)
-            self.play(FadeOut(cap), FadeIn(new), run_time=0.5)
-            cap = new
-            state["M0"], state["M1"] = M().copy(), Mnext
-            s.set_value(0.0)
-            self.play(s.animate.set_value(1.0), run_time=2, rate_func=smooth)
-            self.wait(0.6)
+        loi = ["Bước một, V chuyển vị: một phép quay đưa v một, v hai về nằm trên hai trục tọa độ.",
+               "Bước hai, Sigma: kéo giãn trục thứ nhất gấp sigma một, khoảng sáu phẩy bảy một, "
+               "và trục thứ hai gấp sigma hai, khoảng hai phẩy hai bốn. Đường tròn thành elip.",
+               "Bước ba, U: quay elip về hướng u một, u hai."]
+        for (Mnext, msg), loi_doc in zip(steps, loi):
+            with noi(self, loi_doc):
+                new = caption(msg)
+                self.play(FadeOut(cap), FadeIn(new), run_time=0.5)
+                cap = new
+                state["M0"], state["M1"] = M().copy(), Mnext
+                s.set_value(0.0)
+                self.play(s.animate.set_value(1.0), run_time=2, rate_func=smooth)
+                self.wait(0.6)
         P = A @ unit
         ghost = VMobject(color=C_ACC, stroke_width=6).set_points_as_corners(
             [pt(P[:, i]) for i in range(P.shape[1])])
-        new = caption("Khớp với áp thẳng A lên đường tròn: A = UΣVᵀ")
-        self.play(FadeOut(cap), FadeIn(new), Create(ghost), run_time=1.5)
+        with noi(self, "Kết quả trùng khớp với việc áp thẳng A lên đường tròn. Vậy A bằng U nhân Sigma nhân V chuyển vị."):
+            new = caption("Khớp với áp thẳng A lên đường tròn: A = UΣVᵀ")
+            self.play(FadeOut(cap), FadeIn(new), Create(ghost), run_time=1.5)
         self.wait(3)
 
 
@@ -280,12 +313,15 @@ class PCAXoayTruc(Scene):
             Dot(axes.c2p(*((p @ w()) * w())), radius=0.03, color=C_ACC) for p in X[::2]]))
         var = always_redraw(lambda: T(
             f"phương sai chiếu wᵀCw = {w() @ C @ w():.3f}", 26).to_corner(UL, buff=0.5).shift(DOWN * 0.75))
-        self.play(Write(title), FadeIn(axes), FadeIn(dots))
-        self.play(Create(line), FadeIn(proj), FadeIn(var))
-        self.play(ang.animate.set_value(best - 0.9), run_time=3, rate_func=there_and_back_with_pause)
-        self.play(ang.animate.set_value(best), run_time=2.5)
-        cap = caption(f"Lớn nhất = λₘₐₓ = {evals[-1]:.3f}, tại vector riêng lớn nhất của C")
-        self.play(FadeIn(cap))
+        with noi(self, "PCA tìm hướng mà khi chiếu dữ liệu lên, phương sai là lớn nhất. Đường vàng là hướng w, các chấm vàng là hình chiếu, con số là phương sai chiếu."):
+            self.play(Write(title), FadeIn(axes), FadeIn(dots))
+            self.play(Create(line), FadeIn(proj), FadeIn(var))
+        with noi(self, "Quay w qua lại, phương sai thay đổi theo hướng và đạt lớn nhất ở một hướng duy nhất."):
+            self.play(ang.animate.set_value(best - 0.9), run_time=3, rate_func=there_and_back_with_pause)
+            self.play(ang.animate.set_value(best), run_time=2.5)
+        with noi(self, "Hướng đó là vector riêng ứng với trị riêng lớn nhất của ma trận hiệp phương sai C, và phương sai chiếu khi ấy bằng đúng trị riêng lớn nhất."):
+            cap = caption(f"Lớn nhất = λₘₐₓ = {evals[-1]:.3f}, tại vector riêng lớn nhất của C")
+            self.play(FadeIn(cap))
         self.wait(3)
 
 
@@ -317,7 +353,8 @@ class GDSoDieuKien(Scene):
 
     def construct(self):
         title = T("Số điều kiện κ làm gradient descent chậm thế nào", 30).to_edge(UP, buff=0.3)
-        self.play(Write(title))
+        with noi(self, "Số điều kiện kappa làm gradient descent chậm đi thế nào? So sánh hai hàm bậc hai, cùng trị riêng lớn nhất là mười và cùng learning rate không phẩy một tám."):
+            self.play(Write(title))
         eta, n_steps = 0.18, 25                                # η < 2/λₘₐₓ = 0.2: vẫn ổn định
         xmax, ymax = 1.5, 2.5
         configs = [((10.0, 10.0), LEFT * 3.5, "κ = 1   (λ = 10, 10)"),
@@ -341,11 +378,14 @@ class GDSoDieuKien(Scene):
             path = VMobject(color=C_ACC, stroke_width=3).set_points_as_corners([ax.c2p(*p) for p in pts])
             groups.append(VGroup(ax, levels, lab))
             paths.append((path, VGroup(*[Dot(ax.c2p(*p), radius=0.04, color=C_ACC) for p in pts])))
-        self.play(*[FadeIn(g) for g in groups])
-        self.play(*[Create(p[0]) for p in paths], *[FadeIn(p[1]) for p in paths], run_time=4)
-        self.play(FadeIn(caption(
-            f"Cùng η = 0.18, 25 bước: κ = 1 còn {finals[0]:.3f}, κ = 20 còn {finals[1]:.2f}")))
-        self.wait(1.2)
-        self.play(FadeIn(T("Hệ số co mỗi bước: 0.8 theo λ = 10, nhưng 0.91 theo λ = 0.5",
-                           24, C_ACC).next_to(title, DOWN, buff=0.12)))
+        with noi(self, "Bên trái kappa bằng một, đường đồng mức là đường tròn và đường đi lao thẳng về đáy. Bên phải kappa bằng hai mươi, đường đồng mức dẹt và đường đi trườn rất chậm."):
+            self.play(*[FadeIn(g) for g in groups])
+            self.play(*[Create(p[0]) for p in paths], *[FadeIn(p[1]) for p in paths], run_time=4)
+        with noi(self, "Sau hai mươi lăm bước, bên trái gần như đã tới đáy, còn bên phải vẫn cách đáy khoảng không phẩy một chín."):
+            self.play(FadeIn(caption(
+                f"Cùng η = 0.18, 25 bước: κ = 1 còn {finals[0]:.3f}, κ = 20 còn {finals[1]:.2f}")))
+            self.wait(1.2)
+        with noi(self, "Lý do là mỗi bước, sai số theo trục có trị riêng mười co còn không phẩy tám lần, nhưng theo trục có trị riêng không phẩy năm chỉ co còn không phẩy chín một. Chính trị riêng nhỏ làm chậm, không phải learning rate."):
+            self.play(FadeIn(T("Hệ số co mỗi bước: 0.8 theo λ = 10, nhưng 0.91 theo λ = 0.5",
+                               24, C_ACC).next_to(title, DOWN, buff=0.12)))
         self.wait(2.5)
