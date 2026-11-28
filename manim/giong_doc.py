@@ -1,6 +1,6 @@
 """Giọng đọc tiếng Việt cho cảnh Manim — không cần API key.
 
-Mặc định giọng nam NamMinh (Microsoft Edge TTS); MANIM_GIONG=gtts để dùng giọng nữ Google.
+Mặc định giọng nữ Google (gTTS); MANIM_GIONG=edge để dùng giọng nam NamMinh (Microsoft Edge TTS).
 
 Cách dùng trong một cảnh:
 
@@ -31,9 +31,9 @@ from pathlib import Path
 CACHE = Path(__file__).resolve().parent / "giong_doc_cache"
 NGHI = 0.25  # khoảng lặng (giây) sau mỗi câu trước khi sang câu kế
 
-# Giọng mặc định: giọng nam tiếng Việt NamMinh của Microsoft Edge TTS (miễn phí, không cần key).
-# Đổi GIONG = "gtts" để dùng giọng nữ của Google Translate.
-GIONG = os.environ.get("MANIM_GIONG", "edge")
+# Giọng mặc định: giọng nữ tiếng Việt của Google Translate (gTTS), nhanh 1.25×.
+# MANIM_GIONG=edge để dùng giọng nam NamMinh của Microsoft Edge TTS (miễn phí, không cần key).
+GIONG = os.environ.get("MANIM_GIONG", "gtts")
 EDGE_VOICE = "vi-VN-NamMinhNeural"
 EDGE_RATE = "+10%"   # nhanh hơn tốc độ chuẩn một chút
 GTTS_TOC_DO = 1.25   # gTTS đọc chậm: tăng tốc 1.25× (giữ cao độ) bằng atempo của ffmpeg
