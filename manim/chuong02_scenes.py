@@ -13,7 +13,7 @@ import numpy as np
 from manim import *
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from giong_doc import noi  # giọng đọc Google (gTTS); MANIM_KHONG_GIONG=1 để render câm
+from giong_doc import noi  # giọng đọc tiếng Việt; MANIM_KHONG_GIONG=1 để render câm
 import nen
 
 nen.bat()  # nền lưới mờ thay cho nền đen trơn

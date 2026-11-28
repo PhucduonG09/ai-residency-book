@@ -96,7 +96,7 @@ Nếu thư mục này là bản clone của repo, chạy `git pull` để lấy 
 ## Ghi chú
 
 - **Manim trên Windows:** các cảnh dùng font Segoe UI khi render trên Windows. Nếu một ký hiệu (ví dụ ᵀ) hiện thành ô vuông, đổi biến `FONT` ở đầu file cảnh sang `"Cambria Math"`. Video trong `manim/videos/` đã được render sẵn nên app chạy được ngay cả khi chưa render lại.
-- **Giọng đọc cho video Manim:** `manim/giong_doc.py` dùng gTTS (giọng tiếng Việt của Google Translate, miễn phí, không cần API key). Trong cảnh, bọc từng đoạn hình bằng `with noi(self, "câu thoại"):`; cảnh tự kéo dài cho khớp câu đọc. Hiện mới có lời thoại cho `GradientDongMuc` và `FanOutCongDon` (chương 2). Render lại (lần đầu cần Internet, mp3 được lưu ở `manim/giong_doc_cache/`):
+- **Giọng đọc cho video Manim:** `manim/giong_doc.py` mặc định dùng giọng nam NamMinh của Microsoft Edge TTS (gói `edge-tts`, `setup.bat` tự cài; miễn phí, không cần API key). Đặt `MANIM_GIONG=gtts` để dùng giọng nữ của Google Translate (gói `gtts`). Mọi cảnh có nền lưới mờ nhờ `manim/nen.py`. Trong cảnh, bọc từng đoạn hình bằng `with noi(self, "câu thoại"):`; cảnh tự kéo dài cho khớp câu đọc. Hiện mới có lời thoại cho `GradientDongMuc` và `FanOutCongDon` (chương 2). Render lại (lần đầu cần Internet, mp3 được lưu ở `manim/giong_doc_cache/`):
   ```
   cd manim
   manim -qm chuong02_scenes.py GradientDongMuc FanOutCongDon

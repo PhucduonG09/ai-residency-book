@@ -24,6 +24,9 @@ if errorlevel 1 (
   exit /b 1
 )
 echo.
+echo Cai giong doc cho video Manim (edge-tts)...
+call "%CONDA_BAT%" run -n residency-book python -m pip install -q edge-tts
+echo.
 echo Kiem tra PyTorch...
 call "%CONDA_BAT%" run -n residency-book python -c "import torch; print('PyTorch', torch.__version__)"
 if errorlevel 1 echo Chua import duoc PyTorch. Lab chuong 6-12 can no; xem muc Cai dat trong README.
