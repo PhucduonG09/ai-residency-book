@@ -1,0 +1,4 @@
+# Chỉ dùng để dựng trang web của sách (không cần cho app Streamlit)
+mkdocs==1.6.1
+mkdocs-material==9.5.50
+pyyaml>=6.0

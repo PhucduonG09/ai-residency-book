@@ -1,0 +1,88 @@
+# Trang web tĩnh của sách. Nội dung gốc nằm ở book/; web/build_docs.py gom nó vào web/_docs/.
+# Xem thử trên máy:  pip install -r web/requirements.txt
+#                    python web/build_docs.py && mkdocs serve
+site_name: Sổ tay luyện thi AI Residency
+site_description: Track Research (NLP) — sách, đề thi thử và video Manim
+site_author: PhucduonG
+site_url: https://phucduong09.github.io/ai-residency-book/
+repo_url: https://github.com/PhucduonG09/ai-residency-book
+repo_name: ai-residency-book
+edit_uri: ""
+docs_dir: web/_docs
+site_dir: web/_site
+use_directory_urls: false   # trang là chuong-01.html: link video tương đối đơn giản, mở offline được
+
+theme:
+  name: material
+  language: vi
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle: {icon: material/weather-night, name: Chế độ tối}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle: {icon: material/weather-sunny, name: Chế độ sáng}
+
+plugins:
+  - search:
+      lang: [en]   # lunr chưa có tiếng Việt; tách từ theo khoảng trắng vẫn tìm được chữ có dấu
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+
+extra_css:
+  - extra/katex/katex.min.css
+  - extra/style.css
+extra_javascript:
+  - extra/katex/katex.min.js
+  - extra/katex/contrib/auto-render.min.js
+  - extra/katex-init.js
+extra:
+  generator: false
+
+nav:
+  - Hướng dẫn và đề cương: index.md
+  - Chương 0 — Chẩn đoán đầu vào: chuong-00.md
+  - Phần I — Nền tảng:
+      - chuong-01.md
+      - chuong-02.md
+      - chuong-03.md
+      - chuong-04.md
+      - chuong-05.md
+      - chuong-06.md
+      - thi-thu-1.md
+  - Phần II — Deep learning hiện đại:
+      - chuong-07.md
+      - chuong-08.md
+      - chuong-09.md
+      - chuong-10.md
+      - chuong-11.md
+      - thi-thu-2.md
+  - Phần III — Chuyên sâu NLP:
+      - chuong-12.md
+  - Phần IV — Hồ sơ và phỏng vấn:
+      - chuong-13.md
+      - chuong-14.md
+      - thi-thu-3.md

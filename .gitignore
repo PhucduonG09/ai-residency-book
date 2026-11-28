@@ -3,3 +3,5 @@ manim/cua-toi/videos/
 **/media/
 __pycache__/
 .ipynb_checkpoints/
+web/_docs/
+web/_site/
