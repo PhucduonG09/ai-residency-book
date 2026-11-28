@@ -4,6 +4,15 @@ App học tập chạy trên máy của bạn, gom vào một chỗ: sách (chư
 
 ![Lộ trình 12/2026 – 11/2027](plan/lo-trinh.png)
 
+## Đọc sách trên web
+
+Sách (chương 0–14, ba đề thi thử và video Manim của từng mục) có bản web tại **https://phucduong09.github.io/ai-residency-book/**. Mở bằng trình duyệt trên máy tính hay điện thoại, không cần cài gì và không cần terminal. Có mục lục, tìm kiếm, chế độ tối, công thức hiển thị bằng KaTeX.
+
+- Trang tự dựng lại mỗi khi có commit vào `main` (kể cả khi merge PR rà soát hằng tháng), sau khoảng 1–2 phút. Workflow nằm ở `.github/workflows/web.yml`.
+- Bản web chỉ để đọc. Tích tiến độ, flashcard và sửa lab vẫn dùng app trên máy.
+- Xem thử trên máy: `pip install -r web/requirements.txt`, rồi `python web/build_docs.py` và `mkdocs serve`.
+- `web/build_docs.py` không sửa `book/`: nó chép nội dung sang `web/_docs/`, chèn video Manim ngay dưới tiêu đề mục tương ứng (theo `manim/catalog.yaml`), rồi MkDocs dựng ra `web/_site/`.
+
 ## Lịch học
 
 Lộ trình gồm 49 tuần (tuần 0 đến tuần 48), bắt đầu **Thứ Hai 7/12/2026** và kết thúc **14/11/2027**. Mỗi tuần khoảng 12–15 giờ, chia cho chương học và ba luồng chạy song song: A (dự án nghiên cứu), B (coding), C (tiếng Anh và trình bày). Nhiệm vụ chi tiết nằm trong `plan/weeks.yaml`.
@@ -80,6 +89,7 @@ Nếu thư mục này là bản clone của repo, chạy `git pull` để lấy 
 | `plan/weeks.yaml` | Nhiệm vụ từng tuần, chia theo chương học và luồng A, B, C |
 | `plan/ve_lo_trinh.py` | Vẽ lại `plan/lo-trinh.png` từ lịch hiện tại |
 | `plan/chia_ngay.py` | Chia việc mỗi tuần ra từng ngày (trường `days`) và sinh `plan/lich-theo-ngay.md` |
+| `web/`, `mkdocs.yml` | Dựng bản web của sách (MkDocs Material, KaTeX để sẵn trong `web/extra/katex/`) |
 | `flashcards/` | Thẻ ôn tập dạng CSV cho chương 1–14 (nhập được vào Anki) |
 | `progress/progress.json` | Tiến độ của bạn: việc đã xong, lịch ôn thẻ, điểm mini-test (app tự tạo, không đưa lên git) |
 

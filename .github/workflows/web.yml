@@ -1,0 +1,50 @@
+# Dựng sách thành trang web tĩnh và đưa lên GitHub Pages.
+# - Mỗi lần có commit vào main (kể cả khi merge PR cập nhật hằng tháng): dựng lại và đăng.
+# - Mỗi PR: chỉ dựng thử (--strict) để bắt link hỏng trước khi merge.
+name: Trang web của sách
+
+on:
+  push:
+    branches: [main]
+    paths: [book/**, manim/videos/**, manim/catalog.yaml, plan/lo-trinh.png, web/**, mkdocs.yml, .github/workflows/web.yml]
+  pull_request:
+    paths: [book/**, manim/videos/**, manim/catalog.yaml, plan/lo-trinh.png, web/**, mkdocs.yml, .github/workflows/web.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: web/requirements.txt
+      - run: pip install -r web/requirements.txt
+      - run: python web/build_docs.py
+      - run: mkdocs build --strict
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/_site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
