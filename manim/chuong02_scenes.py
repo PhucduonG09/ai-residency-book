@@ -7,8 +7,16 @@ Chỉ dùng Text (không cần LaTeX), nên chỉ cần Manim Community + ffmpeg
 Mỗi cảnh dùng đúng số liệu của ví dụ giải mẫu trong sách.
 """
 import sys
+from pathlib import Path
+
 import numpy as np
 from manim import *
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from giong_doc import noi  # giọng đọc tiếng Việt; MANIM_KHONG_GIONG=1 để render câm
+import nen
+
+nen.bat()  # nền lưới mờ thay cho nền đen trơn
 
 FONT = "Segoe UI" if sys.platform == "win32" else "DejaVu Sans"
 C1, C2, C_ACC = GREEN, RED, YELLOW
@@ -74,11 +82,14 @@ class GradientDongMuc(Scene):
                           p0 + unit * 0.9 * np.array([1, -1, 0]) / np.sqrt(2), color=GREY_B)
 
         nums = tick_labels(ax, [0, 1, 2, 3], [1, 2, 3, 4])
-        self.play(Write(title), Create(ax), FadeIn(nums))
-        self.play(*[Create(l) for l in levels], FadeIn(lab8), FadeIn(dot), run_time=2)
-        cap = swap_caption(self, None, "Tại x₀ = (1, 2): f = 8, ∇f = (2x₁x₂, x₁² + 3) = (4, 4)")
-        self.play(GrowArrow(garrow), FadeIn(glab), Create(tang))
-        self.wait(1)
+        with noi(self, "Xét hàm f bằng x một bình phương nhân x hai, cộng ba x hai. "
+                       "Mỗi đường cong là một đường đồng mức, nơi giá trị của f không đổi."):
+            self.play(Write(title), Create(ax), FadeIn(nums))
+            self.play(*[Create(l) for l in levels], FadeIn(lab8), FadeIn(dot), run_time=2)
+        with noi(self, "Tại điểm một, hai, f bằng tám, và gradient bằng bốn, bốn."):
+            cap = swap_caption(self, None, "Tại x₀ = (1, 2): f = 8, ∇f = (2x₁x₂, x₁² + 3) = (4, 4)")
+            self.play(GrowArrow(garrow), FadeIn(glab), Create(tang))
+            self.wait(1)
 
         ang = ValueTracker(np.deg2rad(160))
 
@@ -92,19 +103,26 @@ class GradientDongMuc(Scene):
         val = always_redraw(lambda: T(f"∇fᵀu = {g @ u():+.3f}", 30, C2).next_to(panel_title, DOWN, buff=0.4))
         ang_txt = always_redraw(lambda: T(
             f"u = ({u()[0]:+.2f}, {u()[1]:+.2f})", 24).next_to(panel_title, DOWN, buff=1.1))
-        self.play(GrowArrow(uarrow), FadeIn(panel_title), FadeIn(val), FadeIn(ang_txt))
-        cap = swap_caption(self, cap, "Quay vector đơn vị u quanh x₀ và đọc tốc độ thay đổi của f")
-        self.play(ang.animate.set_value(np.arctan2(4, 3)), run_time=2.5)
+        with noi(self, "Giờ quay một vector đơn vị u quanh điểm này. Tích vô hướng giữa gradient và u "
+                       "cho biết f tăng nhanh cỡ nào khi đi theo hướng u."):
+            self.play(GrowArrow(uarrow), FadeIn(panel_title), FadeIn(val), FadeIn(ang_txt))
+            cap = swap_caption(self, cap, "Quay vector đơn vị u quanh x₀ và đọc tốc độ thay đổi của f")
+            self.play(ang.animate.set_value(np.arctan2(4, 3)), run_time=2.5)
         note1 = T("u = (0.6, 0.8): 5.6", 22, GREY_A).next_to(panel_title, DOWN, buff=1.8)
-        self.play(FadeIn(note1))
-        self.play(ang.animate.set_value(PI / 4), run_time=1.2)
+        with noi(self, "Theo hướng không phẩy sáu, không phẩy tám, tốc độ là năm phẩy sáu."):
+            self.play(FadeIn(note1))
         note2 = T("trùng ∇f: lớn nhất = ‖∇f‖ = 4√2 ≈ 5.657", 22, C1).next_to(note1, DOWN, buff=0.25)
-        self.play(FadeIn(note2))
-        self.wait(0.8)
-        self.play(ang.animate.set_value(-PI / 4), run_time=2)
+        with noi(self, "Khi u trùng hướng gradient, tốc độ đạt lớn nhất, "
+                       "bằng độ dài của gradient, bốn căn hai, xấp xỉ năm phẩy sáu năm bảy."):
+            self.play(ang.animate.set_value(PI / 4), run_time=1.2)
+            self.play(FadeIn(note2))
+            self.wait(0.8)
         note3 = T("tiếp tuyến đồng mức: bằng 0", 22, GREY_B).next_to(note2, DOWN, buff=0.25)
-        self.play(FadeIn(note3))
-        cap = swap_caption(self, cap, "∇f chỉ hướng tăng nhanh nhất và vuông góc với đường f = 8")
+        with noi(self, "Còn khi u đi dọc tiếp tuyến của đường đồng mức, tốc độ bằng không."):
+            self.play(ang.animate.set_value(-PI / 4), run_time=2)
+            self.play(FadeIn(note3))
+        with noi(self, "Vậy gradient chỉ hướng f tăng nhanh nhất, và luôn vuông góc với đường đồng mức."):
+            cap = swap_caption(self, cap, "∇f chỉ hướng tăng nhanh nhất và vuông góc với đường f = 8")
         self.wait(1.8)
 
 
@@ -123,16 +141,21 @@ class TaylorXapXi(Scene):
                         T("bậc 2: 8 + 4t + t²", 22, C1)).arrange(DOWN, aligned_edge=LEFT, buff=0.15)
         legend.move_to(RIGHT * 3.9 + UP * 1.5)
         nums = tick_labels(ax, [0, 0.2, 0.4, 0.6, 0.8, 1.0], [8, 9, 10, 11, 12, 13])
-        self.play(Write(title), FadeIn(sub), Create(ax), FadeIn(nums))
-        self.play(Create(true_g), FadeIn(legend[0]))
-        self.play(Create(lin), FadeIn(legend[1]))
-        self.play(Create(quad), FadeIn(legend[2]))
+        with noi(self, "Khai triển Taylor chỉ đúng ở gần điểm khai triển. Ta cắt hàm f dọc hướng d bằng không phẩy năm, không phẩy năm, xuất phát từ điểm một, hai."):
+            self.play(Write(title), FadeIn(sub), Create(ax), FadeIn(nums))
+            self.play(Create(true_g), FadeIn(legend[0]))
+        with noi(self, "Đường đỏ là xấp xỉ bậc một, tám cộng bốn t. Đường xanh là xấp xỉ bậc hai, cộng thêm t bình phương."):
+            self.play(Create(lin), FadeIn(legend[1]))
+            self.play(Create(quad), FadeIn(legend[2]))
 
         def gap_marks(t, vals):
             return VGroup(*[Dot(ax.c2p(t, v), radius=0.06, color=c) for v, c in vals])
 
         info = VGroup()
-        for t, d_txt in [(0.2, "d = (0.1, 0.1)"), (1.0, "d = (0.5, 0.5)")]:
+        loi = ["Bước nhỏ, d bằng không phẩy một, không phẩy một: sai số bậc một là không phẩy không bốn một, "
+               "bậc hai chỉ còn không phẩy không không một.",
+               "Bước gấp năm lần: sai số bậc một tăng lên một phẩy một hai lăm, bậc hai là không phẩy một hai lăm."]
+        for (t, d_txt), loi_doc in zip([(0.2, "d = (0.1, 0.1)"), (1.0, "d = (0.5, 0.5)")], loi):
             tv, t1, t2 = f21(1 + 0.5 * t, 2 + 0.5 * t), 8 + 4 * t, 8 + 4 * t + t ** 2
             marks = gap_marks(t, [(tv, WHITE), (t1, C2), (t2, C1)])
             vline = DashedLine(ax.c2p(t, 7.5), ax.c2p(t, 14), color=GREY_B, stroke_width=2)
@@ -144,11 +167,13 @@ class TaylorXapXi(Scene):
                 block.next_to(legend, DOWN, buff=0.4).align_to(legend, LEFT)
             else:
                 block.next_to(info[-1], DOWN, buff=0.3).align_to(legend, LEFT)
-            self.play(Create(vline), FadeIn(marks))
-            self.play(FadeIn(block))
-            info.add(block)
-            self.wait(0.8)
-        self.play(FadeIn(caption("Bước ×5 → sai bậc 1 ×27, sai bậc 2 ×125: tỉ lệ ‖d‖² và ‖d‖³")))
+            with noi(self, loi_doc):
+                self.play(Create(vline), FadeIn(marks))
+                self.play(FadeIn(block))
+                info.add(block)
+                self.wait(0.8)
+        with noi(self, "Bước tăng năm lần thì sai số bậc một tăng khoảng hai mươi bảy lần, bậc hai tăng một trăm hai lăm lần, đúng như sai số tỉ lệ với bình phương và lập phương độ dài bước."):
+            self.play(FadeIn(caption("Bước ×5 → sai bậc 1 ×27, sai bậc 2 ×125: tỉ lệ ‖d‖² và ‖d‖³")))
         self.wait(3)
 
 
@@ -193,21 +218,25 @@ class JacobianOVuong(Scene):
                       color=C1, stroke_width=4)
         nums = VGroup(tick_labels(left, [1.5, 2.0, 2.5], [0.2, 0.4, 0.6, 0.8, 1.0, 1.2]),
                       tick_labels(right, [0.5, 1.0, 1.5, 2.0, 2.5], [0, 0.5, 1.0, 1.5, 2.0]))
-        self.play(Write(title), Create(left), Create(right), FadeIn(nums), FadeIn(ll), FadeIn(rl), GrowArrow(arrow))
-        self.play(Create(grid_l), run_time=1.2)
-        self.play(TransformFromCopy(grid_l, grid_r), run_time=2)
-        cap = swap_caption(self, None, "Ảnh của lưới thẳng là lưới cong: ánh xạ phi tuyến")
-        self.wait(0.8)
-        self.play(FadeIn(cell))
-        self.play(TransformFromCopy(cell, img), run_time=1.5)
-        cap = swap_caption(self, cap, "Ô nhỏ quanh (2, π/6) → gần như hình bình hành có cạnh là hai cột của J")
-        self.play(Create(par))
-        jtxt = VGroup(T("J ≈ [[0.866, −1.000], [0.500, 1.732]]", 24),
-                      T("det J = r = 2", 24, C1)).arrange(RIGHT, buff=0.6)
-        jtxt.next_to(title, DOWN, buff=0.25)
-        bg = BackgroundRectangle(jtxt, fill_opacity=0.85, buff=0.1)
-        self.play(FadeIn(bg), FadeIn(jtxt))
-        cap = swap_caption(self, cap, "Hai khung cùng thang trục: diện tích ô nhân |det J| = 2")
+        with noi(self, "Phép đổi từ tọa độ cực r, theta sang x, y là một ánh xạ phi tuyến. Lưới thẳng bên trái biến thành lưới cong bên phải."):
+            self.play(Write(title), Create(left), Create(right), FadeIn(nums), FadeIn(ll), FadeIn(rl), GrowArrow(arrow))
+            self.play(Create(grid_l), run_time=1.2)
+            self.play(TransformFromCopy(grid_l, grid_r), run_time=2)
+        with noi(self, "Nhưng nếu chỉ nhìn một ô nhỏ quanh điểm r bằng hai, theta bằng pi trên sáu, thì ảnh của nó gần như một hình bình hành."):
+            cap = swap_caption(self, None, "Ảnh của lưới thẳng là lưới cong: ánh xạ phi tuyến")
+            self.wait(0.8)
+            self.play(FadeIn(cell))
+            self.play(TransformFromCopy(cell, img), run_time=1.5)
+        with noi(self, "Hình bình hành đó có hai cạnh là hai cột của ma trận Jacobian J. Jacobian chính là xấp xỉ tuyến tính tốt nhất của ánh xạ tại điểm này."):
+            cap = swap_caption(self, cap, "Ô nhỏ quanh (2, π/6) → gần như hình bình hành có cạnh là hai cột của J")
+            self.play(Create(par))
+            jtxt = VGroup(T("J ≈ [[0.866, −1.000], [0.500, 1.732]]", 24),
+                          T("det J = r = 2", 24, C1)).arrange(RIGHT, buff=0.6)
+            jtxt.next_to(title, DOWN, buff=0.25)
+            bg = BackgroundRectangle(jtxt, fill_opacity=0.85, buff=0.1)
+            self.play(FadeIn(bg), FadeIn(jtxt))
+        with noi(self, "Định thức của J bằng r, tức là hai: diện tích ô nhỏ được nhân lên hai lần."):
+            cap = swap_caption(self, cap, "Hai khung cùng thang trục: diện tích ô nhân |det J| = 2")
         self.wait(3)
 
 
@@ -246,38 +275,44 @@ class DoThiNeuron(Scene):
             Arrow(leaves[4].get_right(), add.get_bottom(), buff=0.1, color=GREY_B, stroke_width=3),
             edge(m1, add), edge(m2, add), edge(add, sg),
             Arrow(sg.get_right(), out.get_left(), buff=0.1, color=GREY_B, stroke_width=3))
-        self.play(Write(title))
-        self.play(*[FadeIn(l) for l in leaves], FadeIn(m1), FadeIn(m2), FadeIn(add), FadeIn(sg), FadeIn(out),
-                  Create(edges), run_time=1.5)
-        cap = swap_caption(self, None, "Forward (xanh): tính và LƯU mọi giá trị trung gian")
-        fwd = VGroup(*[T(v, 22, C1).next_to(l, LEFT, buff=0.2) for v, l in zip(vals, leaves)])
-        self.play(FadeIn(fwd))
-        f_mid = [T("1.0", 22, C1).next_to(m1, UP, buff=0.1), T("−1.0", 22, C1).next_to(m2, UP, buff=0.1),
-                 T("z = 0.2", 22, C1).next_to(add, UP, buff=0.1), T("0.5498", 22, C1).next_to(sg, UP, buff=0.1),
-                 T("0.5498", 22, C1).next_to(out, UP, buff=0.15)]
-        for t in f_mid:
-            self.play(FadeIn(t, shift=RIGHT * 0.2), run_time=0.45)
-        cap = swap_caption(self, cap, "Backward (đỏ): gradient từ trên × gradient cục bộ, đi ngược")
-        b_out = T("1", 22, C2).next_to(out, DOWN, buff=0.15)
-        b_sg = T("0.2475", 22, C2).next_to(sg, DOWN, buff=0.1)
-        self.play(FadeIn(b_out))
-        loc = T("σ′(z) = s(1 − s) = 0.2475", 22, C2).move_to([2.4, -1.3, 0])
-        self.play(FadeIn(b_sg), FadeIn(loc))
-        self.wait(0.5)
-        b_add = T("0.2475", 22, C2).next_to(add, DR, buff=0.02)
-        b_m1 = T("0.2475", 22, C2).next_to(m1, DOWN, buff=0.1)
-        b_m2 = T("0.2475", 22, C2).next_to(m2, DOWN, buff=0.1)
-        self.play(FadeIn(b_add))
-        cap = swap_caption(self, cap, "Cổng cộng: chuyển nguyên gradient cho mọi đầu vào")
-        self.play(FadeIn(b_m1), FadeIn(b_m2))
-        self.wait(0.6)
-        cap = swap_caption(self, cap, "Cổng nhân đổi chéo: ∂s/∂w₁ = 0.2475 × x₁,  ∂s/∂x₁ = 0.2475 × w₁")
-        # Cột gradient nằm bên trái cột giá trị forward, cùng hàng với tên biến.
-        bl = VGroup(*[T(gv, 20, C2).next_to(v, LEFT, buff=0.25) for gv, v in zip(grads, fwd)])
-        hl = SurroundingRectangle(VGroup(leaves[0], leaves[1], fwd[0], fwd[1], bl[0], bl[1]), color=C_ACC, buff=0.12)
-        self.play(FadeIn(bl), Create(hl), run_time=1.2)
-        self.wait(1)
-        cap = swap_caption(self, cap, "x lớn → gradient của w lớn: lý do phải chuẩn hóa đầu vào")
+        with noi(self, "Đây là đồ thị tính toán của một neuron sigmoid: hai phép nhân, một phép cộng với bias, rồi hàm sigma."):
+            self.play(Write(title))
+            self.play(*[FadeIn(l) for l in leaves], FadeIn(m1), FadeIn(m2), FadeIn(add), FadeIn(sg), FadeIn(out),
+                      Create(edges), run_time=1.5)
+        with noi(self, "Lượt forward tính và lưu lại mọi giá trị trung gian: z bằng không phẩy hai, đầu ra s bằng không phẩy năm bốn chín tám."):
+            cap = swap_caption(self, None, "Forward (xanh): tính và LƯU mọi giá trị trung gian")
+            fwd = VGroup(*[T(v, 22, C1).next_to(l, LEFT, buff=0.2) for v, l in zip(vals, leaves)])
+            self.play(FadeIn(fwd))
+            f_mid = [T("1.0", 22, C1).next_to(m1, UP, buff=0.1), T("−1.0", 22, C1).next_to(m2, UP, buff=0.1),
+                     T("z = 0.2", 22, C1).next_to(add, UP, buff=0.1), T("0.5498", 22, C1).next_to(sg, UP, buff=0.1),
+                     T("0.5498", 22, C1).next_to(out, UP, buff=0.15)]
+            for t in f_mid:
+                self.play(FadeIn(t, shift=RIGHT * 0.2), run_time=0.45)
+        with noi(self, "Lượt backward đi ngược: gradient từ phía trên nhân với gradient cục bộ. Đạo hàm của sigma là s nhân một trừ s, bằng không phẩy hai bốn bảy lăm."):
+            cap = swap_caption(self, cap, "Backward (đỏ): gradient từ trên × gradient cục bộ, đi ngược")
+            b_out = T("1", 22, C2).next_to(out, DOWN, buff=0.15)
+            b_sg = T("0.2475", 22, C2).next_to(sg, DOWN, buff=0.1)
+            self.play(FadeIn(b_out))
+            loc = T("σ′(z) = s(1 − s) = 0.2475", 22, C2).move_to([2.4, -1.3, 0])
+            self.play(FadeIn(b_sg), FadeIn(loc))
+            self.wait(0.5)
+        with noi(self, "Cổng cộng chuyển nguyên gradient cho mọi đầu vào của nó."):
+            b_add = T("0.2475", 22, C2).next_to(add, DR, buff=0.02)
+            b_m1 = T("0.2475", 22, C2).next_to(m1, DOWN, buff=0.1)
+            b_m2 = T("0.2475", 22, C2).next_to(m2, DOWN, buff=0.1)
+            self.play(FadeIn(b_add))
+            cap = swap_caption(self, cap, "Cổng cộng: chuyển nguyên gradient cho mọi đầu vào")
+            self.play(FadeIn(b_m1), FadeIn(b_m2))
+            self.wait(0.6)
+        with noi(self, "Cổng nhân thì đổi chéo: gradient theo w một bằng gradient phía trên nhân x một, còn gradient theo x một nhân với w một."):
+            cap = swap_caption(self, cap, "Cổng nhân đổi chéo: ∂s/∂w₁ = 0.2475 × x₁,  ∂s/∂x₁ = 0.2475 × w₁")
+            # Cột gradient nằm bên trái cột giá trị forward, cùng hàng với tên biến.
+            bl = VGroup(*[T(gv, 20, C2).next_to(v, LEFT, buff=0.25) for gv, v in zip(grads, fwd)])
+            hl = SurroundingRectangle(VGroup(leaves[0], leaves[1], fwd[0], fwd[1], bl[0], bl[1]), color=C_ACC, buff=0.12)
+            self.play(FadeIn(bl), Create(hl), run_time=1.2)
+            self.wait(1)
+        with noi(self, "Vì thế đầu vào x lớn sẽ làm gradient của trọng số lớn theo. Đó là một lý do phải chuẩn hóa đầu vào."):
+            cap = swap_caption(self, cap, "x lớn → gradient của w lớn: lý do phải chuẩn hóa đầu vào")
         self.wait(3)
 
 
@@ -296,30 +331,40 @@ class FanOutCongDon(Scene):
         e_qf = Arrow(q.get_right(), f.get_left() + UP * 0.15, buff=0.05, color=GREY_B, stroke_width=3)
         e_yf = Arrow(y.get_right(), f.get_left() + DOWN * 0.15, buff=0.05, color=GREY_B, stroke_width=3)
         e_fo = Arrow(f.get_right(), out.get_left(), buff=0.1, color=GREY_B, stroke_width=3)
-        self.play(Write(title))
-        self.play(FadeIn(VGroup(x, y, q, f, out)), Create(VGroup(e_xq, e_yq, e_qf, e_yf, e_fo)))
+        with noi(self, "Khi một biến được dùng ở nhiều chỗ, gradient từ mọi nhánh phải được cộng dồn lại. "
+                       "Xét f bằng x cộng y, rồi nhân với y."):
+            self.play(Write(title))
+            self.play(FadeIn(VGroup(x, y, q, f, out)), Create(VGroup(e_xq, e_yq, e_qf, e_yf, e_fo)))
         fv = VGroup(T("3", 22, C1).next_to(x, LEFT, buff=0.15), T("2", 22, C1).next_to(y, LEFT, buff=0.15),
                     T("q = 5", 22, C1).next_to(q, UP, buff=0.1), T("10", 22, C1).next_to(out, UP, buff=0.15))
-        cap = swap_caption(self, None, "Forward: q = x + y = 5, f = q·y = 10. Biến y được dùng HAI lần")
-        self.play(FadeIn(fv))
-        self.wait(0.8)
-        cap = swap_caption(self, cap, "Cổng nhân: ∂f/∂q = y = 2, còn nhánh trực tiếp ∂f/∂y = q = 5")
+        with noi(self, "Chạy forward tại x bằng ba, y bằng hai: q bằng năm, f bằng mười. "
+                       "Để ý rằng y được dùng hai lần."):
+            cap = swap_caption(self, None, "Forward: q = x + y = 5, f = q·y = 10. Biến y được dùng HAI lần")
+            self.play(FadeIn(fv))
+            self.wait(0.8)
         p1 = T("2", 24, C2).next_to(e_qf.get_center(), UP, buff=0.12)
         p2 = T("5", 24, C2).next_to(e_yf.get_center(), DOWN, buff=0.12)
-        self.play(FadeIn(p1), FadeIn(p2))
+        with noi(self, "Đi backward qua cổng nhân: đạo hàm theo q bằng y, tức là hai. "
+                       "Còn nhánh nối thẳng về y nhận giá trị q, tức là năm."):
+            cap = swap_caption(self, cap, "Cổng nhân: ∂f/∂q = y = 2, còn nhánh trực tiếp ∂f/∂y = q = 5")
+            self.play(FadeIn(p1), FadeIn(p2))
         p3 = T("2", 24, C2).next_to(e_yq.get_center(), LEFT, buff=0.2)
         p4 = T("2", 24, C2).next_to(e_xq.get_center(), UP, buff=0.12)
-        cap = swap_caption(self, cap, "Cổng cộng chuyển nguyên 2 về cả x và y")
-        self.play(FadeIn(p3), FadeIn(p4))
-        self.play(Indicate(p2, color=C_ACC), Indicate(p3, color=C_ACC))
+        with noi(self, "Cổng cộng chuyển nguyên gradient hai về cả x và y."):
+            cap = swap_caption(self, cap, "Cổng cộng chuyển nguyên 2 về cả x và y")
+            self.play(FadeIn(p3), FadeIn(p4))
         total = T("∂f/∂y = 5 + 2 = 7", 28, C_ACC).next_to(y, DOWN, buff=0.35).shift(RIGHT * 1.2)
         gx = T("∂f/∂x = 2", 28, C_ACC).next_to(x, UP, buff=0.3).shift(RIGHT * 0.8)
-        self.play(FadeIn(total), FadeIn(gx))
-        cap = swap_caption(self, cap, "Viết y.grad = ... (ghi đè) thay vì += sẽ ra 2: sai mà không báo lỗi")
+        with noi(self, "Vậy y nhận hai phần đóng góp, năm và hai, tổng là bảy. Còn đạo hàm theo x bằng hai."):
+            self.play(Indicate(p2, color=C_ACC), Indicate(p3, color=C_ACC))
+            self.play(FadeIn(total), FadeIn(gx))
         wrong = T("y.grad = 2  (ghi đè)", 24, C2).next_to(total, RIGHT, buff=0.6)
         cross = Line(wrong.get_left(), wrong.get_right(), color=C2, stroke_width=4)
-        self.play(FadeIn(wrong))
-        self.play(Create(cross))
+        with noi(self, "Nếu code ghi đè gradient thay vì cộng dồn, ta chỉ được hai: sai mà không hề báo lỗi. "
+                       "Autograd của PyTorch tự cộng dồn các nhánh; lỗi này hay gặp khi tự viết backprop bằng tay."):
+            cap = swap_caption(self, cap, "Viết y.grad = ... (ghi đè) thay vì += sẽ ra 2: sai mà không báo lỗi")
+            self.play(FadeIn(wrong))
+            self.play(Create(cross))
         self.wait(3)
 
 
@@ -339,35 +384,39 @@ class ForwardVsReverse(Scene):
                 cells.add(VGroup(sq, T(str(Jv[i][j]), 30).move_to(sq)))
         mat = cells.copy().shift(UP * 0.6)
         Jlab = T("J (2 × 3)", 24).next_to(mat, LEFT, buff=0.4)
-        self.play(Write(title), FadeIn(sub))
-        self.play(FadeIn(mat), FadeIn(Jlab))
+        with noi(self, "Xét hàm f từ ba chiều sang hai chiều. Jacobian của nó tại điểm một, hai, ba là một ma trận hai nhân ba."):
+            self.play(Write(title), FadeIn(sub))
+            self.play(FadeIn(mat), FadeIn(Jlab))
 
         def cell(i, j):
             return mat[i * 3 + j]
 
-        cap = swap_caption(self, None, "Forward mode (JVP): mỗi lượt đẩy một hướng v, nhận một cột Jv")
-        cnt = None
-        for j in range(3):
-            box = SurroundingRectangle(VGroup(cell(0, j), cell(1, j)), color=C1, buff=0.05)
-            new = T(f"JVP lượt {j + 1}/3: v = e{'₁₂₃'[j]} → cột ({Jv[0][j]}, {Jv[1][j]})", 26, C1)
-            new.next_to(mat, DOWN, buff=0.4)
-            if cnt is not None:
+        with noi(self, "Forward mode đẩy một hướng v đi qua hàm và nhận về một cột của J. Muốn đủ ba cột thì cần ba lượt."):
+            cap = swap_caption(self, None, "Forward mode (JVP): mỗi lượt đẩy một hướng v, nhận một cột Jv")
+            cnt = None
+            for j in range(3):
+                box = SurroundingRectangle(VGroup(cell(0, j), cell(1, j)), color=C1, buff=0.05)
+                new = T(f"JVP lượt {j + 1}/3: v = e{'₁₂₃'[j]} → cột ({Jv[0][j]}, {Jv[1][j]})", 26, C1)
+                new.next_to(mat, DOWN, buff=0.4)
+                if cnt is not None:
+                    self.play(FadeOut(cnt), run_time=0.2)
+                self.play(Create(box), FadeIn(new), run_time=0.6)
+                cnt = new
+                self.wait(0.35)
+                self.play(FadeOut(box), run_time=0.3)
+        with noi(self, "Reverse mode đi ngược với một vector u và nhận về một hàng. Hai hàng thì chỉ cần hai lượt."):
+            cap = swap_caption(self, cap, "Reverse mode (VJP): mỗi lượt đi ngược một vector u, nhận một hàng uᵀJ")
+            for i in range(2):
+                box = SurroundingRectangle(VGroup(*[cell(i, j) for j in range(3)]), color=C2, buff=0.05)
+                new = T(f"VJP lượt {i + 1}/2: u = e{'₁₂'[i]} → hàng {tuple(Jv[i])}", 26, C2).next_to(mat, DOWN, buff=0.4)
                 self.play(FadeOut(cnt), run_time=0.2)
-            self.play(Create(box), FadeIn(new), run_time=0.6)
-            cnt = new
-            self.wait(0.35)
-            self.play(FadeOut(box), run_time=0.3)
-        cap = swap_caption(self, cap, "Reverse mode (VJP): mỗi lượt đi ngược một vector u, nhận một hàng uᵀJ")
-        for i in range(2):
-            box = SurroundingRectangle(VGroup(*[cell(i, j) for j in range(3)]), color=C2, buff=0.05)
-            new = T(f"VJP lượt {i + 1}/2: u = e{'₁₂'[i]} → hàng {tuple(Jv[i])}", 26, C2).next_to(mat, DOWN, buff=0.4)
-            self.play(FadeOut(cnt), run_time=0.2)
-            self.play(Create(box), FadeIn(new), run_time=0.6)
-            cnt = new
-            self.wait(0.35)
-            self.play(FadeOut(box), run_time=0.3)
-        cap = swap_caption(self, cap, "Cần n lượt forward hoặc m lượt reverse. Loss vô hướng: m = 1")
-        self.wait(1)
+                self.play(Create(box), FadeIn(new), run_time=0.6)
+                cnt = new
+                self.wait(0.35)
+                self.play(FadeOut(box), run_time=0.3)
+        with noi(self, "Tóm lại, forward mode cần số lượt bằng số đầu vào, reverse mode cần số lượt bằng số đầu ra. Với loss vô hướng, số đầu ra là một."):
+            cap = swap_caption(self, cap, "Cần n lượt forward hoặc m lượt reverse. Loss vô hướng: m = 1")
+            self.wait(1)
         self.play(FadeOut(mat), FadeOut(Jlab), FadeOut(cnt), FadeOut(sub))
         head = T("Chuỗi 10 lớp 1000 × 1000 → loss vô hướng", 28).next_to(title, DOWN, buff=0.4)
         rev = T("Reverse: 10 tích vector × ma trận = 10 × 10⁶ = 10⁷ phép nhân", 26, C2)
@@ -378,10 +427,12 @@ class ForwardVsReverse(Scene):
         bars = VGroup(bar_r, bar_f).arrange(DOWN, aligned_edge=LEFT, buff=0.3).next_to(grp, DOWN, buff=0.5)
         bars.to_edge(LEFT, buff=0.8)
         tag = T("← vạch đỏ gần như không thấy: rẻ hơn 1000 lần", 22, C2).next_to(bar_r, RIGHT, buff=0.2)
-        self.play(FadeIn(head))
-        self.play(FadeIn(rev), FadeIn(fwd))
-        self.play(GrowFromEdge(bar_r, LEFT), GrowFromEdge(bar_f, LEFT), FadeIn(tag), run_time=1.5)
-        cap = swap_caption(self, cap, "Backprop = nhân vector từ loss ngược về, không bao giờ dựng Jacobian")
+        with noi(self, "Với chuỗi mười lớp, mỗi lớp một nghìn nhân một nghìn, reverse mode tốn khoảng mười triệu phép nhân, còn dựng Jacobian từ đầu vào tốn mười tỉ, đắt hơn một nghìn lần."):
+            self.play(FadeIn(head))
+            self.play(FadeIn(rev), FadeIn(fwd))
+            self.play(GrowFromEdge(bar_r, LEFT), GrowFromEdge(bar_f, LEFT), FadeIn(tag), run_time=1.5)
+        with noi(self, "Vì vậy backprop chỉ nhân vector từ loss ngược về, không bao giờ dựng cả ma trận Jacobian."):
+            cap = swap_caption(self, cap, "Backprop = nhân vector từ loss ngược về, không bao giờ dựng Jacobian")
         self.wait(2.2)
 
 
@@ -391,7 +442,8 @@ class SoftmaxGradient(Scene):
 
     def construct(self):
         title = T("Softmax + cross-entropy: gradient = p − y", 32).to_edge(UP, buff=0.3)
-        self.play(Write(title))
+        with noi(self, "Softmax đi kèm cross-entropy cho một gradient rất gọn: p trừ y."):
+            self.play(Write(title))
         z = np.array([2.0, 1.0, 0.0])
         p = np.exp(z - z.max()); p /= p.sum()
         y = np.array([0.0, 1.0, 0.0])
@@ -419,23 +471,29 @@ class SoftmaxGradient(Scene):
                 grp.add(rect, num, lab)
             grp.add(T(name, 24, col).move_to([cx, 2.3, 0]))
             groups.append(grp)
-        self.play(FadeIn(groups[0]))
-        cap = swap_caption(self, None, "Logit (2, 1, 0); nhãn đúng là lớp 2")
-        self.play(FadeIn(groups[1]))
-        cap = swap_caption(self, cap, "p ≈ (0.665, 0.245, 0.090); loss = −log 0.245 ≈ 1.408")
-        self.wait(0.8)
-        self.play(FadeIn(groups[2]))
-        cap = swap_caption(self, cap, "Âm ở lớp đúng (đẩy logit lên), dương ở lớp sai (kéo xuống)")
-        self.wait(1.5)
+        with noi(self, "Lấy logit hai, một, không, và nhãn đúng là lớp thứ hai."):
+            self.play(FadeIn(groups[0]))
+            cap = swap_caption(self, None, "Logit (2, 1, 0); nhãn đúng là lớp 2")
+        with noi(self, "Softmax cho xác suất khoảng không phẩy sáu sáu lăm, không phẩy hai bốn lăm và không phẩy không chín. Loss bằng trừ log của không phẩy hai bốn lăm, khoảng một phẩy bốn."):
+            self.play(FadeIn(groups[1]))
+            cap = swap_caption(self, cap, "p ≈ (0.665, 0.245, 0.090); loss = −log 0.245 ≈ 1.408")
+            self.wait(0.8)
+        with noi(self, "Gradient p trừ y âm ở lớp đúng, nên đẩy logit của nó lên, và dương ở các lớp sai, kéo logit của chúng xuống."):
+            self.play(FadeIn(groups[2]))
+            cap = swap_caption(self, cap, "Âm ở lớp đúng (đẩy logit lên), dương ở lớp sai (kéo xuống)")
+            self.wait(1.5)
         self.play(*[FadeOut(gp) for gp in groups], FadeOut(cap))
         l1 = T("z = (1000, 999, 998)", 28).shift(UP * 1.4)
         l2 = T("np.exp(z) → inf,  inf / inf → nan", 28, C2).next_to(l1, DOWN, buff=0.5)
         l3 = T("trừ max: z − 1000 = (0, −1, −2)", 28, C1).next_to(l2, DOWN, buff=0.5)
         l4 = T("p = (0.665, 0.245, 0.090) — đúng như trên", 28, C1).next_to(l3, DOWN, buff=0.4)
-        self.play(FadeIn(l1))
-        self.play(FadeIn(l2))
-        self.wait(0.6)
-        self.play(FadeIn(l3))
-        self.play(FadeIn(l4))
-        self.play(FadeIn(caption("Cộng cùng một hằng số vào mọi logit không đổi p: trừ max là miễn phí")))
+        with noi(self, "Một chuyện thực tế: nếu logit là một nghìn, chín trăm chín chín, chín trăm chín tám, thì hàm exp bị tràn số và kết quả thành nan."):
+            self.play(FadeIn(l1))
+            self.play(FadeIn(l2))
+            self.wait(0.6)
+        with noi(self, "Cách sửa là trừ đi giá trị lớn nhất trước khi lấy exp. Kết quả vẫn y như cũ."):
+            self.play(FadeIn(l3))
+            self.play(FadeIn(l4))
+        with noi(self, "Vì cộng cùng một hằng số vào mọi logit không làm đổi softmax, nên trừ max là hoàn toàn miễn phí."):
+            self.play(FadeIn(caption("Cộng cùng một hằng số vào mọi logit không đổi p: trừ max là miễn phí")))
         self.wait(3)
