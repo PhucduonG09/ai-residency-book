@@ -14,6 +14,9 @@ from manim import *
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from giong_doc import noi  # giọng đọc Google (gTTS); MANIM_KHONG_GIONG=1 để render câm
+import nen
+
+nen.bat()  # nền lưới mờ thay cho nền đen trơn
 
 FONT = "Segoe UI" if sys.platform == "win32" else "DejaVu Sans"
 C1, C2, C_ACC = GREEN, RED, YELLOW

@@ -14,30 +14,40 @@ Cách dùng trong một cảnh:
 - Sửa câu thoại thì mã băm đổi và câu được tải lại.
 - Đặt biến môi trường MANIM_KHONG_GIONG=1 để render câm như cũ (bỏ qua giọng đọc).
 
-Cần: pip install gTTS   (Manim Community ≥ 0.18 đã kèm PyAV để đo độ dài mp3)
+Cần: pip install gTTS, và ffmpeg trong PATH để tăng tốc giọng (environment.yml đã có).
+(Manim Community ≥ 0.18 đã kèm PyAV để đo độ dài mp3.)
 """
 from __future__ import annotations
 
 import hashlib
 import os
+import subprocess
 from contextlib import contextmanager
 from pathlib import Path
 
 CACHE = Path(__file__).resolve().parent / "giong_doc_cache"
 LANG = "vi"
 NGHI = 0.25  # khoảng lặng (giây) sau mỗi câu trước khi sang câu kế
+TOC_DO = 1.25  # gTTS đọc khá chậm: tăng tốc 1.25× (giữ cao độ) bằng bộ lọc atempo của ffmpeg
 
 
-def file_giong(text: str, lang: str = LANG) -> Path:
-    """Trả về mp3 của câu, tải từ gTTS nếu chưa có trong cache."""
-    key = hashlib.sha1(f"{lang}|{text}".encode("utf-8")).hexdigest()[:16]
+def file_giong(text: str, lang: str = LANG, toc_do: float = TOC_DO) -> Path:
+    """Trả về mp3 của câu (đã chỉnh tốc độ), tải từ gTTS nếu chưa có trong cache."""
+    key = hashlib.sha1(f"{lang}|{toc_do}|{text}".encode("utf-8")).hexdigest()[:16]
     f = CACHE / f"{key}.mp3"
     if not f.exists():
         from gtts import gTTS  # chỉ cần khi phải tải câu mới
 
         CACHE.mkdir(exist_ok=True)
-        tmp = f.with_suffix(".tmp")
-        gTTS(text, lang=lang).save(str(tmp))
+        goc = f.with_suffix(".goc.mp3")
+        gTTS(text, lang=lang).save(str(goc))
+        if toc_do != 1:
+            tmp = f.with_suffix(".tmp.mp3")
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(goc), "-filter:a", f"atempo={toc_do}",
+                            str(tmp)], check=True)
+            goc.unlink()
+        else:
+            tmp = goc
         tmp.replace(f)  # ghi xong mới đổi tên: lỗi mạng giữa chừng không để lại file hỏng
     return f
 
